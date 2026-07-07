@@ -5,7 +5,9 @@ export const NAV_ITEMS = [
   { label: "Publicações", path: "/publicacoes" },
   { label: "Parcerias", path: "/parcerias" },
   { label: "Cursos", path: "/cursos" },
+  { label: "Formação Complementar", path: "/formacao-complementar" },
   { label: "Eventos", path: "/eventos" },
+  { label: "Oportunidades", path: "/oportunidades" },
   { label: "Membros", path: "/membros" },
   { label: "Contato", path: "/contato" },
 ] as const

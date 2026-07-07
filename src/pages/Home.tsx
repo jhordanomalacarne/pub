@@ -26,6 +26,18 @@ const HIGHLIGHTS = [
       "Cursos e eventos voltados a alunos, pesquisadores e à comunidade.",
     to: "/cursos",
   },
+  {
+    title: "Formação Complementar",
+    description:
+      "Sugestões de cursos e materiais externos para aprofundar temas do laboratório.",
+    to: "/formacao-complementar",
+  },
+  {
+    title: "Oportunidades",
+    description:
+      "Estágios, bolsas e vagas de emprego divulgadas pelo laboratório e parceiros.",
+    to: "/oportunidades",
+  },
 ]
 
 export function Home() {
@@ -65,7 +77,7 @@ export function Home() {
         <h2 className="font-serif text-2xl font-semibold text-navy-900">
           Áreas de atuação
         </h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {HIGHLIGHTS.map((item) => (
             <Link key={item.to} to={item.to}>
               <Card className="h-full">

@@ -6,7 +6,9 @@ import { Projects } from "./pages/Projects"
 import { Publications } from "./pages/Publications"
 import { Partnerships } from "./pages/Partnerships"
 import { Courses } from "./pages/Courses"
+import { ComplementaryTraining } from "./pages/ComplementaryTraining"
 import { Events } from "./pages/Events"
+import { Opportunities } from "./pages/Opportunities"
 import { Members } from "./pages/Members"
 import { Contact } from "./pages/Contact"
 
@@ -20,7 +22,9 @@ function App() {
         <Route path="publicacoes" element={<Publications />} />
         <Route path="parcerias" element={<Partnerships />} />
         <Route path="cursos" element={<Courses />} />
+        <Route path="formacao-complementar" element={<ComplementaryTraining />} />
         <Route path="eventos" element={<Events />} />
+        <Route path="oportunidades" element={<Opportunities />} />
         <Route path="membros" element={<Members />} />
         <Route path="contato" element={<Contact />} />
       </Route>
