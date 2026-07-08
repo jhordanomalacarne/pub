@@ -4,6 +4,7 @@ export const NAV_ITEMS = [
   { label: "Projetos", path: "/projetos" },
   { label: "Publicações", path: "/publicacoes" },
   { label: "Parcerias", path: "/parcerias" },
+  { label: "Serviços", path: "/servicos" },
   { label: "Cursos", path: "/cursos" },
   { label: "Formação Complementar", path: "/formacao-complementar" },
   { label: "Eventos", path: "/eventos" },

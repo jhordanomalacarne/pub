@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Card } from "../components/ui/Card"
+import { SERVICES } from "../lib/services"
 
 const HIGHLIGHTS = [
   {
@@ -90,6 +91,42 @@ export function Home() {
               </Card>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-navy-950">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">
+                Serviços públicos
+              </p>
+              <h2 className="mt-2 font-serif text-2xl font-semibold text-white">
+                Ferramentas web abertas à comunidade
+              </h2>
+            </div>
+            <Link
+              to="/servicos"
+              className="rounded-md border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-slate-400"
+            >
+              Ver todos os serviços
+            </Link>
+          </div>
+
+          <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-5">
+            {SERVICES.map((service) => (
+              <Link
+                key={service.name}
+                to="/servicos"
+                className="flex flex-col items-center gap-2 text-center text-slate-300 transition-colors hover:text-white"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-gold-500">
+                  <service.icon />
+                </span>
+                <span className="text-xs">{service.name}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
