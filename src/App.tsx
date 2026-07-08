@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Layout } from "./components/layout/Layout"
+import { ScrollToTop } from "./components/ScrollToTop"
 import { Home } from "./pages/Home"
 import { About } from "./pages/About"
 import { Projects } from "./pages/Projects"
@@ -16,23 +17,26 @@ import { Contact } from "./pages/Contact"
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="sobre" element={<About />} />
-        <Route path="projetos" element={<Projects />} />
-        <Route path="publicacoes" element={<Publications />} />
-        <Route path="parcerias" element={<Partnerships />} />
-        <Route path="servicos" element={<Services />} />
-        <Route path="servicos/:slug" element={<ServiceDetail />} />
-        <Route path="cursos" element={<Courses />} />
-        <Route path="formacao-complementar" element={<ComplementaryTraining />} />
-        <Route path="eventos" element={<Events />} />
-        <Route path="oportunidades" element={<Opportunities />} />
-        <Route path="membros" element={<Members />} />
-        <Route path="contato" element={<Contact />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="sobre" element={<About />} />
+          <Route path="projetos" element={<Projects />} />
+          <Route path="publicacoes" element={<Publications />} />
+          <Route path="parcerias" element={<Partnerships />} />
+          <Route path="servicos" element={<Services />} />
+          <Route path="servicos/:slug" element={<ServiceDetail />} />
+          <Route path="cursos" element={<Courses />} />
+          <Route path="formacao-complementar" element={<ComplementaryTraining />} />
+          <Route path="eventos" element={<Events />} />
+          <Route path="oportunidades" element={<Opportunities />} />
+          <Route path="membros" element={<Members />} />
+          <Route path="contato" element={<Contact />} />
+        </Route>
+      </Routes>
+    </>
   )
 }
 
