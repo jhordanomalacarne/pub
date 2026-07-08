@@ -1,5 +1,6 @@
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
+import gtecLogo from "../assets/gtec-logo.jpg"
 
 export function About() {
   return (
@@ -11,7 +12,14 @@ export function About() {
       />
 
       <section className="mx-auto max-w-4xl px-6 py-16">
-        <h2 className="font-serif text-2xl font-semibold text-navy-900">Missão</h2>
+        <div className="flex items-center gap-4 rounded-lg border border-border bg-surface px-6 py-5">
+          <img src={gtecLogo} alt="GTEC" className="h-14 w-auto shrink-0" />
+          <p className="text-sm text-ink-soft">
+            O Laboratório Zero é vinculado ao <strong className="text-ink">GTEC — Grupo de Pesquisa em Tecnologia, Comunicação e Governança</strong>.
+          </p>
+        </div>
+
+        <h2 className="mt-12 font-serif text-2xl font-semibold text-navy-900">Missão</h2>
         <p className="mt-4 text-ink-soft leading-relaxed">
           Produzir pesquisa aplicada e formação em rede de computadores,
           comunicação e governança digital, articulando infraestrutura

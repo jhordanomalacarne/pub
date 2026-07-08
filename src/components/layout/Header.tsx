@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
+import gtecLogo from "../../assets/gtec-logo.jpg"
 
 function navLinkClass({ isActive }: { isActive: boolean }) {
   return [
@@ -17,7 +18,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-paper/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-        <NavLink to="/" className="shrink-0" onClick={() => setOpen(false)}>
+        <NavLink to="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
+          <img src={gtecLogo} alt="GTEC" className="h-9 w-auto" />
           <span className="font-serif text-xl font-semibold text-navy-900">
             Laboratório Zero
           </span>

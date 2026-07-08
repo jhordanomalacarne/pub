@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
+import gtecLogo from "../../assets/gtec-logo.jpg"
 
 export function Footer() {
   return (
@@ -7,7 +8,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <span className="font-serif text-lg font-semibold text-navy-900">
+            <img src={gtecLogo} alt="GTEC" className="h-10 w-auto" />
+            <span className="mt-3 block font-serif text-lg font-semibold text-navy-900">
               Laboratório Zero
             </span>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
