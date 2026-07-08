@@ -108,3 +108,15 @@ export function LinkIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function QrCodeIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="3.5" width="6" height="6" rx="0.5" />
+      <rect x="14.5" y="3.5" width="6" height="6" rx="0.5" />
+      <rect x="3.5" y="14.5" width="6" height="6" rx="0.5" />
+      <path d="M6 6h1M6 17h1M17 6h1" />
+      <path d="M14.5 14.5h2.5v2.5h-2.5zM20 14.5v2M14.5 20h2.5v.01M20 20v.01" />
+    </Base>
+  )
+}

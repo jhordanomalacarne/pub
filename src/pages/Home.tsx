@@ -116,8 +116,8 @@ export function Home() {
           <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-5">
             {SERVICES.map((service) => (
               <Link
-                key={service.name}
-                to="/servicos"
+                key={service.slug}
+                to={`/servicos/${service.slug}`}
                 className="flex flex-col items-center gap-2 text-center text-slate-300 transition-colors hover:text-white"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-gold-500">

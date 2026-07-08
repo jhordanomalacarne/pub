@@ -6,6 +6,7 @@ import { Projects } from "./pages/Projects"
 import { Publications } from "./pages/Publications"
 import { Partnerships } from "./pages/Partnerships"
 import { Services } from "./pages/Services"
+import { ServiceDetail } from "./pages/ServiceDetail"
 import { Courses } from "./pages/Courses"
 import { ComplementaryTraining } from "./pages/ComplementaryTraining"
 import { Events } from "./pages/Events"
@@ -23,6 +24,7 @@ function App() {
         <Route path="publicacoes" element={<Publications />} />
         <Route path="parcerias" element={<Partnerships />} />
         <Route path="servicos" element={<Services />} />
+        <Route path="servicos/:slug" element={<ServiceDetail />} />
         <Route path="cursos" element={<Courses />} />
         <Route path="formacao-complementar" element={<ComplementaryTraining />} />
         <Route path="eventos" element={<Events />} />
