@@ -29,8 +29,8 @@ export function PartnershipDetail() {
 
         <h2 className="mt-10 font-serif text-xl font-semibold text-heading">Quem são</h2>
         <p className="mt-2 text-sm text-ink-soft">
-          A rede abaixo representa as conexões entre o laboratório e seus parceiros — clique em um
-          nome para ver os detalhes da parceria.
+          A rede abaixo representa as conexões entre o laboratório e seus parceiros — passe o mouse
+          ou toque em um parceiro para ver os detalhes da parceria.
         </p>
         <div className="mt-6">
           <PartnerNetwork categorySlug={category.slug} partners={category.partners} />

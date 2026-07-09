@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import type { Partner } from "../../lib/partnershipCategories"
 import { computeNetworkLayout } from "../../lib/networkLayout"
@@ -26,25 +26,88 @@ function accentFor(name: string) {
 }
 
 function buildEdges(partners: Partner[]): NetworkEdge[] {
-  const edges: NetworkEdge[] = partners.map((partner) => ({ source: LAB_ID, target: partner.slug }))
+  return partners.map((partner) => ({ source: LAB_ID, target: partner.slug }))
+}
 
-  if (partners.length > 1) {
-    const extraCount = Math.max(1, Math.ceil(partners.length / 2))
-    const used = new Set<string>()
-    let attempts = 0
-    while (used.size < extraCount && attempts < extraCount * 12) {
-      attempts++
-      const a = partners[Math.floor(Math.random() * partners.length)]
-      const b = partners[Math.floor(Math.random() * partners.length)]
-      if (a.slug === b.slug) continue
-      const key = [a.slug, b.slug].sort().join("|")
-      if (used.has(key)) continue
-      used.add(key)
-      edges.push({ source: a.slug, target: b.slug })
-    }
+function PartnerLogo({ partner, className = "" }: { partner: Partner; className?: string }) {
+  if (partner.logo) {
+    return (
+      <img
+        src={partner.logo}
+        alt=""
+        className={`rounded-full border border-border bg-paper object-contain ${className}`}
+      />
+    )
   }
+  return (
+    <span
+      className={`flex items-center justify-center rounded-full font-serif font-semibold text-white ${accentFor(partner.name)} ${className}`}
+    >
+      {initials(partner.name)}
+    </span>
+  )
+}
 
-  return edges
+function PartnerNode({
+  categorySlug,
+  partner,
+  x,
+  y,
+}: {
+  categorySlug: string
+  partner: Partner
+  x: number
+  y: number
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [open])
+
+  return (
+    <div
+      ref={ref}
+      className="absolute -translate-x-1/2 -translate-y-1/2"
+      style={{ left: `${x}%`, top: `${y}%` }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-expanded={open}
+        aria-label={partner.name}
+        className="block"
+      >
+        <PartnerLogo
+          partner={partner}
+          className="h-10 w-10 text-xs shadow-md transition-transform hover:scale-110 sm:h-14 sm:w-14 sm:text-sm"
+        />
+      </button>
+
+      {open && (
+        <div className="absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-lg border border-border bg-paper p-3 text-center shadow-lg">
+          <PartnerLogo partner={partner} className="mx-auto h-16 w-16 text-base" />
+          <p className="mt-2 text-sm font-semibold text-heading">{partner.name}</p>
+          <Link
+            to={`/parcerias/${categorySlug}/${partner.slug}`}
+            className="mt-2 inline-block text-xs font-semibold text-heading transition-colors hover:underline"
+          >
+            Ver detalhes da parceria →
+          </Link>
+        </div>
+      )}
+    </div>
+  )
 }
 
 export function PartnerNetwork({
@@ -75,7 +138,6 @@ export function PartnerNetwork({
           const a = positions[edge.source]
           const b = positions[edge.target]
           if (!a || !b) return null
-          const isHubEdge = edge.source === LAB_ID || edge.target === LAB_ID
           return (
             <line
               key={index}
@@ -84,7 +146,7 @@ export function PartnerNetwork({
               x2={b.x}
               y2={b.y}
               stroke="var(--color-ink-soft)"
-              strokeWidth={isHubEdge ? 2.5 : 1.5}
+              strokeWidth={2.5}
             />
           )
         })}
@@ -111,30 +173,13 @@ export function PartnerNetwork({
         const pos = positions[partner.slug]
         if (!pos) return null
         return (
-          <Link
+          <PartnerNode
             key={partner.slug}
-            to={`/parcerias/${categorySlug}/${partner.slug}`}
-            title={partner.name}
-            className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1 text-center"
-            style={{ left: `${(pos.x / WIDTH) * 100}%`, top: `${(pos.y / HEIGHT) * 100}%` }}
-          >
-            {partner.logo ? (
-              <img
-                src={partner.logo}
-                alt=""
-                className="h-10 w-10 rounded-full border border-border bg-paper object-contain shadow-md transition-transform hover:scale-110 sm:h-14 sm:w-14"
-              />
-            ) : (
-              <span
-                className={`flex h-10 w-10 items-center justify-center rounded-full font-serif text-xs font-semibold text-white shadow-md transition-transform hover:scale-110 sm:h-14 sm:w-14 sm:text-sm ${accentFor(partner.name)}`}
-              >
-                {initials(partner.name)}
-              </span>
-            )}
-            <span className="max-w-[4.5rem] text-[10px] text-ink-soft sm:max-w-[6rem] sm:text-xs">
-              {partner.name}
-            </span>
-          </Link>
+            categorySlug={categorySlug}
+            partner={partner}
+            x={(pos.x / WIDTH) * 100}
+            y={(pos.y / HEIGHT) * 100}
+          />
         )
       })}
     </div>
