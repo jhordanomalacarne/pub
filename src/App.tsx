@@ -7,6 +7,7 @@ import { Projects } from "./pages/Projects"
 import { Publications } from "./pages/Publications"
 import { Statistics } from "./pages/Statistics"
 import { Partnerships } from "./pages/Partnerships"
+import { PartnershipDetail } from "./pages/PartnershipDetail"
 import { Services } from "./pages/Services"
 import { ServiceDetail } from "./pages/ServiceDetail"
 import { Courses } from "./pages/Courses"
@@ -28,6 +29,7 @@ function App() {
           <Route path="publicacoes" element={<Publications />} />
           <Route path="estatisticas" element={<Statistics />} />
           <Route path="parcerias" element={<Partnerships />} />
+          <Route path="parcerias/:slug" element={<PartnershipDetail />} />
           <Route path="servicos" element={<Services />} />
           <Route path="servicos/:slug" element={<ServiceDetail />} />
           <Route path="cursos" element={<Courses />} />

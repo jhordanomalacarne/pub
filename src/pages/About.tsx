@@ -1,8 +1,8 @@
-import { useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
 import { ABOUT_SECTIONS } from "../lib/aboutSections"
+import { useHashScroll } from "../hooks/useHashScroll"
 import gtecLogo from "../assets/gtec-logo.png"
 
 const DATACENTER_ITEMS = [
@@ -29,13 +29,7 @@ const MAP_ADDRESS =
   "Instituto Federal de Rondônia — Campus Porto Velho Zona Norte, Av. Gov. Jorge Teixeira, 3146, Setor Industrial, Porto Velho - RO, 76821-002"
 
 export function About() {
-  const location = useLocation()
-
-  useEffect(() => {
-    if (!location.hash) return
-    const id = location.hash.slice(1)
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }, [location.hash])
+  useHashScroll()
 
   return (
     <>

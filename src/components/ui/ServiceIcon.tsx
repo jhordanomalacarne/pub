@@ -120,3 +120,35 @@ export function QrCodeIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function GiftIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="4" y="10" width="16" height="10" rx="1" />
+      <path d="M4 10h16" />
+      <path d="M12 10v10" />
+      <circle cx="9.5" cy="7" r="2" />
+      <circle cx="14.5" cy="7" r="2" />
+    </Base>
+  )
+}
+
+export function UsersIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="8.5" cy="8" r="3" />
+      <path d="M3 20c0-3.6 2.5-6.2 5.5-6.2S14 16.4 14 20" />
+      <circle cx="17" cy="9" r="2.3" />
+      <path d="M15 13.3c2.4.4 4 2.6 4 6.7" />
+    </Base>
+  )
+}
+
+export function CollaborationIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="9" cy="12" r="6.5" />
+      <circle cx="15" cy="12" r="6.5" />
+    </Base>
+  )
+}

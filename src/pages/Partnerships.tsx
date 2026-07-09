@@ -1,37 +1,54 @@
+import { Link } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
-
-const PARTNERS = [
-  { name: "Instituição Parceira A", type: "Universidade" },
-  { name: "Instituição Parceira B", type: "Órgão público" },
-  { name: "Instituição Parceira C", type: "Centro de pesquisa" },
-  { name: "Instituição Parceira D", type: "Organização da sociedade civil" },
-]
+import { PARTNERSHIP_CATEGORIES } from "../lib/partnershipCategories"
+import { useHashScroll } from "../hooks/useHashScroll"
 
 export function Partnerships() {
+  useHashScroll()
+
   return (
     <>
       <PageHero
         eyebrow="Parcerias"
-        title="Instituições parceiras"
-        description="O Laboratório Zero desenvolve projetos e pesquisas em cooperação com instituições acadêmicas e públicas."
+        title="Parcerias"
+        description="O Laboratório Zero se relaciona com diferentes tipos de parceiros: doadores, usuários da infraestrutura e instituições que desenvolvem projetos em conjunto."
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PARTNERS.map((partner) => (
-            <Card key={partner.name} className="flex flex-col items-center text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-surface text-xs text-ink-soft">
-                logo
-              </div>
-              <p className="mt-4 font-medium text-heading">{partner.name}</p>
-              <p className="mt-1 text-xs text-ink-soft">{partner.type}</p>
-            </Card>
+      <nav className="border-b border-border bg-surface">
+        <div className="mx-auto flex max-w-4xl flex-wrap gap-x-6 gap-y-2 px-6 py-4 text-sm">
+          {PARTNERSHIP_CATEGORIES.map((category) => (
+            <Link
+              key={category.id}
+              to={`#${category.id}`}
+              className="text-ink-soft transition-colors hover:text-heading"
+            >
+              {category.label}
+            </Link>
           ))}
         </div>
-        <p className="mt-8 text-xs text-ink-soft">
-          Lista ilustrativa — substitua pelos parceiros reais e seus logos.
-        </p>
+      </nav>
+
+      <section className="mx-auto max-w-4xl px-6 py-16">
+        <div className="space-y-6">
+          {PARTNERSHIP_CATEGORIES.map((category) => (
+            <div key={category.id} id={category.id} className="scroll-mt-24">
+              <Link to={`/parcerias/${category.slug}`}>
+                <Card className="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-navy-950 text-gold-500">
+                    <category.icon />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-xl font-semibold text-heading">
+                      {category.label}
+                    </h2>
+                    <p className="mt-2 text-sm text-ink-soft">{category.description}</p>
+                  </div>
+                </Card>
+              </Link>
+            </div>
+          ))}
+        </div>
       </section>
     </>
   )
