@@ -94,6 +94,51 @@ export function Home() {
         </div>
       </section>
 
+      <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="rounded-lg border-2 border-gold-500 bg-paper p-8 sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gold-600">
+              Fomento e Inovação
+            </p>
+            <h2 className="mt-2 max-w-3xl font-serif text-2xl font-semibold text-heading sm:text-3xl">
+              Está submetendo um projeto a um edital de fomento?
+            </h2>
+            <div className="mt-6 grid gap-8 lg:grid-cols-2">
+              <p className="text-ink-soft leading-relaxed">
+                Se você está cogitando submeter sua startup ou projeto em
+                editais de fomento como FINEP, CNPq, fundações de amparo à
+                pesquisa ou mesmo editais internacionais, considere a
+                indicação do Laboratório Zero como parceiro para
+                implementação de soluções. Na previsão orçamentária do
+                projeto, considere recursos para infraestrutura de
+                tecnologia para suportar suas soluções.
+              </p>
+              <div>
+                <h3 className="font-serif text-lg font-semibold text-heading">
+                  Datacenter as a Service
+                </h3>
+                <p className="mt-2 text-sm text-ink-soft leading-relaxed">
+                  O Laboratório Zero atua com hospedagem de serviços diversos
+                  no conceito de datacenter as a service: uma infraestrutura
+                  completa de datacenter como serviço para parceiros, com
+                  mecanismos de segurança, backup, aplicações
+                  personalizadas e soluções ajustadas às demandas
+                  individuais — inovação tecnológica aplicada ao suporte de
+                  tecnologias com segurança, soberania de dados e alto
+                  desempenho.
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/sobre#contato"
+              className="mt-8 inline-block rounded-md bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+            >
+              Fale com o laboratório
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-border bg-navy-950">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
