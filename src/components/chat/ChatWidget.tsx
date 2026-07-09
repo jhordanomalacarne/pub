@@ -1,5 +1,7 @@
 import { useState } from "react"
 import type { FormEvent } from "react"
+import { useLanguage } from "../../i18n/LanguageContext"
+import type { Dictionary } from "../../i18n/translations"
 
 type Message = {
   role: "user" | "assistant"
@@ -8,9 +10,9 @@ type Message = {
 
 const ENDPOINT = import.meta.env.VITE_CHAT_ENDPOINT as string | undefined
 
-async function sendMessage(history: Message[]): Promise<string> {
+async function sendMessage(history: Message[], dict: Dictionary): Promise<string> {
   if (!ENDPOINT) {
-    return "Assistente ainda não conectado. Configure VITE_CHAT_ENDPOINT com a URL do seu serviço externo."
+    return dict.chatWidget.notConnected
   }
 
   const res = await fetch(ENDPOINT, {
@@ -20,21 +22,18 @@ async function sendMessage(history: Message[]): Promise<string> {
   })
 
   if (!res.ok) {
-    throw new Error(`Falha na resposta do assistente (HTTP ${res.status})`)
+    throw new Error(dict.chatWidget.responseError.replace("{status}", String(res.status)))
   }
 
   const data = (await res.json()) as { reply?: string }
-  return data.reply ?? "Não recebi uma resposta válida do assistente."
+  return data.reply ?? dict.chatWidget.invalidResponse
 }
 
 export function ChatWidget({ raised = false }: { raised?: boolean }) {
+  const { dict } = useLanguage()
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content:
-        "Olá! Posso ajudar com dúvidas sobre o curso de Tecnologia em Redes de Computadores e sobre o Laboratório Zero.",
-    },
+    { role: "assistant", content: dict.chatWidget.greeting },
   ])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
@@ -50,16 +49,10 @@ export function ChatWidget({ raised = false }: { raised?: boolean }) {
     setLoading(true)
 
     try {
-      const reply = await sendMessage(nextMessages)
+      const reply = await sendMessage(nextMessages, dict)
       setMessages((prev) => [...prev, { role: "assistant", content: reply }])
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "Ocorreu um erro ao falar com o assistente. Tente novamente em instantes.",
-        },
-      ])
+      setMessages((prev) => [...prev, { role: "assistant", content: dict.chatWidget.genericError }])
     } finally {
       setLoading(false)
     }
@@ -74,13 +67,11 @@ export function ChatWidget({ raised = false }: { raised?: boolean }) {
       {open && (
         <div className="flex h-[28rem] w-[22rem] max-w-[calc(100vw-2.5rem)] flex-col overflow-hidden rounded-lg border border-border bg-paper shadow-xl">
           <div className="flex items-center justify-between border-b border-border bg-navy-950 px-4 py-3">
-            <span className="font-serif text-sm font-semibold text-white">
-              Assistente do Laboratório Zero
-            </span>
+            <span className="font-serif text-sm font-semibold text-white">{dict.chatWidget.title}</span>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              aria-label="Fechar chat"
+              aria-label={dict.chatWidget.close}
               className="text-slate-300 transition-colors hover:text-white"
             >
               ✕
@@ -102,7 +93,7 @@ export function ChatWidget({ raised = false }: { raised?: boolean }) {
             ))}
             {loading && (
               <div className="max-w-[85%] rounded-lg bg-surface px-3 py-2 text-sm text-ink-soft">
-                Digitando…
+                {dict.chatWidget.typing}
               </div>
             )}
           </div>
@@ -112,7 +103,7 @@ export function ChatWidget({ raised = false }: { raised?: boolean }) {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Digite sua pergunta…"
+              placeholder={dict.chatWidget.placeholder}
               className="flex-1 rounded-md border border-border px-3 py-2 text-sm outline-none focus:border-navy-700"
             />
             <button
@@ -120,7 +111,7 @@ export function ChatWidget({ raised = false }: { raised?: boolean }) {
               disabled={loading || !input.trim()}
               className="rounded-md bg-gold-500 px-3 py-2 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-600 disabled:opacity-50"
             >
-              Enviar
+              {dict.chatWidget.send}
             </button>
           </form>
         </div>
@@ -129,7 +120,7 @@ export function ChatWidget({ raised = false }: { raised?: boolean }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Fechar chat" : "Abrir chat com o assistente"}
+        aria-label={open ? dict.chatWidget.close : dict.chatWidget.open}
         className="flex h-14 w-14 items-center justify-center rounded-full bg-navy-900 text-white shadow-lg transition-colors hover:bg-navy-800"
       >
         {open ? (

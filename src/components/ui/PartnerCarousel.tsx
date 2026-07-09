@@ -1,4 +1,5 @@
 import { ALL_PARTNERS } from "../../lib/partnershipCategories"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 function initials(name: string) {
   return name
@@ -10,6 +11,8 @@ function initials(name: string) {
 }
 
 export function PartnerCarousel() {
+  const { language } = useLanguage()
+
   if (ALL_PARTNERS.length === 0) return null
 
   const track = [...ALL_PARTNERS, ...ALL_PARTNERS]
@@ -17,21 +20,22 @@ export function PartnerCarousel() {
   return (
     <div className="overflow-hidden border-y border-border bg-surface py-6" aria-hidden="true">
       <div className="animate-marquee flex w-max gap-6 hover:[animation-play-state:paused]">
-        {track.map((partner, index) => (
-          <div
-            key={`${partner.name}-${index}`}
-            title={partner.name}
-            className="flex h-16 w-32 shrink-0 items-center justify-center rounded-lg border border-border bg-paper px-3"
-          >
-            {partner.logo ? (
-              <img src={partner.logo} alt="" className="max-h-10 max-w-full object-contain" />
-            ) : (
-              <span className="font-serif text-sm font-semibold text-heading">
-                {initials(partner.name)}
-              </span>
-            )}
-          </div>
-        ))}
+        {track.map((partner, index) => {
+          const name = partner.name[language]
+          return (
+            <div
+              key={`${partner.slug}-${index}`}
+              title={name}
+              className="flex h-16 w-32 shrink-0 items-center justify-center rounded-lg border border-border bg-paper px-3"
+            >
+              {partner.logo ? (
+                <img src={partner.logo} alt="" className="max-h-10 max-w-full object-contain" />
+              ) : (
+                <span className="font-serif text-sm font-semibold text-heading">{initials(name)}</span>
+              )}
+            </div>
+          )
+        })}
       </div>
     </div>
   )

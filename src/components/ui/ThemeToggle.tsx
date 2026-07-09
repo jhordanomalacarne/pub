@@ -1,7 +1,9 @@
 import { useTheme } from "../../hooks/useTheme"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
+  const { dict } = useLanguage()
   const isDark = theme === "dark"
 
   return (
@@ -9,7 +11,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex items-center justify-center rounded-md border border-border p-2 text-ink-soft transition-colors hover:text-heading"
-      aria-label={isDark ? "Ativar modo claro" : "Ativar modo escuro"}
+      aria-label={isDark ? dict.themeToggle.enableLight : dict.themeToggle.enableDark}
     >
       {isDark ? (
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">

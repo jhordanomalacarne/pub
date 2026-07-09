@@ -1,0 +1,589 @@
+export const pt = {
+  nav: {
+    home: "Início",
+    about: "Sobre",
+    projects: "Projetos",
+    publications: "Publicações",
+    statistics: "Estatísticas",
+    partnerships: "Parcerias",
+    services: "Serviços",
+    courses: "Cursos",
+    complementaryTraining: "Formação Complementar",
+    events: "Eventos",
+    opportunities: "Oportunidades",
+    members: "Membros",
+  },
+  aboutSections: {
+    mission: "Missão",
+    researchLines: "Linhas de pesquisa",
+    datacenter: "Infraestrutura",
+    photos: "Fotos",
+    virtualTour: "Tour 360° / 3D",
+    location: "Localização",
+    contact: "Contato",
+  },
+  header: {
+    openMenu: "Abrir menu",
+    expandSubmenu: "Expandir submenu de",
+    collapseSubmenu: "Recolher submenu de",
+    changeLanguage: "Alterar idioma",
+  },
+  footer: {
+    description:
+      "Laboratório do Grupo de Pesquisa em Tecnologia, Comunicação e Governança. Infraestrutura de rede, projetos, publicações e formação aplicados à pesquisa acadêmica.",
+    navigation: "Navegação",
+    contact: "Contato",
+    viewLocation: "Ver localização",
+    copyright: "Laboratório Zero — Grupo de Pesquisa em Tecnologia, Comunicação e Governança.",
+    privacyPolicy: "Política de Privacidade",
+  },
+  themeToggle: {
+    enableLight: "Ativar modo claro",
+    enableDark: "Ativar modo escuro",
+  },
+  cookieConsent: {
+    message:
+      "Usamos armazenamento local do navegador apenas para lembrar sua preferência de tema e idioma. Não utilizamos cookies de rastreamento ou publicidade.",
+    learnMore: "Saiba mais",
+    decline: "Recusar",
+    accept: "Aceitar",
+  },
+  chatWidget: {
+    title: "Assistente do Laboratório Zero",
+    greeting:
+      "Olá! Posso ajudar com dúvidas sobre o curso de Tecnologia em Redes de Computadores e sobre o Laboratório Zero.",
+    notConnected:
+      "Assistente ainda não conectado. Configure VITE_CHAT_ENDPOINT com a URL do seu serviço externo.",
+    responseError: "Falha na resposta do assistente (HTTP {status})",
+    invalidResponse: "Não recebi uma resposta válida do assistente.",
+    genericError: "Ocorreu um erro ao falar com o assistente. Tente novamente em instantes.",
+    typing: "Digitando…",
+    placeholder: "Digite sua pergunta…",
+    send: "Enviar",
+    close: "Fechar chat",
+    open: "Abrir chat com o assistente",
+  },
+  home: {
+    eyebrow: "Grupo de Pesquisa em Tecnologia, Comunicação e Governança",
+    title: "Laboratório Zero",
+    description:
+      "Um laboratório de pesquisa dedicado a infraestrutura de rede, projetos aplicados, publicações e formação de pesquisadores e alunos, em parceria com instituições acadêmicas e públicas.",
+    ctaProjects: "Conhecer os projetos",
+    ctaAbout: "Sobre o laboratório",
+    areasTitle: "Áreas de atuação",
+    highlights: {
+      projects: {
+        title: "Projetos",
+        description:
+          "Pesquisa aplicada em infraestrutura de rede, governança digital e comunicação, com resultados abertos.",
+      },
+      publications: {
+        title: "Publicações",
+        description: "Produção acadêmica do grupo: artigos, capítulos e relatórios técnicos.",
+      },
+      partnerships: {
+        title: "Parcerias",
+        description: "Cooperação com instituições de ensino, pesquisa e órgãos públicos.",
+      },
+      training: {
+        title: "Formação",
+        description: "Cursos e eventos voltados a alunos, pesquisadores e à comunidade.",
+      },
+      complementaryTraining: {
+        title: "Formação Complementar",
+        description:
+          "Sugestões de cursos e materiais externos para aprofundar temas do laboratório.",
+      },
+      opportunities: {
+        title: "Oportunidades",
+        description: "Estágios, bolsas e vagas de emprego divulgadas pelo laboratório e parceiros.",
+      },
+    },
+    grants: {
+      eyebrow: "Fomento e Inovação",
+      title: "Está submetendo um projeto a um edital de fomento?",
+      paragraph:
+        "Se você está cogitando submeter sua startup ou projeto em editais de fomento como FINEP, CNPq, fundações de amparo à pesquisa ou mesmo editais internacionais, considere a indicação do Laboratório Zero como parceiro para implementação de soluções. Na previsão orçamentária do projeto, considere recursos para infraestrutura de tecnologia para suportar suas soluções.",
+      dcaasTitle: "Datacenter as a Service",
+      dcaasParagraph:
+        "O Laboratório Zero atua com hospedagem de serviços diversos no conceito de datacenter as a service: uma infraestrutura completa de datacenter como serviço para parceiros, com mecanismos de segurança, backup, aplicações personalizadas e soluções ajustadas às demandas individuais — inovação tecnológica aplicada ao suporte de tecnologias com segurança, soberania de dados e alto desempenho.",
+      ctaContact: "Fale com o laboratório",
+      ctaEligibility: "Verificar elegibilidade do projeto",
+      eligibilityComingSoon: "Link do formulário em breve",
+    },
+    servicesEyebrow: "Serviços públicos",
+    servicesTitle: "Ferramentas web abertas à comunidade",
+    servicesCta: "Ver todos os serviços",
+    stats: {
+      projects: "projetos desenvolvidos",
+      publications: "publicações do grupo",
+      partners: "instituições parceiras",
+      note: "Números ilustrativos — atualize com os dados reais do laboratório.",
+      cta: "Veja as estatísticas completas →",
+    },
+  },
+  about: {
+    eyebrow: "Sobre",
+    title: "O laboratório",
+    description:
+      "O Laboratório Zero integra o Grupo de Pesquisa em Tecnologia, Comunicação e Governança, reunindo infraestrutura de rede, projetos aplicados e formação de pesquisadores.",
+    gtecNote:
+      "O Laboratório Zero é vinculado ao {gtec}.",
+    gtecName: "GTEC — Grupo de Pesquisa em Tecnologia, Comunicação e Governança",
+    missionTitle: "Missão",
+    missionText:
+      "Produzir pesquisa aplicada e formação em rede de computadores, comunicação e governança digital, articulando infraestrutura própria, parcerias institucionais e a participação ativa de alunos e pesquisadores em projetos de impacto acadêmico e social.",
+    researchLinesTitle: "Linhas de pesquisa",
+    researchLines: {
+      network: {
+        title: "Infraestrutura de rede",
+        description:
+          "Simulação, experimentação e desenvolvimento de soluções de rede para ensino e pesquisa.",
+      },
+      governance: {
+        title: "Governança digital",
+        description:
+          "Estudo de políticas, regulação e governança de tecnologias de comunicação e dados.",
+      },
+      communication: {
+        title: "Comunicação e tecnologia",
+        description:
+          "Interseção entre tecnologia, comunicação pública e produção de conhecimento aberto.",
+      },
+      training: {
+        title: "Formação",
+        description:
+          "Cursos, oficinas e orientação de alunos de graduação e pós-graduação envolvidos nos projetos do laboratório.",
+      },
+    },
+    datacenterTitle: "Nossa infraestrutura de datacenter",
+    datacenterIntro:
+      "A operação do laboratório é sustentada por um pequeno datacenter próprio, utilizado tanto para os projetos de pesquisa quanto para os serviços públicos disponibilizados à comunidade.",
+    datacenterItems: {
+      proxmox: {
+        title: "Virtualização com Proxmox",
+        description:
+          "Cluster de virtualização baseado em Proxmox VE, hospedando os ambientes de simulação, testes de rede e os serviços públicos mantidos pelo laboratório.",
+      },
+      aiWorkstation: {
+        title: "Workstation para IA",
+        description:
+          "Estação de trabalho dedicada a cargas de processamento de inteligência artificial, utilizada em projetos de pesquisa aplicada e experimentação de modelos.",
+      },
+      backup: {
+        title: "Backup local e remoto",
+        description:
+          "Rotinas de backup redundantes, com cópias mantidas localmente e em destino remoto, garantindo continuidade e integridade dos dados do laboratório.",
+      },
+    },
+    photosTitle: "Fotos do laboratório",
+    photoLabel: "foto",
+    photosNote: "Galeria ilustrativa — substitua pelas fotos reais do laboratório.",
+    tourTitle: "Conheça o lab em 360° e em 3D",
+    tourText:
+      "Espaço reservado para um tour virtual imersivo pelas instalações do laboratório, com visualização em 360° e modelo tridimensional dos ambientes.",
+    tourPlaceholder: "Tour virtual 360° / 3D em breve",
+    locationTitle: "Localização",
+    locationText: "O Laboratório Zero funciona nas instalações do IFRO — Campus Porto Velho Zona Norte:",
+    locationAddress: "Av. Gov. Jorge Teixeira, 3146 — Setor Industrial, Porto Velho - RO, 76821-002",
+    mapTitle: "Mapa - IFRO Campus Porto Velho Zona Norte",
+    contactTitle: "Contato",
+    contactEmailLabel: "E-mail",
+    contactAddressLabel: "Endereço",
+    contactAddress:
+      "IFRO — Campus Porto Velho Zona Norte, Av. Gov. Jorge Teixeira, 3146 — Setor Industrial, Porto Velho - RO",
+    sendEmail: "Enviar e-mail",
+    emailNote: "E-mail ilustrativo — substitua pelo contato real do laboratório.",
+  },
+  projects: {
+    eyebrow: "Projetos",
+    title: "Projetos e resultados",
+    description:
+      "Projetos desenvolvidos pelo laboratório, ativos e encerrados, com seus resultados: artigos, software, animações e outros materiais.",
+    note: "Conteúdo ilustrativo — substitua pelos projetos reais do laboratório.",
+    items: [
+      {
+        title: "Projeto Alpha",
+        period: "2023 – atual",
+        description:
+          "Simulador de redes para ensino, com resultados publicados como software aberto.",
+        media: ["Software", "Artigo"],
+      },
+      {
+        title: "Projeto Beta",
+        period: "2022 – 2023",
+        description: "Estudo de governança de dados em parceria com órgão público.",
+        media: ["Relatório técnico"],
+      },
+      {
+        title: "Projeto Gama",
+        period: "2021 – 2022",
+        description:
+          "Material de divulgação científica com animações sobre infraestrutura de internet.",
+        media: ["Animação", "Vídeo"],
+      },
+      {
+        title: "Projeto Delta",
+        period: "2019 – 2021",
+        description: "Plataforma experimental de comunicação para redes comunitárias.",
+        media: ["Software", "Artigo"],
+      },
+    ],
+  },
+  publications: {
+    eyebrow: "Publicações",
+    title: "Produção acadêmica",
+    description:
+      "Artigos, capítulos e relatórios técnicos produzidos pelo laboratório e seus pesquisadores.",
+    note: "Lista ilustrativa — substitua pelas publicações reais do grupo.",
+    items: [
+      {
+        title: "Governança de dados em redes comunitárias: um estudo de caso",
+        authors: "Silva, A.; Souza, B.",
+        venue: "Revista Brasileira de Tecnologia e Sociedade",
+        year: "2024",
+      },
+      {
+        title: "Simulação de protocolos de rede para o ensino de graduação",
+        authors: "Pereira, C.; Lima, D.",
+        venue: "Anais do Congresso Nacional de Redes de Computadores",
+        year: "2023",
+      },
+      {
+        title: "Comunicação pública e infraestrutura digital: desafios de governança",
+        authors: "Costa, E.",
+        venue: "Cadernos de Comunicação e Governança",
+        year: "2022",
+      },
+    ],
+  },
+  statistics: {
+    eyebrow: "Estatísticas",
+    title: "Estatísticas do laboratório",
+    description:
+      "Números do dia a dia operacional do Laboratório Zero: infraestrutura mantida, atendimento à comunidade e produtividade gerada pelos projetos.",
+    note: "Números ilustrativos — atualize com os dados reais de operação do laboratório.",
+    kpis: [
+      { label: "Máquinas virtuais criadas", value: "1.240+" },
+      { label: "Usuários atendidos", value: "3.800+" },
+      { label: "Dados gerenciados", value: "18.400 GB" },
+      { label: "Análises automatizadas realizadas", value: "52.000+" },
+      { label: "Horas de trabalho economizadas", value: "6.500+ h" },
+      { label: "Scripts e ferramentas desenvolvidos", value: "140+" },
+      { label: "Incidentes de rede resolvidos", value: "320+" },
+      { label: "Uptime médio dos serviços", value: "99,7%" },
+    ],
+    machinesChartTitle: "Crescimento de máquinas gerenciadas",
+    machinesChartSubtitle: "Últimos 6 meses",
+    machinesGrowth: [
+      { label: "Jan", value: 780 },
+      { label: "Fev", value: 850 },
+      { label: "Mar", value: 920 },
+      { label: "Abr", value: 1010 },
+      { label: "Mai", value: 1140 },
+      { label: "Jun", value: 1240 },
+    ],
+    categoryChartTitle: "Dados gerenciados por categoria",
+    categoryChartSubtitle: "Distribuição atual",
+    dataByCategory: [
+      { label: "Backups", value: 8200 },
+      { label: "Máquinas virtuais", value: 5100 },
+      { label: "Repositórios", value: 2800 },
+      { label: "Wiki e documentos", value: 1600 },
+      { label: "Outros serviços", value: 700 },
+    ],
+  },
+  partnerships: {
+    eyebrow: "Parcerias",
+    title: "Parcerias",
+    description:
+      "O Laboratório Zero se relaciona com diferentes tipos de parceiros: doadores, usuários da infraestrutura e instituições que desenvolvem projetos em conjunto.",
+    whoAreThey: "Quem são",
+    networkIntro:
+      "A rede abaixo representa as conexões entre o laboratório e seus parceiros — passe o mouse ou toque em um parceiro para ver os detalhes da parceria.",
+    networkNote:
+      "Rede ilustrativa — a organização muda a cada visita à página; substitua pelos parceiros e logos reais.",
+    backToPartnerships: "← Voltar para Parcerias",
+    backTo: "← Voltar para",
+    viewDetails: "Ver detalhes da parceria →",
+    logo: "logo",
+    illustrativeNote: "Conteúdo ilustrativo — substitua pelos dados reais desta parceria.",
+    labName: "Laboratório Zero",
+  },
+  services: {
+    eyebrow: "Serviços",
+    title: "Serviços públicos",
+    description:
+      "Ferramentas web mantidas pelo Laboratório Zero e disponibilizadas gratuitamente para a comunidade.",
+    note: "Serviços em implantação — os links de acesso serão publicados assim que cada um estiver disponível.",
+    comingSoon: "Em breve",
+    backToServices: "← Voltar para Serviços",
+    featuresTitle: "Recursos",
+    accessService: "Acessar",
+    notPublished: "Em breve — serviço ainda não publicado",
+    items: {
+      wiki: {
+        name: "Wiki",
+        description:
+          "Páginas de wiki diversas para documentação colaborativa de projetos e do conhecimento técnico do laboratório.",
+        details:
+          "Espaço de documentação colaborativa mantido pelo laboratório, reunindo páginas sobre projetos, procedimentos técnicos, tutoriais e registros de conhecimento produzidos pela equipe.",
+        features: [
+          "Edição colaborativa entre membros do laboratório",
+          "Histórico de versões das páginas",
+          "Organização por categorias e projetos",
+        ],
+      },
+      bentopdf: {
+        name: "BentoPDF",
+        description:
+          "Manipulador de PDF (juntar, dividir, converter) com processamento local, preservando a privacidade dos arquivos.",
+        details:
+          "Ferramenta para juntar, dividir, comprimir e converter arquivos PDF diretamente no navegador, sem enviar os documentos a servidores externos — todo o processamento acontece localmente, preservando a privacidade do conteúdo.",
+        features: [
+          "Processamento local, sem upload dos arquivos",
+          "Juntar, dividir, comprimir e converter PDFs",
+          "Sem necessidade de cadastro",
+        ],
+      },
+      drawio: {
+        name: "Draw.io",
+        description: "Editor de diagramas para fluxogramas, arquiteturas de rede e mapas conceituais.",
+        details:
+          "Editor de diagramas para criação de fluxogramas, arquiteturas de rede, mapas mentais e mapas conceituais, com exportação em diversos formatos.",
+        features: [
+          "Modelos prontos para diagramas de rede",
+          "Exportação em PNG, SVG e PDF",
+          "Integração com serviços de armazenamento em nuvem",
+        ],
+      },
+      excalidraw: {
+        name: "Excalidraw",
+        description: "Quadro branco colaborativo para esboços e diagramas em estilo desenhado à mão.",
+        details:
+          "Quadro branco colaborativo com estilo de desenho à mão livre, ideal para esboçar ideias, arquiteturas e explicações visuais em tempo real com outras pessoas.",
+        features: [
+          "Colaboração em tempo real",
+          "Estilo de desenho à mão livre",
+          "Exportação como imagem (PNG/SVG)",
+        ],
+      },
+      limesurvey: {
+        name: "LimeSurvey",
+        description: "Plataforma para criação e aplicação de formulários e pesquisas acadêmicas.",
+        details:
+          "Plataforma para criação, aplicação e análise de formulários e pesquisas acadêmicas, utilizada em coletas de dados de projetos do laboratório e do grupo de pesquisa.",
+        features: [
+          "Diversos tipos de pergunta e lógica condicional",
+          "Exportação dos resultados coletados",
+          "Suporte a pesquisas anônimas",
+        ],
+      },
+      "repositorio-debian": {
+        name: "Repositório de pacotes Debian",
+        description: "Repositório público de pacotes Debian mantido pelo laboratório.",
+        details:
+          "Repositório público de pacotes Debian mantido pelo laboratório, disponibilizando pacotes utilizados nos projetos de infraestrutura de rede desenvolvidos pela equipe.",
+        features: [
+          "Espelho de pacotes atualizado periodicamente",
+          "Acesso público via apt",
+          "Documentação de configuração do repositório",
+        ],
+      },
+      "teste-ipv6": {
+        name: "Servidor de testes IPv6",
+        description: "Ferramenta para verificar a conectividade e a configuração IPv6 de uma rede.",
+        details:
+          "Ferramenta para verificar se uma rede e um dispositivo possuem conectividade IPv6 funcional, além de ajudar a diagnosticar problemas comuns de configuração.",
+        features: [
+          "Teste de conectividade IPv6",
+          "Diagnóstico de problemas de configuração",
+          "Relatório simples de resultados",
+        ],
+      },
+      openspeedtest: {
+        name: "OpenSpeedTest",
+        description: "Teste de velocidade de conexão à internet hospedado pelo próprio laboratório.",
+        details:
+          "Servidor de teste de velocidade de internet hospedado pelo laboratório, permitindo medir download, upload e latência sem depender de serviços de terceiros.",
+        features: [
+          "Teste de download e upload",
+          "Medição de latência (ping)",
+          "Sem necessidade de plugins",
+        ],
+      },
+      "encurtador-url": {
+        name: "Encurtador de URL",
+        description: "Serviço para encurtar e compartilhar links de forma simples.",
+        details:
+          "Serviço para encurtar links longos, facilitando o compartilhamento de materiais, formulários e páginas do laboratório.",
+        features: [
+          "Geração instantânea de links curtos",
+          "Estatísticas básicas de acesso",
+          "Links personalizáveis",
+        ],
+      },
+      qrcode: {
+        name: "Gerador de QR Code",
+        description:
+          "Geração de QR Codes personalizados para divulgação de materiais, eventos e serviços do laboratório.",
+        details:
+          "Ferramenta para criação de QR Codes personalizados — com cores e formato ajustáveis — para uso em materiais impressos, apresentações e divulgação de eventos e serviços do laboratório.",
+        features: [
+          "Personalização de cores e formato",
+          "Exportação em alta resolução",
+          "Geração rápida, sem cadastro",
+        ],
+      },
+    },
+  },
+  courses: {
+    eyebrow: "Cursos",
+    title: "Formação",
+    description: "Cursos e oficinas oferecidos pelo laboratório para alunos, pesquisadores e a comunidade.",
+    note: "Conteúdo ilustrativo — substitua pelos cursos reais oferecidos.",
+    items: [
+      {
+        title: "Introdução a redes de computadores",
+        description: "Curso de extensão voltado a alunos de graduação.",
+        modality: "Presencial",
+      },
+      {
+        title: "Governança de dados e tecnologia",
+        description: "Curso de curta duração sobre políticas de dados e regulação digital.",
+        modality: "Online",
+      },
+      {
+        title: "Oficina de simulação de redes",
+        description: "Oficina prática com as ferramentas desenvolvidas pelo laboratório.",
+        modality: "Presencial",
+      },
+    ],
+  },
+  complementaryTraining: {
+    eyebrow: "Formação Complementar",
+    title: "Sugestões de formação",
+    description:
+      "Cursos e materiais externos recomendados pelo laboratório para aprofundar temas de redes, governança e comunicação, complementando os cursos oferecidos diretamente pelo grupo.",
+    note: "Lista ilustrativa — substitua pelas sugestões reais de formação e respectivos links.",
+    items: [
+      {
+        title: "Fundamentos de redes de computadores",
+        provider: "Plataforma de ensino aberto",
+        area: "Redes",
+        format: "Online",
+      },
+      {
+        title: "Introdução à governança de dados",
+        provider: "Curso de extensão universitária",
+        area: "Governança",
+        format: "Online",
+      },
+      {
+        title: "Comunicação científica e divulgação da pesquisa",
+        provider: "Programa de pós-graduação parceiro",
+        area: "Comunicação",
+        format: "Presencial",
+      },
+      {
+        title: "Segurança e privacidade em infraestrutura de rede",
+        provider: "Plataforma de ensino aberto",
+        area: "Redes",
+        format: "Online",
+      },
+    ],
+  },
+  events: {
+    eyebrow: "Eventos",
+    title: "Eventos",
+    description: "Workshops, seminários e encontros promovidos pelo laboratório e pelo grupo de pesquisa.",
+    note: "Lista ilustrativa — substitua pelos eventos reais do laboratório.",
+    items: [
+      { title: "Seminário de Governança Digital", date: "Outubro de 2025", status: "Realizado", upcoming: false },
+      { title: "Workshop de Redes Comunitárias", date: "Março de 2026", status: "Próximo", upcoming: true },
+      { title: "Encontro Anual do Grupo de Pesquisa", date: "Junho de 2026", status: "Próximo", upcoming: true },
+    ],
+  },
+  opportunities: {
+    eyebrow: "Oportunidades",
+    title: "Estágio e emprego",
+    description:
+      "Oportunidades de estágio, bolsas e emprego divulgadas pelo laboratório e por instituições parceiras.",
+    note: "Lista ilustrativa — substitua pelas oportunidades reais e respectivos contatos/links de candidatura.",
+    items: [
+      {
+        title: "Estágio em pesquisa — infraestrutura de rede",
+        organization: "Laboratório Zero",
+        type: "Estágio",
+        status: "Aberta",
+        open: true,
+        description:
+          "Apoio a projetos de simulação e experimentação de rede, para alunos de graduação.",
+      },
+      {
+        title: "Bolsa de iniciação científica — governança de dados",
+        organization: "Laboratório Zero",
+        type: "Bolsa",
+        status: "Aberta",
+        open: true,
+        description: "Pesquisa sobre políticas de dados em parceria com órgão público.",
+      },
+      {
+        title: "Vaga de desenvolvedor(a) — instituição parceira",
+        organization: "Instituição Parceira A",
+        type: "Emprego",
+        status: "Encerrada",
+        open: false,
+        description: "Vaga divulgada por instituição parceira do laboratório.",
+      },
+    ],
+  },
+  members: {
+    eyebrow: "Membros",
+    title: "Equipe",
+    description: "Pesquisadores e alunos que integram o Laboratório Zero.",
+    note: "Lista ilustrativa — substitua pelos membros reais da equipe.",
+    photoLabel: "foto",
+    items: [
+      { name: "Coordenador(a) do laboratório", role: "Docente / coordenação" },
+      { name: "Pesquisador(a) A", role: "Pesquisador(a)" },
+      { name: "Pesquisador(a) B", role: "Pesquisador(a)" },
+      { name: "Aluno(a) de graduação A", role: "Iniciação científica" },
+      { name: "Aluno(a) de pós-graduação A", role: "Mestrando(a)" },
+      { name: "Aluno(a) de pós-graduação B", role: "Doutorando(a)" },
+    ],
+  },
+  privacyPolicy: {
+    eyebrow: "Privacidade",
+    title: "Política de Privacidade",
+    description:
+      "Como o site do Laboratório Zero trata dados de navegação e preferências, em conformidade com a Lei Geral de Proteção de Dados (LGPD).",
+    dataTitle: "Quais dados coletamos",
+    themeCardTitle: "Preferência de tema e idioma",
+    themeCardText:
+      "Guardadas localmente no seu navegador (armazenamento local), somente após seu consentimento. Não são enviadas aos nossos servidores nem compartilhadas com terceiros.",
+    assistantCardTitle: "Assistente virtual",
+    assistantCardText:
+      "Ao utilizar o assistente de IA do site, as mensagens que você digitar são enviadas ao serviço de assistente configurado pelo laboratório, apenas para gerar uma resposta. O histórico da conversa não é armazenado por este site — existe somente durante a sua visita e é apagado ao atualizar a página.",
+    trackingCardTitle: "Cookies e rastreamento",
+    trackingCardText:
+      "Não utilizamos cookies de rastreamento, publicidade ou ferramentas de análise de navegação (analytics) neste site.",
+    legalBasisTitle: "Base legal e consentimento",
+    legalBasisText:
+      "O armazenamento das preferências de tema e idioma só ocorre mediante o seu consentimento, conforme o aviso exibido na primeira visita ao site (Art. 7º, I, da LGPD). O envio de mensagens ao assistente virtual ocorre apenas quando você decide utilizá-lo, para a execução do serviço solicitado (Art. 7º, V, da LGPD).",
+    retentionTitle: "Retenção e exclusão",
+    retentionText:
+      "As preferências de tema e idioma permanecem armazenadas até que você as apague pelo próprio navegador ou revogue o consentimento (veja o botão abaixo). As mensagens do assistente não são retidas por este site.",
+    sharingTitle: "Compartilhamento com terceiros",
+    sharingText:
+      "Somente o serviço de assistente virtual configurado pelo laboratório recebe o conteúdo das mensagens quando você opta por utilizá-lo. Nenhum outro terceiro recebe dados a partir deste site.",
+    rightsTitle: "Seus direitos",
+    rightsText:
+      "Nos termos do Art. 18 da LGPD, você pode solicitar a confirmação da existência de tratamento, acesso, correção, anonimização ou eliminação de dados desnecessários, portabilidade, informação sobre compartilhamento e revogação do consentimento. Para exercer esses direitos, entre em contato pelo e-mail informado na {link}.",
+    contactPageLink: "página de Contato",
+    manageTitle: "Gerenciar suas preferências",
+    manageText: "Você pode revogar seu consentimento a qualquer momento e voltar a ver o aviso de cookies.",
+    manageButton: "Gerenciar preferências de cookies",
+    lastUpdated: "Última atualização: julho de 2026.",
+  },
+}

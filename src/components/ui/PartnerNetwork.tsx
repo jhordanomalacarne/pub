@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import type { Partner } from "../../lib/partnershipCategories"
 import { computeNetworkLayout } from "../../lib/networkLayout"
 import type { NetworkEdge } from "../../lib/networkLayout"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 const WIDTH = 1000
 const HEIGHT = 560
@@ -30,11 +31,11 @@ function buildEdges(partners: Partner[]): NetworkEdge[] {
   return partners.map((partner) => ({ source: LAB_ID, target: partner.slug }))
 }
 
-function PartnerLogo({ partner, className = "" }: { partner: Partner; className?: string }) {
-  if (partner.logo) {
+function PartnerLogo({ name, logo, className = "" }: { name: string; logo?: string; className?: string }) {
+  if (logo) {
     return (
       <img
-        src={partner.logo}
+        src={logo}
         alt=""
         className={`rounded-full border border-border bg-paper object-contain ${className}`}
       />
@@ -42,9 +43,9 @@ function PartnerLogo({ partner, className = "" }: { partner: Partner; className?
   }
   return (
     <span
-      className={`flex items-center justify-center rounded-full font-serif font-semibold text-white ${accentFor(partner.name)} ${className}`}
+      className={`flex items-center justify-center rounded-full font-serif font-semibold text-white ${accentFor(name)} ${className}`}
     >
-      {initials(partner.name)}
+      {initials(name)}
     </span>
   )
 }
@@ -62,6 +63,8 @@ function PartnerNode({
   x: number
   y: number
 }) {
+  const { dict, language } = useLanguage()
+  const name = partner.name[language]
   const [open, setOpen] = useState(false)
   const [popoverPos, setPopoverPos] = useState<{ left: number; top: number } | null>(null)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -135,11 +138,12 @@ function PartnerNode({
           setOpen(true)
         }}
         aria-expanded={open}
-        aria-label={partner.name}
+        aria-label={name}
         className="block"
       >
         <PartnerLogo
-          partner={partner}
+          name={name}
+          logo={partner.logo}
           className="h-10 w-10 text-xs shadow-md transition-transform hover:scale-110 sm:h-14 sm:w-14 sm:text-sm"
         />
       </button>
@@ -154,14 +158,14 @@ function PartnerNode({
             onMouseEnter={cancelClose}
             onMouseLeave={scheduleClose}
           >
-            <PartnerLogo partner={partner} className="mx-auto h-16 w-16 text-base" />
-            <p className="mt-2 text-sm font-semibold text-heading">{partner.name}</p>
+            <PartnerLogo name={name} logo={partner.logo} className="mx-auto h-16 w-16 text-base" />
+            <p className="mt-2 text-sm font-semibold text-heading">{name}</p>
             <Link
               to={`/parcerias/${categorySlug}/${partner.slug}`}
               className="mt-2 inline-block text-xs font-semibold text-heading transition-colors hover:underline"
               onClick={() => setOpen(false)}
             >
-              Ver detalhes da parceria →
+              {dict.partnerships.viewDetails}
             </Link>
           </div>,
           document.body,
@@ -177,6 +181,7 @@ export function PartnerNetwork({
   categorySlug: string
   partners: Partner[]
 }) {
+  const { dict } = useLanguage()
   const { positions, edges } = useMemo(() => {
     const edges = buildEdges(partners)
     const nodeIds = [LAB_ID, ...partners.map((p) => p.slug)]
@@ -214,7 +219,7 @@ export function PartnerNetwork({
 
       <Link
         to="/sobre"
-        title="Laboratório Zero"
+        title={dict.partnerships.labName}
         className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1"
         style={{
           left: `${(labPosition.x / WIDTH) * 100}%`,
@@ -225,7 +230,7 @@ export function PartnerNetwork({
           Lab
         </span>
         <span className="max-w-[4.5rem] text-center text-[10px] font-semibold text-heading sm:max-w-[6rem] sm:text-xs">
-          Laboratório Zero
+          {dict.partnerships.labName}
         </span>
       </Link>
 

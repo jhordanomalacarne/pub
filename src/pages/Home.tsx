@@ -1,94 +1,58 @@
 import { Link } from "react-router-dom"
 import { Card } from "../components/ui/Card"
-import { SERVICES } from "../lib/services"
+import { SERVICES, getServiceTranslation } from "../lib/services"
 import { ELIGIBILITY_FORM_URL } from "../lib/externalLinks"
+import { useLanguage } from "../i18n/LanguageContext"
 
 const HIGHLIGHTS = [
-  {
-    title: "Projetos",
-    description:
-      "Pesquisa aplicada em infraestrutura de rede, governança digital e comunicação, com resultados abertos.",
-    to: "/projetos",
-  },
-  {
-    title: "Publicações",
-    description:
-      "Produção acadêmica do grupo: artigos, capítulos e relatórios técnicos.",
-    to: "/publicacoes",
-  },
-  {
-    title: "Parcerias",
-    description:
-      "Cooperação com instituições de ensino, pesquisa e órgãos públicos.",
-    to: "/parcerias",
-  },
-  {
-    title: "Formação",
-    description:
-      "Cursos e eventos voltados a alunos, pesquisadores e à comunidade.",
-    to: "/cursos",
-  },
-  {
-    title: "Formação Complementar",
-    description:
-      "Sugestões de cursos e materiais externos para aprofundar temas do laboratório.",
-    to: "/formacao-complementar",
-  },
-  {
-    title: "Oportunidades",
-    description:
-      "Estágios, bolsas e vagas de emprego divulgadas pelo laboratório e parceiros.",
-    to: "/oportunidades",
-  },
-]
+  { key: "projects", to: "/projetos" },
+  { key: "publications", to: "/publicacoes" },
+  { key: "partnerships", to: "/parcerias" },
+  { key: "training", to: "/cursos" },
+  { key: "complementaryTraining", to: "/formacao-complementar" },
+  { key: "opportunities", to: "/oportunidades" },
+] as const
 
 export function Home() {
+  const { dict } = useLanguage()
+  const t = dict.home
+
   return (
     <>
       <section className="border-b border-border bg-navy-950">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">
-            Grupo de Pesquisa em Tecnologia, Comunicação e Governança
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">{t.eyebrow}</p>
           <h1 className="mt-3 max-w-3xl font-serif text-4xl font-semibold text-white sm:text-5xl">
-            Laboratório Zero
+            {t.title}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-slate-300">
-            Um laboratório de pesquisa dedicado a infraestrutura de rede,
-            projetos aplicados, publicações e formação de pesquisadores e
-            alunos, em parceria com instituições acadêmicas e públicas.
-          </p>
+          <p className="mt-5 max-w-2xl text-lg text-slate-300">{t.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               to="/projetos"
               className="rounded-md bg-gold-500 px-5 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-600"
             >
-              Conhecer os projetos
+              {t.ctaProjects}
             </Link>
             <Link
               to="/sobre"
               className="rounded-md border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-slate-400"
             >
-              Sobre o laboratório
+              {t.ctaAbout}
             </Link>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="font-serif text-2xl font-semibold text-heading">
-          Áreas de atuação
-        </h2>
+        <h2 className="font-serif text-2xl font-semibold text-heading">{t.areasTitle}</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {HIGHLIGHTS.map((item) => (
             <Link key={item.to} to={item.to}>
               <Card className="h-full">
                 <h3 className="font-serif text-lg font-semibold text-heading">
-                  {item.title}
+                  {t.highlights[item.key].title}
                 </h3>
-                <p className="mt-2 text-sm text-ink-soft">
-                  {item.description}
-                </p>
+                <p className="mt-2 text-sm text-ink-soft">{t.highlights[item.key].description}</p>
               </Card>
             </Link>
           ))}
@@ -99,35 +63,16 @@ export function Home() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="rounded-lg border-2 border-gold-500 bg-paper p-8 sm:p-10">
             <p className="text-sm font-semibold uppercase tracking-wide text-gold-600">
-              Fomento e Inovação
+              {t.grants.eyebrow}
             </p>
             <h2 className="mt-2 max-w-3xl font-serif text-2xl font-semibold text-heading sm:text-3xl">
-              Está submetendo um projeto a um edital de fomento?
+              {t.grants.title}
             </h2>
             <div className="mt-6 grid gap-8 lg:grid-cols-2">
-              <p className="text-ink-soft leading-relaxed">
-                Se você está cogitando submeter sua startup ou projeto em
-                editais de fomento como FINEP, CNPq, fundações de amparo à
-                pesquisa ou mesmo editais internacionais, considere a
-                indicação do Laboratório Zero como parceiro para
-                implementação de soluções. Na previsão orçamentária do
-                projeto, considere recursos para infraestrutura de
-                tecnologia para suportar suas soluções.
-              </p>
+              <p className="text-ink-soft leading-relaxed">{t.grants.paragraph}</p>
               <div>
-                <h3 className="font-serif text-lg font-semibold text-heading">
-                  Datacenter as a Service
-                </h3>
-                <p className="mt-2 text-sm text-ink-soft leading-relaxed">
-                  O Laboratório Zero atua com hospedagem de serviços diversos
-                  no conceito de datacenter as a service: uma infraestrutura
-                  completa de datacenter como serviço para parceiros, com
-                  mecanismos de segurança, backup, aplicações
-                  personalizadas e soluções ajustadas às demandas
-                  individuais — inovação tecnológica aplicada ao suporte de
-                  tecnologias com segurança, soberania de dados e alto
-                  desempenho.
-                </p>
+                <h3 className="font-serif text-lg font-semibold text-heading">{t.grants.dcaasTitle}</h3>
+                <p className="mt-2 text-sm text-ink-soft leading-relaxed">{t.grants.dcaasParagraph}</p>
               </div>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -135,7 +80,7 @@ export function Home() {
                 to="/sobre#contato"
                 className="inline-block rounded-md bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
               >
-                Fale com o laboratório
+                {t.grants.ctaContact}
               </Link>
               {ELIGIBILITY_FORM_URL ? (
                 <a
@@ -144,14 +89,14 @@ export function Home() {
                   rel="noopener noreferrer"
                   className="inline-block rounded-md border border-border px-5 py-3 text-sm font-semibold text-heading transition-colors hover:bg-surface"
                 >
-                  Verificar elegibilidade do projeto
+                  {t.grants.ctaEligibility}
                 </a>
               ) : (
                 <span
-                  title="Link do formulário em breve"
+                  title={t.grants.eligibilityComingSoon}
                   className="inline-flex cursor-not-allowed items-center rounded-md border border-border px-5 py-3 text-sm font-semibold text-ink-soft opacity-70"
                 >
-                  Verificar elegibilidade do projeto
+                  {t.grants.ctaEligibility}
                 </span>
               )}
             </div>
@@ -164,17 +109,15 @@ export function Home() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">
-                Serviços públicos
+                {t.servicesEyebrow}
               </p>
-              <h2 className="mt-2 font-serif text-2xl font-semibold text-white">
-                Ferramentas web abertas à comunidade
-              </h2>
+              <h2 className="mt-2 font-serif text-2xl font-semibold text-white">{t.servicesTitle}</h2>
             </div>
             <Link
               to="/servicos"
               className="rounded-md border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-slate-400"
             >
-              Ver todos os serviços
+              {t.servicesCta}
             </Link>
           </div>
 
@@ -188,7 +131,7 @@ export function Home() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-gold-500">
                   <service.icon />
                 </span>
-                <span className="text-xs">{service.name}</span>
+                <span className="text-xs">{getServiceTranslation(dict, service.slug).name}</span>
               </Link>
             ))}
           </div>
@@ -200,25 +143,23 @@ export function Home() {
           <div className="grid gap-10 sm:grid-cols-3">
             <div>
               <p className="font-serif text-4xl font-semibold text-heading">12+</p>
-              <p className="mt-1 text-sm text-ink-soft">projetos desenvolvidos</p>
+              <p className="mt-1 text-sm text-ink-soft">{t.stats.projects}</p>
             </div>
             <div>
               <p className="font-serif text-4xl font-semibold text-heading">20+</p>
-              <p className="mt-1 text-sm text-ink-soft">publicações do grupo</p>
+              <p className="mt-1 text-sm text-ink-soft">{t.stats.publications}</p>
             </div>
             <div>
               <p className="font-serif text-4xl font-semibold text-heading">5</p>
-              <p className="mt-1 text-sm text-ink-soft">instituições parceiras</p>
+              <p className="mt-1 text-sm text-ink-soft">{t.stats.partners}</p>
             </div>
           </div>
-          <p className="mt-6 text-xs text-ink-soft">
-            Números ilustrativos — atualize com os dados reais do laboratório.
-          </p>
+          <p className="mt-6 text-xs text-ink-soft">{t.stats.note}</p>
           <Link
             to="/estatisticas"
             className="mt-4 inline-block text-sm font-semibold text-heading transition-colors hover:text-navy-700 dark:hover:text-white"
           >
-            Veja as estatísticas completas →
+            {t.stats.cta}
           </Link>
         </div>
       </section>

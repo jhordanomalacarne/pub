@@ -1,9 +1,9 @@
 export const ABOUT_SECTIONS = [
-  { id: "missao", label: "Missão" },
-  { id: "linhas-pesquisa", label: "Linhas de pesquisa" },
-  { id: "datacenter", label: "Infraestrutura" },
-  { id: "fotos", label: "Fotos" },
-  { id: "tour-virtual", label: "Tour 360° / 3D" },
-  { id: "localizacao", label: "Localização" },
-  { id: "contato", label: "Contato" },
+  { id: "missao", key: "mission" },
+  { id: "linhas-pesquisa", key: "researchLines" },
+  { id: "datacenter", key: "datacenter" },
+  { id: "fotos", key: "photos" },
+  { id: "tour-virtual", key: "virtualTour" },
+  { id: "localizacao", key: "location" },
+  { id: "contato", key: "contact" },
 ] as const

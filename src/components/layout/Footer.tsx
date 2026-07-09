@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
+import { useLanguage } from "../../i18n/LanguageContext"
 import gtecLogo from "../../assets/gtec-logo.png"
 
 export function Footer() {
+  const { dict } = useLanguage()
+
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-12">
@@ -12,15 +15,11 @@ export function Footer() {
             <span className="mt-3 block font-serif text-lg font-semibold text-heading">
               Laboratório Zero
             </span>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              Laboratório do Grupo de Pesquisa em Tecnologia, Comunicação e
-              Governança. Infraestrutura de rede, projetos, publicações e
-              formação aplicados à pesquisa acadêmica.
-            </p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">{dict.footer.description}</p>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-ink">Navegação</h2>
+            <h2 className="text-sm font-semibold text-ink">{dict.footer.navigation}</h2>
             <ul className="mt-3 space-y-2">
               {NAV_ITEMS.map((item) => (
                 <li key={item.path}>
@@ -28,7 +27,7 @@ export function Footer() {
                     to={item.path}
                     className="text-sm text-ink-soft transition-colors hover:text-heading"
                   >
-                    {item.label}
+                    {dict.nav[item.key]}
                   </Link>
                 </li>
               ))}
@@ -36,13 +35,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-ink">Contato</h2>
+            <h2 className="text-sm font-semibold text-ink">{dict.footer.contact}</h2>
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
               <li>contato@laboratoriozero.example</li>
               <li>IFRO — Campus Porto Velho Zona Norte</li>
               <li>
                 <Link to="/sobre#localizacao" className="hover:text-heading">
-                  Ver localização
+                  {dict.footer.viewLocation}
                 </Link>
               </li>
             </ul>
@@ -51,11 +50,10 @@ export function Footer() {
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-ink-soft">
           <span>
-            © {new Date().getFullYear()} Laboratório Zero — Grupo de Pesquisa
-            em Tecnologia, Comunicação e Governança.
+            © {new Date().getFullYear()} {dict.footer.copyright}
           </span>
           <Link to="/privacidade" className="hover:text-heading">
-            Política de Privacidade
+            {dict.footer.privacyPolicy}
           </Link>
         </div>
       </div>

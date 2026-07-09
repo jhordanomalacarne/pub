@@ -1,57 +1,22 @@
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
-
-const PROJECTS = [
-  {
-    title: "Projeto Alpha",
-    period: "2023 – atual",
-    description:
-      "Simulador de redes para ensino, com resultados publicados como software aberto.",
-    media: ["Software", "Artigo"],
-  },
-  {
-    title: "Projeto Beta",
-    period: "2022 – 2023",
-    description:
-      "Estudo de governança de dados em parceria com órgão público.",
-    media: ["Relatório técnico"],
-  },
-  {
-    title: "Projeto Gama",
-    period: "2021 – 2022",
-    description:
-      "Material de divulgação científica com animações sobre infraestrutura de internet.",
-    media: ["Animação", "Vídeo"],
-  },
-  {
-    title: "Projeto Delta",
-    period: "2019 – 2021",
-    description:
-      "Plataforma experimental de comunicação para redes comunitárias.",
-    media: ["Software", "Artigo"],
-  },
-]
+import { useLanguage } from "../i18n/LanguageContext"
 
 export function Projects() {
+  const { dict } = useLanguage()
+  const t = dict.projects
+
   return (
     <>
-      <PageHero
-        eyebrow="Projetos"
-        title="Projetos e resultados"
-        description="Projetos desenvolvidos pelo laboratório, ativos e encerrados, com seus resultados: artigos, software, animações e outros materiais."
-      />
+      <PageHero eyebrow={t.eyebrow} title={t.title} description={t.description} />
 
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
+          {t.items.map((project) => (
             <Card key={project.title}>
               <div className="flex items-baseline justify-between gap-4">
-                <h2 className="font-serif text-xl font-semibold text-heading">
-                  {project.title}
-                </h2>
-                <span className="whitespace-nowrap text-xs text-ink-soft">
-                  {project.period}
-                </span>
+                <h2 className="font-serif text-xl font-semibold text-heading">{project.title}</h2>
+                <span className="whitespace-nowrap text-xs text-ink-soft">{project.period}</span>
               </div>
               <p className="mt-3 text-sm text-ink-soft">{project.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -67,9 +32,7 @@ export function Projects() {
             </Card>
           ))}
         </div>
-        <p className="mt-8 text-xs text-ink-soft">
-          Conteúdo ilustrativo — substitua pelos projetos reais do laboratório.
-        </p>
+        <p className="mt-8 text-xs text-ink-soft">{t.note}</p>
       </section>
     </>
   )

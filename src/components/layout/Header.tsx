@@ -4,15 +4,12 @@ import { NAV_ITEMS } from "../../lib/nav"
 import { ABOUT_SECTIONS } from "../../lib/aboutSections"
 import { PARTNERSHIP_CATEGORIES } from "../../lib/partnershipCategories"
 import { useHideOnScroll } from "../../hooks/useHideOnScroll"
+import { useLanguage } from "../../i18n/LanguageContext"
 import gtecLogo from "../../assets/gtec-logo.png"
 import { ThemeToggle } from "../ui/ThemeToggle"
+import { LanguageSwitcher } from "../ui/LanguageSwitcher"
 
 type SubmenuSection = { id: string; label: string }
-
-const SUBMENUS: Record<string, readonly SubmenuSection[]> = {
-  "/sobre": ABOUT_SECTIONS,
-  "/parcerias": PARTNERSHIP_CATEGORIES,
-}
 
 function navLinkClass({ isActive }: { isActive: boolean }) {
   return [
@@ -53,6 +50,7 @@ function DesktopSubmenu({
   label: string
   sections: readonly SubmenuSection[]
 }) {
+  const { dict } = useLanguage()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -75,7 +73,7 @@ function DesktopSubmenu({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label={open ? `Recolher submenu de ${label}` : `Expandir submenu de ${label}`}
+        aria-label={`${open ? dict.header.collapseSubmenu : dict.header.expandSubmenu} ${label}`}
         className="rounded p-0.5 text-ink-soft transition-colors hover:text-heading"
       >
         <ChevronIcon open={open} />
@@ -110,6 +108,7 @@ function MobileSubmenu({
   sections: readonly SubmenuSection[]
   onNavigate: () => void
 }) {
+  const { dict } = useLanguage()
   const [open, setOpen] = useState(false)
 
   return (
@@ -122,7 +121,7 @@ function MobileSubmenu({
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label={open ? `Recolher submenu de ${label}` : `Expandir submenu de ${label}`}
+          aria-label={`${open ? dict.header.collapseSubmenu : dict.header.expandSubmenu} ${label}`}
           className="rounded p-1 text-ink-soft transition-colors hover:text-heading"
         >
           <ChevronIcon open={open} />
@@ -149,6 +148,7 @@ function MobileSubmenu({
 }
 
 export function Header() {
+  const { language, dict } = useLanguage()
   const [open, setOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
   const scrollVisible = useHideOnScroll()
@@ -163,6 +163,19 @@ export function Header() {
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
+
+  const aboutSections: SubmenuSection[] = ABOUT_SECTIONS.map((section) => ({
+    id: section.id,
+    label: dict.aboutSections[section.key],
+  }))
+  const partnershipSections: SubmenuSection[] = PARTNERSHIP_CATEGORIES.map((category) => ({
+    id: category.id,
+    label: category.label[language],
+  }))
+  const submenus: Record<string, SubmenuSection[]> = {
+    "/sobre": aboutSections,
+    "/parcerias": partnershipSections,
+  }
 
   return (
     <header
@@ -180,27 +193,30 @@ export function Header() {
 
         <nav className="hidden flex-wrap items-center justify-end gap-x-3 gap-y-1 xl:flex">
           {NAV_ITEMS.map((item) => {
-            const sections = SUBMENUS[item.path]
+            const sections = submenus[item.path]
+            const label = dict.nav[item.key]
             return sections ? (
-              <DesktopSubmenu key={item.path} basePath={item.path} label={item.label} sections={sections} />
+              <DesktopSubmenu key={item.path} basePath={item.path} label={label} sections={sections} />
             ) : (
               <NavLink key={item.path} to={item.path} end={item.path === "/"} className={navLinkClass}>
-                {item.label}
+                {label}
               </NavLink>
             )
           })}
         </nav>
 
-        <div className="hidden shrink-0 xl:block">
+        <div className="hidden shrink-0 items-center gap-2 xl:flex">
+          <LanguageSwitcher />
           <ThemeToggle />
         </div>
 
         <div ref={mobileMenuRef} className="relative flex shrink-0 items-center gap-2 xl:hidden">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md border border-border p-2"
-            aria-label="Abrir menu"
+            aria-label={dict.header.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
@@ -214,12 +230,13 @@ export function Header() {
             <nav className="absolute right-0 top-full z-50 mt-2 w-max max-w-xs max-h-[calc(100vh-5rem)] overflow-y-auto rounded-md border border-border bg-paper p-4 shadow-lg">
               <ul className="flex flex-col gap-3">
                 {NAV_ITEMS.map((item) => {
-                  const sections = SUBMENUS[item.path]
+                  const sections = submenus[item.path]
+                  const label = dict.nav[item.key]
                   return sections ? (
                     <MobileSubmenu
                       key={item.path}
                       basePath={item.path}
-                      label={item.label}
+                      label={label}
                       sections={sections}
                       onNavigate={() => setOpen(false)}
                     />
@@ -231,7 +248,7 @@ export function Header() {
                         className={navLinkClass}
                         onClick={() => setOpen(false)}
                       >
-                        {item.label}
+                        {label}
                       </NavLink>
                     </li>
                   )

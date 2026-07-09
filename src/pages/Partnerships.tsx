@@ -4,17 +4,16 @@ import { Card } from "../components/ui/Card"
 import { PartnerCarousel } from "../components/ui/PartnerCarousel"
 import { PARTNERSHIP_CATEGORIES } from "../lib/partnershipCategories"
 import { useHashScroll } from "../hooks/useHashScroll"
+import { useLanguage } from "../i18n/LanguageContext"
 
 export function Partnerships() {
   useHashScroll()
+  const { dict, language } = useLanguage()
+  const t = dict.partnerships
 
   return (
     <>
-      <PageHero
-        eyebrow="Parcerias"
-        title="Parcerias"
-        description="O Laboratório Zero se relaciona com diferentes tipos de parceiros: doadores, usuários da infraestrutura e instituições que desenvolvem projetos em conjunto."
-      />
+      <PageHero eyebrow={t.eyebrow} title={t.title} description={t.description} />
 
       <PartnerCarousel />
 
@@ -26,7 +25,7 @@ export function Partnerships() {
               to={`#${category.id}`}
               className="text-ink-soft transition-colors hover:text-heading"
             >
-              {category.label}
+              {category.label[language]}
             </Link>
           ))}
         </div>
@@ -43,9 +42,9 @@ export function Partnerships() {
                   </div>
                   <div>
                     <h2 className="font-serif text-xl font-semibold text-heading">
-                      {category.label}
+                      {category.label[language]}
                     </h2>
-                    <p className="mt-2 text-sm text-ink-soft">{category.description}</p>
+                    <p className="mt-2 text-sm text-ink-soft">{category.description[language]}</p>
                   </div>
                 </Card>
               </Link>
