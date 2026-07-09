@@ -11,5 +11,4 @@ export const NAV_ITEMS = [
   { label: "Eventos", path: "/eventos" },
   { label: "Oportunidades", path: "/oportunidades" },
   { label: "Membros", path: "/membros" },
-  { label: "Contato", path: "/contato" },
 ] as const

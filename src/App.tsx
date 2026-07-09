@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { Layout } from "./components/layout/Layout"
 import { ScrollToTop } from "./components/ScrollToTop"
 import { Home } from "./pages/Home"
@@ -14,7 +14,6 @@ import { ComplementaryTraining } from "./pages/ComplementaryTraining"
 import { Events } from "./pages/Events"
 import { Opportunities } from "./pages/Opportunities"
 import { Members } from "./pages/Members"
-import { Contact } from "./pages/Contact"
 
 function App() {
   return (
@@ -35,7 +34,7 @@ function App() {
           <Route path="eventos" element={<Events />} />
           <Route path="oportunidades" element={<Opportunities />} />
           <Route path="membros" element={<Members />} />
-          <Route path="contato" element={<Contact />} />
+          <Route path="contato" element={<Navigate to="/sobre#contato" replace />} />
         </Route>
       </Routes>
     </>

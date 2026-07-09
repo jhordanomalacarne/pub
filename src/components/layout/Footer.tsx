@@ -39,7 +39,12 @@ export function Footer() {
             <h2 className="text-sm font-semibold text-ink">Contato</h2>
             <ul className="mt-3 space-y-2 text-sm text-ink-soft">
               <li>contato@laboratoriozero.example</li>
-              <li>Instituição parceira, Departamento X</li>
+              <li>IFRO — Campus Porto Velho Zona Norte</li>
+              <li>
+                <Link to="/sobre#localizacao" className="hover:text-heading">
+                  Ver localização
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
