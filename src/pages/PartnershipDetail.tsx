@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
-import { Card } from "../components/ui/Card"
+import { PartnerNetwork } from "../components/ui/PartnerNetwork"
 import { getPartnershipCategoryBySlug } from "../lib/partnershipCategories"
 
 export function PartnershipDetail() {
@@ -28,19 +28,16 @@ export function PartnershipDetail() {
         </div>
 
         <h2 className="mt-10 font-serif text-xl font-semibold text-heading">Quem são</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {category.partners.map((partner) => (
-            <Card key={partner.name} className="flex flex-col items-center text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-surface text-xs text-ink-soft">
-                logo
-              </div>
-              <p className="mt-4 font-medium text-heading">{partner.name}</p>
-              <p className="mt-1 text-xs text-ink-soft">{partner.type}</p>
-            </Card>
-          ))}
+        <p className="mt-2 text-sm text-ink-soft">
+          A rede abaixo representa as conexões entre o laboratório e seus parceiros — clique em um
+          nome para ver os detalhes da parceria.
+        </p>
+        <div className="mt-6">
+          <PartnerNetwork categorySlug={category.slug} partners={category.partners} />
         </div>
-        <p className="mt-8 text-xs text-ink-soft">
-          Lista ilustrativa — substitua pelos parceiros reais e seus logos.
+        <p className="mt-6 text-xs text-ink-soft">
+          Rede ilustrativa — a organização muda a cada visita à página; substitua pelos parceiros e
+          logos reais.
         </p>
       </section>
     </>

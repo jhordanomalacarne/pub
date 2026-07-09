@@ -8,6 +8,7 @@ import { Publications } from "./pages/Publications"
 import { Statistics } from "./pages/Statistics"
 import { Partnerships } from "./pages/Partnerships"
 import { PartnershipDetail } from "./pages/PartnershipDetail"
+import { PartnerDetail } from "./pages/PartnerDetail"
 import { Services } from "./pages/Services"
 import { ServiceDetail } from "./pages/ServiceDetail"
 import { Courses } from "./pages/Courses"
@@ -30,6 +31,7 @@ function App() {
           <Route path="estatisticas" element={<Statistics />} />
           <Route path="parcerias" element={<Partnerships />} />
           <Route path="parcerias/:slug" element={<PartnershipDetail />} />
+          <Route path="parcerias/:categorySlug/:partnerSlug" element={<PartnerDetail />} />
           <Route path="servicos" element={<Services />} />
           <Route path="servicos/:slug" element={<ServiceDetail />} />
           <Route path="cursos" element={<Courses />} />

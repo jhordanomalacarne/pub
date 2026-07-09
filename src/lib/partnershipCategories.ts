@@ -2,12 +2,14 @@ import type { ComponentType, SVGProps } from "react"
 import { GiftIcon, UsersIcon, CollaborationIcon } from "../components/ui/ServiceIcon"
 
 export type Partner = {
+  slug: string
   name: string
   type: string
+  /** Texto descrevendo a parceria, usado na página de detalhe do parceiro. */
+  details: string
   /**
    * Caminho da logomarca do parceiro. Deixe undefined até haver uma
-   * logo real — enquanto isso, o carrossel exibe um selo com as
-   * iniciais do nome.
+   * logo real — enquanto isso, os selos exibem as iniciais do nome.
    */
   logo?: string
 }
@@ -33,8 +35,20 @@ export const PARTNERSHIP_CATEGORIES: PartnershipCategory[] = [
       "Apoiadores que contribuem com doações de equipamentos, licenças, recursos financeiros ou infraestrutura, viabilizando a manutenção e a expansão das atividades do laboratório.",
     icon: GiftIcon,
     partners: [
-      { name: "Doador Institucional A", type: "Equipamentos" },
-      { name: "Doador Institucional B", type: "Infraestrutura" },
+      {
+        slug: "doador-institucional-a",
+        name: "Doador Institucional A",
+        type: "Equipamentos",
+        details:
+          "Doou equipamentos de rede e servidores usados na expansão do datacenter do laboratório.",
+      },
+      {
+        slug: "doador-institucional-b",
+        name: "Doador Institucional B",
+        type: "Infraestrutura",
+        details:
+          "Apoiou obras de infraestrutura elétrica e de refrigeração do ambiente de datacenter.",
+      },
     ],
   },
   {
@@ -47,8 +61,20 @@ export const PARTNERSHIP_CATEGORIES: PartnershipCategory[] = [
       "Instituições, cursos e comunidades que utilizam regularmente a infraestrutura de rede e os serviços públicos disponibilizados pelo laboratório em suas atividades.",
     icon: UsersIcon,
     partners: [
-      { name: "Instituição Usuária A", type: "Ensino" },
-      { name: "Instituição Usuária B", type: "Comunidade" },
+      {
+        slug: "instituicao-usuaria-a",
+        name: "Instituição Usuária A",
+        type: "Ensino",
+        details:
+          "Utiliza a infraestrutura de rede do laboratório em disciplinas práticas de cursos técnicos.",
+      },
+      {
+        slug: "instituicao-usuaria-b",
+        name: "Instituição Usuária B",
+        type: "Comunidade",
+        details:
+          "Comunidade que utiliza os serviços públicos hospedados pelo laboratório no dia a dia.",
+      },
     ],
   },
   {
@@ -61,9 +87,27 @@ export const PARTNERSHIP_CATEGORIES: PartnershipCategory[] = [
       "Instituições acadêmicas, órgãos públicos e organizações que colaboram diretamente no desenvolvimento de projetos, pesquisas e publicações junto ao laboratório.",
     icon: CollaborationIcon,
     partners: [
-      { name: "Instituição Parceira A", type: "Universidade" },
-      { name: "Instituição Parceira B", type: "Órgão público" },
-      { name: "Instituição Parceira C", type: "Centro de pesquisa" },
+      {
+        slug: "instituicao-parceira-a",
+        name: "Instituição Parceira A",
+        type: "Universidade",
+        details:
+          "Desenvolve, em conjunto com o laboratório, projetos de pesquisa em infraestrutura de rede.",
+      },
+      {
+        slug: "instituicao-parceira-b",
+        name: "Instituição Parceira B",
+        type: "Órgão público",
+        details:
+          "Parceria voltada à governança digital e à aplicação de políticas públicas de tecnologia.",
+      },
+      {
+        slug: "instituicao-parceira-c",
+        name: "Instituição Parceira C",
+        type: "Centro de pesquisa",
+        details:
+          "Colabora em publicações e experimentos conjuntos na área de comunicação e redes.",
+      },
     ],
   },
 ]
@@ -72,6 +116,16 @@ export function getPartnershipCategoryBySlug(
   slug: string | undefined,
 ): PartnershipCategory | undefined {
   return PARTNERSHIP_CATEGORIES.find((category) => category.slug === slug)
+}
+
+export function getPartnerBySlug(
+  categorySlug: string | undefined,
+  partnerSlug: string | undefined,
+): { category: PartnershipCategory; partner: Partner } | undefined {
+  const category = getPartnershipCategoryBySlug(categorySlug)
+  const partner = category?.partners.find((p) => p.slug === partnerSlug)
+  if (!category || !partner) return undefined
+  return { category, partner }
 }
 
 /** Todos os parceiros de todas as categorias, usado no carrossel de logos. */
