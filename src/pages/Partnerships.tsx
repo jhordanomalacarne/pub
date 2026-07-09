@@ -24,7 +24,7 @@ export function Partnerships() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-surface text-xs text-ink-soft">
                 logo
               </div>
-              <p className="mt-4 font-medium text-navy-900">{partner.name}</p>
+              <p className="mt-4 font-medium text-heading">{partner.name}</p>
               <p className="mt-1 text-xs text-ink-soft">{partner.type}</p>
             </Card>
           ))}

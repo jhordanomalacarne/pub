@@ -2,13 +2,14 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
 import gtecLogo from "../../assets/gtec-logo.png"
+import { ThemeToggle } from "../ui/ThemeToggle"
 
 function navLinkClass({ isActive }: { isActive: boolean }) {
   return [
     "text-sm transition-colors",
     isActive
-      ? "text-navy-900 font-semibold"
-      : "text-ink-soft hover:text-navy-900",
+      ? "text-heading font-semibold"
+      : "text-ink-soft hover:text-heading",
   ].join(" ")
 }
 
@@ -20,7 +21,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <NavLink to="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img src={gtecLogo} alt="GTEC" className="h-9 w-auto" />
-          <span className="font-serif text-xl font-semibold text-navy-900">
+          <span className="font-serif text-xl font-semibold text-heading">
             Laboratório Zero
           </span>
         </NavLink>
@@ -33,18 +34,25 @@ export function Header() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-md border border-border p-2 xl:hidden"
-          aria-label="Abrir menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="sr-only">Menu</span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-        </button>
+        <div className="hidden shrink-0 xl:block">
+          <ThemeToggle />
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md border border-border p-2"
+            aria-label="Abrir menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className="sr-only">Menu</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {open && (

@@ -34,7 +34,7 @@ export function Publications() {
         <ul className="divide-y divide-border">
           {PUBLICATIONS.map((pub) => (
             <li key={pub.title} className="py-6 first:pt-0">
-              <p className="font-serif text-lg font-semibold text-navy-900">
+              <p className="font-serif text-lg font-semibold text-heading">
                 {pub.title}
               </p>
               <p className="mt-1 text-sm text-ink-soft">{pub.authors}</p>

@@ -52,7 +52,7 @@ export function Statistics() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-border bg-paper p-6">
-            <h2 className="font-serif text-lg font-semibold text-navy-900">
+            <h2 className="font-serif text-lg font-semibold text-heading">
               Crescimento de máquinas gerenciadas
             </h2>
             <p className="mt-1 text-sm text-ink-soft">Últimos 6 meses</p>
@@ -62,7 +62,7 @@ export function Statistics() {
           </div>
 
           <div className="rounded-lg border border-border bg-paper p-6">
-            <h2 className="font-serif text-lg font-semibold text-navy-900">
+            <h2 className="font-serif text-lg font-semibold text-heading">
               Dados gerenciados por categoria
             </h2>
             <p className="mt-1 text-sm text-ink-soft">Distribuição atual</p>

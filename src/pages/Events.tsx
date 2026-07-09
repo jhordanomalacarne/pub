@@ -34,7 +34,7 @@ export function Events() {
             <li key={event.title}>
               <Card className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="font-serif text-lg font-semibold text-navy-900">
+                  <p className="font-serif text-lg font-semibold text-heading">
                     {event.title}
                   </p>
                   <p className="mt-1 text-sm text-ink-soft">{event.date}</p>

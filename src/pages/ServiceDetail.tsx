@@ -15,7 +15,7 @@ export function ServiceDetail() {
       <PageHero eyebrow="Serviços" title={service.name} description={service.description} />
 
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <Link to="/servicos" className="text-sm text-ink-soft transition-colors hover:text-navy-900">
+        <Link to="/servicos" className="text-sm text-ink-soft transition-colors hover:text-heading">
           ← Voltar para Serviços
         </Link>
 
@@ -26,7 +26,7 @@ export function ServiceDetail() {
           <p className="text-ink-soft leading-relaxed">{service.details}</p>
         </div>
 
-        <h2 className="mt-10 font-serif text-xl font-semibold text-navy-900">Recursos</h2>
+        <h2 className="mt-10 font-serif text-xl font-semibold text-heading">Recursos</h2>
         <ul className="mt-4 space-y-2">
           {service.features.map((feature) => (
             <li key={feature} className="flex gap-2 text-sm text-ink-soft">

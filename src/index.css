@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -9,6 +11,9 @@
   --color-paper: #ffffff;
   --color-surface: #f7f7f5;
   --color-border: #e4e2dd;
+  /* Heading/emphasis text — same value as navy-900 by default, so light
+     mode is pixel-identical to before. Only the dark override differs. */
+  --color-heading: #0f2647;
 
   --color-navy-950: #0a1930;
   --color-navy-900: #0f2647;
@@ -19,6 +24,18 @@
   --color-gold-600: #a9761f;
   --color-gold-500: #c08c2c;
   --color-gold-100: #f5ead2;
+}
+
+/* Dark mode: only surface/text tokens shift ("less bright" backgrounds).
+   Brand colors (navy/gold) and any element already on a fixed navy
+   background are intentionally left untouched. */
+:root.dark {
+  --color-ink: #e7e9ee;
+  --color-ink-soft: #99a2b5;
+  --color-paper: #12161f;
+  --color-surface: #1a2030;
+  --color-border: #2b3245;
+  --color-heading: #f4f6fb;
 }
 
 body {

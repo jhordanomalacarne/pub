@@ -44,7 +44,7 @@ export function ComplementaryTraining() {
               <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">
                 {item.area}
               </span>
-              <h2 className="mt-2 font-serif text-lg font-semibold text-navy-900">
+              <h2 className="mt-2 font-serif text-lg font-semibold text-heading">
                 {item.title}
               </h2>
               <p className="mt-2 text-sm text-ink-soft">{item.provider}</p>

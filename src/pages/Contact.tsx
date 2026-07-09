@@ -14,11 +14,11 @@ export function Contact() {
         <Card>
           <dl className="space-y-4 text-sm">
             <div>
-              <dt className="font-semibold text-navy-900">E-mail</dt>
+              <dt className="font-semibold text-heading">E-mail</dt>
               <dd className="mt-1 text-ink-soft">contato@laboratoriozero.example</dd>
             </div>
             <div>
-              <dt className="font-semibold text-navy-900">Endereço</dt>
+              <dt className="font-semibold text-heading">Endereço</dt>
               <dd className="mt-1 text-ink-soft">
                 Instituição parceira, Departamento X — Cidade, Estado
               </dd>

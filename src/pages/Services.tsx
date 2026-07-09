@@ -20,7 +20,7 @@ export function Services() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-950 text-gold-500">
                   <service.icon />
                 </div>
-                <h2 className="mt-4 font-serif text-lg font-semibold text-navy-900">
+                <h2 className="mt-4 font-serif text-lg font-semibold text-heading">
                   {service.name}
                 </h2>
                 <p className="mt-2 text-sm text-ink-soft">{service.description}</p>

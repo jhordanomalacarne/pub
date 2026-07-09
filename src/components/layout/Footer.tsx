@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <img src={gtecLogo} alt="GTEC" className="h-10 w-auto" />
-            <span className="mt-3 block font-serif text-lg font-semibold text-navy-900">
+            <span className="mt-3 block font-serif text-lg font-semibold text-heading">
               Laboratório Zero
             </span>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
@@ -26,7 +26,7 @@ export function Footer() {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-sm text-ink-soft transition-colors hover:text-navy-900"
+                    className="text-sm text-ink-soft transition-colors hover:text-heading"
                   >
                     {item.label}
                   </Link>

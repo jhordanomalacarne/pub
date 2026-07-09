@@ -46,7 +46,7 @@ export function Projects() {
           {PROJECTS.map((project) => (
             <Card key={project.title}>
               <div className="flex items-baseline justify-between gap-4">
-                <h2 className="font-serif text-xl font-semibold text-navy-900">
+                <h2 className="font-serif text-xl font-semibold text-heading">
                   {project.title}
                 </h2>
                 <span className="whitespace-nowrap text-xs text-ink-soft">

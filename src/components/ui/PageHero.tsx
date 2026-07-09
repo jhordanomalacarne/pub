@@ -13,7 +13,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-2 font-serif text-4xl font-semibold text-navy-900 sm:text-5xl">
+        <h1 className="mt-2 font-serif text-4xl font-semibold text-heading sm:text-5xl">
           {title}
         </h1>
         {description && (

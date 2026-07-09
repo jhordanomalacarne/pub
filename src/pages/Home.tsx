@@ -75,14 +75,14 @@ export function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="font-serif text-2xl font-semibold text-navy-900">
+        <h2 className="font-serif text-2xl font-semibold text-heading">
           Áreas de atuação
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {HIGHLIGHTS.map((item) => (
             <Link key={item.to} to={item.to}>
               <Card className="h-full">
-                <h3 className="font-serif text-lg font-semibold text-navy-900">
+                <h3 className="font-serif text-lg font-semibold text-heading">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-ink-soft">
@@ -134,15 +134,15 @@ export function Home() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid gap-10 sm:grid-cols-3">
             <div>
-              <p className="font-serif text-4xl font-semibold text-navy-900">12+</p>
+              <p className="font-serif text-4xl font-semibold text-heading">12+</p>
               <p className="mt-1 text-sm text-ink-soft">projetos desenvolvidos</p>
             </div>
             <div>
-              <p className="font-serif text-4xl font-semibold text-navy-900">20+</p>
+              <p className="font-serif text-4xl font-semibold text-heading">20+</p>
               <p className="mt-1 text-sm text-ink-soft">publicações do grupo</p>
             </div>
             <div>
-              <p className="font-serif text-4xl font-semibold text-navy-900">5</p>
+              <p className="font-serif text-4xl font-semibold text-heading">5</p>
               <p className="mt-1 text-sm text-ink-soft">instituições parceiras</p>
             </div>
           </div>
@@ -151,7 +151,7 @@ export function Home() {
           </p>
           <Link
             to="/estatisticas"
-            className="mt-4 inline-block text-sm font-semibold text-navy-900 transition-colors hover:text-navy-700"
+            className="mt-4 inline-block text-sm font-semibold text-heading transition-colors hover:text-navy-700 dark:hover:text-white"
           >
             Veja as estatísticas completas →
           </Link>

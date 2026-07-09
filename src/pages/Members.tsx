@@ -27,7 +27,7 @@ export function Members() {
                 foto
               </div>
               <div>
-                <p className="font-medium text-navy-900">{member.name}</p>
+                <p className="font-medium text-heading">{member.name}</p>
                 <p className="text-xs text-ink-soft">{member.role}</p>
               </div>
             </Card>

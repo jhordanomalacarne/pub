@@ -32,7 +32,7 @@ export function Courses() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {COURSES.map((course) => (
             <Card key={course.title}>
-              <h2 className="font-serif text-lg font-semibold text-navy-900">
+              <h2 className="font-serif text-lg font-semibold text-heading">
                 {course.title}
               </h2>
               <p className="mt-2 text-sm text-ink-soft">{course.description}</p>

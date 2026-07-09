@@ -43,7 +43,7 @@ export function Opportunities() {
               <Card>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
-                    <h2 className="font-serif text-lg font-semibold text-navy-900">
+                    <h2 className="font-serif text-lg font-semibold text-heading">
                       {item.title}
                     </h2>
                     <p className="mt-1 text-sm text-ink-soft">
