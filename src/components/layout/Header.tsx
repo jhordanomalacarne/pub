@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
 import { ABOUT_SECTIONS } from "../../lib/aboutSections"
 import { PARTNERSHIP_CATEGORIES } from "../../lib/partnershipCategories"
+import { useHideOnScroll } from "../../hooks/useHideOnScroll"
 import gtecLogo from "../../assets/gtec-logo.png"
 import { ThemeToggle } from "../ui/ThemeToggle"
 
@@ -150,6 +151,8 @@ function MobileSubmenu({
 export function Header() {
   const [open, setOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const scrollVisible = useHideOnScroll()
+  const visible = open || scrollVisible
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -162,7 +165,11 @@ export function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-paper/95 backdrop-blur">
+    <header
+      className={`sticky top-0 z-40 border-b border-border bg-paper/95 backdrop-blur transition-transform duration-300 ease-in-out ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <NavLink to="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img src={gtecLogo} alt="GTEC" className="h-9 w-auto" />
