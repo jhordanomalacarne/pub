@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 import { Link } from "react-router-dom"
 import type { Partner } from "../../lib/partnershipCategories"
 import { computeNetworkLayout } from "../../lib/networkLayout"
@@ -48,6 +49,8 @@ function PartnerLogo({ partner, className = "" }: { partner: Partner; className?
   )
 }
 
+const POPOVER_WIDTH = 192
+
 function PartnerNode({
   categorySlug,
   partner,
@@ -60,30 +63,77 @@ function PartnerNode({
   y: number
 }) {
   const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const [popoverPos, setPopoverPos] = useState<{ left: number; top: number } | null>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const closeTimeout = useRef<number | null>(null)
+
+  function cancelClose() {
+    if (closeTimeout.current !== null) {
+      window.clearTimeout(closeTimeout.current)
+      closeTimeout.current = null
+    }
+  }
+
+  function scheduleClose() {
+    cancelClose()
+    closeTimeout.current = window.setTimeout(() => setOpen(false), 150)
+  }
+
+  useEffect(() => {
+    if (!open || !buttonRef.current) return
+    const rect = buttonRef.current.getBoundingClientRect()
+    const halfWidth = POPOVER_WIDTH / 2
+    const left = Math.min(
+      Math.max(rect.left + rect.width / 2, halfWidth + 8),
+      window.innerWidth - halfWidth - 8,
+    )
+    setPopoverPos({ left, top: rect.bottom + 8 })
+  }, [open])
 
   useEffect(() => {
     if (!open) return
     function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+      const target = event.target as Node
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(target) &&
+        !(event.target as HTMLElement).closest("[data-partner-popover]")
+      ) {
         setOpen(false)
       }
     }
+    function handleScroll() {
+      setOpen(false)
+    }
     document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
+    window.addEventListener("scroll", handleScroll, true)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+      window.removeEventListener("scroll", handleScroll, true)
+    }
   }, [open])
+
+  useEffect(() => () => cancelClose(), [])
 
   return (
     <div
-      ref={ref}
+      ref={wrapperRef}
       className="absolute -translate-x-1/2 -translate-y-1/2"
       style={{ left: `${x}%`, top: `${y}%` }}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => {
+        cancelClose()
+        setOpen(true)
+      }}
+      onMouseLeave={scheduleClose}
     >
       <button
+        ref={buttonRef}
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          cancelClose()
+          setOpen(true)
+        }}
         aria-expanded={open}
         aria-label={partner.name}
         className="block"
@@ -94,18 +144,28 @@ function PartnerNode({
         />
       </button>
 
-      {open && (
-        <div className="absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-lg border border-border bg-paper p-3 text-center shadow-lg">
-          <PartnerLogo partner={partner} className="mx-auto h-16 w-16 text-base" />
-          <p className="mt-2 text-sm font-semibold text-heading">{partner.name}</p>
-          <Link
-            to={`/parcerias/${categorySlug}/${partner.slug}`}
-            className="mt-2 inline-block text-xs font-semibold text-heading transition-colors hover:underline"
+      {open &&
+        popoverPos &&
+        createPortal(
+          <div
+            data-partner-popover
+            className="fixed z-[999] w-48 -translate-x-1/2 rounded-lg border border-border bg-paper p-3 text-center shadow-lg"
+            style={{ left: popoverPos.left, top: popoverPos.top }}
+            onMouseEnter={cancelClose}
+            onMouseLeave={scheduleClose}
           >
-            Ver detalhes da parceria →
-          </Link>
-        </div>
-      )}
+            <PartnerLogo partner={partner} className="mx-auto h-16 w-16 text-base" />
+            <p className="mt-2 text-sm font-semibold text-heading">{partner.name}</p>
+            <Link
+              to={`/parcerias/${categorySlug}/${partner.slug}`}
+              className="mt-2 inline-block text-xs font-semibold text-heading transition-colors hover:underline"
+              onClick={() => setOpen(false)}
+            >
+              Ver detalhes da parceria →
+            </Link>
+          </div>,
+          document.body,
+        )}
     </div>
   )
 }
