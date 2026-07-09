@@ -4,6 +4,12 @@ import { GiftIcon, UsersIcon, CollaborationIcon } from "../components/ui/Service
 export type Partner = {
   name: string
   type: string
+  /**
+   * Caminho da logomarca do parceiro. Deixe undefined até haver uma
+   * logo real — enquanto isso, o carrossel exibe um selo com as
+   * iniciais do nome.
+   */
+  logo?: string
 }
 
 export type PartnershipCategory = {
@@ -67,3 +73,8 @@ export function getPartnershipCategoryBySlug(
 ): PartnershipCategory | undefined {
   return PARTNERSHIP_CATEGORIES.find((category) => category.slug === slug)
 }
+
+/** Todos os parceiros de todas as categorias, usado no carrossel de logos. */
+export const ALL_PARTNERS: Partner[] = PARTNERSHIP_CATEGORIES.flatMap(
+  (category) => category.partners,
+)

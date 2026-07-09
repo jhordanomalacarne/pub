@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
+import { PartnerCarousel } from "../components/ui/PartnerCarousel"
 import { PARTNERSHIP_CATEGORIES } from "../lib/partnershipCategories"
 import { useHashScroll } from "../hooks/useHashScroll"
 
@@ -14,6 +15,8 @@ export function Partnerships() {
         title="Parcerias"
         description="O Laboratório Zero se relaciona com diferentes tipos de parceiros: doadores, usuários da infraestrutura e instituições que desenvolvem projetos em conjunto."
       />
+
+      <PartnerCarousel />
 
       <nav className="border-b border-border bg-surface">
         <div className="mx-auto flex max-w-4xl flex-wrap gap-x-6 gap-y-2 px-6 py-4 text-sm">
