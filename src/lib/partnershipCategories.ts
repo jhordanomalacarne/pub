@@ -49,6 +49,13 @@ export const PARTNERSHIP_CATEGORIES: PartnershipCategory[] = [
         details:
           "Apoiou obras de infraestrutura elétrica e de refrigeração do ambiente de datacenter.",
       },
+      {
+        slug: "doador-institucional-c",
+        name: "Doador Institucional C",
+        type: "Recursos financeiros",
+        details:
+          "Contribuiu com recursos financeiros destinados à renovação de licenças e softwares.",
+      },
     ],
   },
   {
@@ -74,6 +81,27 @@ export const PARTNERSHIP_CATEGORIES: PartnershipCategory[] = [
         type: "Comunidade",
         details:
           "Comunidade que utiliza os serviços públicos hospedados pelo laboratório no dia a dia.",
+      },
+      {
+        slug: "instituicao-usuaria-c",
+        name: "Instituição Usuária C",
+        type: "Ensino",
+        details:
+          "Utiliza os laboratórios de rede remotos para aulas práticas de graduação.",
+      },
+      {
+        slug: "instituicao-usuaria-d",
+        name: "Instituição Usuária D",
+        type: "Órgão público",
+        details:
+          "Usa a infraestrutura de hospedagem do laboratório para sistemas internos de pequeno porte.",
+      },
+      {
+        slug: "instituicao-usuaria-e",
+        name: "Instituição Usuária E",
+        type: "Startup",
+        details:
+          "Startup que utiliza o datacenter do laboratório para testes de suas soluções em estágio inicial.",
       },
     ],
   },
@@ -107,6 +135,42 @@ export const PARTNERSHIP_CATEGORIES: PartnershipCategory[] = [
         type: "Centro de pesquisa",
         details:
           "Colabora em publicações e experimentos conjuntos na área de comunicação e redes.",
+      },
+      {
+        slug: "instituicao-parceira-d",
+        name: "Instituição Parceira D",
+        type: "Universidade",
+        details: "Parceria em projetos de extensão universitária e formação de pesquisadores.",
+      },
+      {
+        slug: "instituicao-parceira-e",
+        name: "Instituição Parceira E",
+        type: "Órgão público",
+        details: "Cooperação técnica em iniciativas de governança digital do setor público.",
+      },
+      {
+        slug: "instituicao-parceira-f",
+        name: "Instituição Parceira F",
+        type: "Organização da sociedade civil",
+        details: "Atua junto ao laboratório em projetos de inclusão digital e formação comunitária.",
+      },
+      {
+        slug: "instituicao-parceira-g",
+        name: "Instituição Parceira G",
+        type: "Centro de pesquisa",
+        details: "Desenvolve, em conjunto, pesquisas aplicadas em segurança de redes.",
+      },
+      {
+        slug: "instituicao-parceira-h",
+        name: "Instituição Parceira H",
+        type: "Empresa parceira",
+        details: "Colabora no desenvolvimento de soluções personalizadas de infraestrutura.",
+      },
+      {
+        slug: "instituicao-parceira-i",
+        name: "Instituição Parceira I",
+        type: "Universidade",
+        details: "Parceria em programas de pós-graduação e coorientação de pesquisas aplicadas.",
       },
     ],
   },

@@ -67,6 +67,7 @@ export function PartnerNetwork({
     <div className="relative mx-auto h-[420px] w-full max-w-3xl sm:h-[480px]">
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+        preserveAspectRatio="none"
         className="absolute inset-0 h-full w-full"
         aria-hidden="true"
       >
@@ -82,8 +83,8 @@ export function PartnerNetwork({
               y1={a.y}
               x2={b.x}
               y2={b.y}
-              stroke="var(--color-border)"
-              strokeWidth={isHubEdge ? 1.5 : 1}
+              stroke="var(--color-ink-soft)"
+              strokeWidth={isHubEdge ? 2.5 : 1.5}
             />
           )
         })}
