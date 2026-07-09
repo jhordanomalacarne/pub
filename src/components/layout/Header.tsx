@@ -149,6 +149,17 @@ function MobileSubmenu({
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-paper/95 backdrop-blur">
@@ -177,7 +188,7 @@ export function Header() {
           <ThemeToggle />
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+        <div ref={mobileMenuRef} className="relative flex shrink-0 items-center gap-2 xl:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -191,38 +202,38 @@ export function Header() {
               <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </button>
+
+          {open && (
+            <nav className="absolute right-0 top-full z-50 mt-2 w-max max-w-xs max-h-[calc(100vh-5rem)] overflow-y-auto rounded-md border border-border bg-paper p-4 shadow-lg">
+              <ul className="flex flex-col gap-3">
+                {NAV_ITEMS.map((item) => {
+                  const sections = SUBMENUS[item.path]
+                  return sections ? (
+                    <MobileSubmenu
+                      key={item.path}
+                      basePath={item.path}
+                      label={item.label}
+                      sections={sections}
+                      onNavigate={() => setOpen(false)}
+                    />
+                  ) : (
+                    <li key={item.path}>
+                      <NavLink
+                        to={item.path}
+                        end={item.path === "/"}
+                        className={navLinkClass}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.label}
+                      </NavLink>
+                    </li>
+                  )
+                })}
+              </ul>
+            </nav>
+          )}
         </div>
       </div>
-
-      {open && (
-        <nav className="border-t border-border bg-paper px-6 py-4 xl:hidden">
-          <ul className="flex flex-col gap-3">
-            {NAV_ITEMS.map((item) => {
-              const sections = SUBMENUS[item.path]
-              return sections ? (
-                <MobileSubmenu
-                  key={item.path}
-                  basePath={item.path}
-                  label={item.label}
-                  sections={sections}
-                  onNavigate={() => setOpen(false)}
-                />
-              ) : (
-                <li key={item.path}>
-                  <NavLink
-                    to={item.path}
-                    end={item.path === "/"}
-                    className={navLinkClass}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      )}
     </header>
   )
 }
