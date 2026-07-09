@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Card } from "../components/ui/Card"
 import { SERVICES } from "../lib/services"
+import { ELIGIBILITY_FORM_URL } from "../lib/externalLinks"
 
 const HIGHLIGHTS = [
   {
@@ -129,12 +130,31 @@ export function Home() {
                 </p>
               </div>
             </div>
-            <Link
-              to="/sobre#contato"
-              className="mt-8 inline-block rounded-md bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
-            >
-              Fale com o laboratório
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/sobre#contato"
+                className="inline-block rounded-md bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+              >
+                Fale com o laboratório
+              </Link>
+              {ELIGIBILITY_FORM_URL ? (
+                <a
+                  href={ELIGIBILITY_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-md border border-border px-5 py-3 text-sm font-semibold text-heading transition-colors hover:bg-surface"
+                >
+                  Verificar elegibilidade do projeto
+                </a>
+              ) : (
+                <span
+                  title="Link do formulário em breve"
+                  className="inline-flex cursor-not-allowed items-center rounded-md border border-border px-5 py-3 text-sm font-semibold text-ink-soft opacity-70"
+                >
+                  Verificar elegibilidade do projeto
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </section>
