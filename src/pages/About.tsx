@@ -1,6 +1,6 @@
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
-import gtecLogo from "../assets/gtec-logo.jpg"
+import gtecLogo from "../assets/gtec-logo.png"
 
 export function About() {
   return (

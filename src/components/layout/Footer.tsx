@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
-import gtecLogo from "../../assets/gtec-logo.jpg"
+import gtecLogo from "../../assets/gtec-logo.png"
 
 export function Footer() {
   return (

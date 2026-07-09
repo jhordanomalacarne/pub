@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
-import gtecLogo from "../../assets/gtec-logo.jpg"
+import gtecLogo from "../../assets/gtec-logo.png"
 
 function navLinkClass({ isActive }: { isActive: boolean }) {
   return [
