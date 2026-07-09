@@ -149,6 +149,12 @@ export function Home() {
           <p className="mt-6 text-xs text-ink-soft">
             Números ilustrativos — atualize com os dados reais do laboratório.
           </p>
+          <Link
+            to="/estatisticas"
+            className="mt-4 inline-block text-sm font-semibold text-navy-900 transition-colors hover:text-navy-700"
+          >
+            Veja as estatísticas completas →
+          </Link>
         </div>
       </section>
     </>
