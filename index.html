@@ -7,7 +7,8 @@
     <title>pub</title>
     <script>
       (function () {
-        var stored = localStorage.getItem("theme");
+        var consented = localStorage.getItem("cookie-consent") === "accepted";
+        var stored = consented ? localStorage.getItem("theme") : null;
         var dark =
           stored === "dark" ||
           (stored !== "light" &&

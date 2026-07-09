@@ -49,9 +49,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-xs text-ink-soft">
-          © {new Date().getFullYear()} Laboratório Zero — Grupo de Pesquisa em
-          Tecnologia, Comunicação e Governança.
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-ink-soft">
+          <span>
+            © {new Date().getFullYear()} Laboratório Zero — Grupo de Pesquisa
+            em Tecnologia, Comunicação e Governança.
+          </span>
+          <Link to="/privacidade" className="hover:text-heading">
+            Política de Privacidade
+          </Link>
         </div>
       </div>
     </footer>

@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useState } from "react"
+import { hasConsent } from "../lib/cookieConsent"
 
 type Theme = "light" | "dark"
 
 const STORAGE_KEY = "theme"
 
 function getInitialTheme(): Theme {
-  const stored = window.localStorage.getItem(STORAGE_KEY)
-  if (stored === "light" || stored === "dark") return stored
+  if (hasConsent()) {
+    const stored = window.localStorage.getItem(STORAGE_KEY)
+    if (stored === "light" || stored === "dark") return stored
+  }
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light"
@@ -17,7 +20,9 @@ export function useTheme() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark")
-    window.localStorage.setItem(STORAGE_KEY, theme)
+    if (hasConsent()) {
+      window.localStorage.setItem(STORAGE_KEY, theme)
+    }
   }, [theme])
 
   const toggleTheme = useCallback(() => {

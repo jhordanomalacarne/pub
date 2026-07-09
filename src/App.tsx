@@ -14,6 +14,7 @@ import { ComplementaryTraining } from "./pages/ComplementaryTraining"
 import { Events } from "./pages/Events"
 import { Opportunities } from "./pages/Opportunities"
 import { Members } from "./pages/Members"
+import { PrivacyPolicy } from "./pages/PrivacyPolicy"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="eventos" element={<Events />} />
           <Route path="oportunidades" element={<Opportunities />} />
           <Route path="membros" element={<Members />} />
+          <Route path="privacidade" element={<PrivacyPolicy />} />
           <Route path="contato" element={<Navigate to="/sobre#contato" replace />} />
         </Route>
       </Routes>

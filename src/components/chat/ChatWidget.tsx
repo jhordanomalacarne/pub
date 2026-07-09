@@ -27,7 +27,7 @@ async function sendMessage(history: Message[]): Promise<string> {
   return data.reply ?? "Não recebi uma resposta válida do assistente."
 }
 
-export function ChatWidget() {
+export function ChatWidget({ raised = false }: { raised?: boolean }) {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -66,7 +66,11 @@ export function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div
+      className={`fixed right-5 z-50 flex flex-col items-end gap-3 transition-[bottom] ${
+        raised ? "bottom-28" : "bottom-5"
+      }`}
+    >
       {open && (
         <div className="flex h-[28rem] w-[22rem] max-w-[calc(100vw-2.5rem)] flex-col overflow-hidden rounded-lg border border-border bg-paper shadow-xl">
           <div className="flex items-center justify-between border-b border-border bg-navy-950 px-4 py-3">
