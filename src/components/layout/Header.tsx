@@ -1,6 +1,7 @@
-import { useState } from "react"
-import { NavLink } from "react-router-dom"
+import { useEffect, useRef, useState } from "react"
+import { Link, NavLink } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
+import { ABOUT_SECTIONS } from "../../lib/aboutSections"
 import gtecLogo from "../../assets/gtec-logo.png"
 import { ThemeToggle } from "../ui/ThemeToggle"
 
@@ -11,6 +12,113 @@ function navLinkClass({ isActive }: { isActive: boolean }) {
       ? "text-heading font-semibold"
       : "text-ink-soft hover:text-heading",
   ].join(" ")
+}
+
+function ChevronIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+      className={`transition-transform ${open ? "rotate-180" : ""}`}
+    >
+      <path
+        d="M3 4.5l3 3 3-3"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function AboutDesktopMenu() {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative flex items-center gap-0.5">
+      <NavLink to="/sobre" end className={navLinkClass} onClick={() => setOpen(false)}>
+        Sobre
+      </NavLink>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-label={open ? "Recolher submenu de Sobre" : "Expandir submenu de Sobre"}
+        className="rounded p-0.5 text-ink-soft transition-colors hover:text-heading"
+      >
+        <ChevronIcon open={open} />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 top-full z-50 mt-2 w-56 rounded-md border border-border bg-paper py-2 shadow-lg">
+          {ABOUT_SECTIONS.map((section) => (
+            <Link
+              key={section.id}
+              to={`/sobre#${section.id}`}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2 text-sm text-ink-soft transition-colors hover:bg-surface hover:text-heading"
+            >
+              {section.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function AboutMobileMenu({ onNavigate }: { onNavigate: () => void }) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <li>
+      <div className="flex items-center justify-between gap-2">
+        <NavLink to="/sobre" end className={navLinkClass} onClick={onNavigate}>
+          Sobre
+        </NavLink>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-label={open ? "Recolher submenu de Sobre" : "Expandir submenu de Sobre"}
+          className="rounded p-1 text-ink-soft transition-colors hover:text-heading"
+        >
+          <ChevronIcon open={open} />
+        </button>
+      </div>
+
+      {open && (
+        <ul className="mt-2 flex flex-col gap-2 border-l border-border pl-4">
+          {ABOUT_SECTIONS.map((section) => (
+            <li key={section.id}>
+              <Link
+                to={`/sobre#${section.id}`}
+                onClick={onNavigate}
+                className="block text-sm text-ink-soft transition-colors hover:text-heading"
+              >
+                {section.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  )
 }
 
 export function Header() {
@@ -27,11 +135,15 @@ export function Header() {
         </NavLink>
 
         <nav className="hidden flex-wrap items-center justify-end gap-x-3 gap-y-1 xl:flex">
-          {NAV_ITEMS.map((item) => (
-            <NavLink key={item.path} to={item.path} end={item.path === "/"} className={navLinkClass}>
-              {item.label}
-            </NavLink>
-          ))}
+          {NAV_ITEMS.map((item) =>
+            item.path === "/sobre" ? (
+              <AboutDesktopMenu key={item.path} />
+            ) : (
+              <NavLink key={item.path} to={item.path} end={item.path === "/"} className={navLinkClass}>
+                {item.label}
+              </NavLink>
+            ),
+          )}
         </nav>
 
         <div className="hidden shrink-0 xl:block">
@@ -58,18 +170,22 @@ export function Header() {
       {open && (
         <nav className="border-t border-border bg-paper px-6 py-4 xl:hidden">
           <ul className="flex flex-col gap-3">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.path}>
-                <NavLink
-                  to={item.path}
-                  end={item.path === "/"}
-                  className={navLinkClass}
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              item.path === "/sobre" ? (
+                <AboutMobileMenu key={item.path} onNavigate={() => setOpen(false)} />
+              ) : (
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    end={item.path === "/"}
+                    className={navLinkClass}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
       )}

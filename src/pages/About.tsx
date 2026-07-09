@@ -1,16 +1,9 @@
+import { useEffect } from "react"
+import { Link, useLocation } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
+import { ABOUT_SECTIONS } from "../lib/aboutSections"
 import gtecLogo from "../assets/gtec-logo.png"
-
-const SECTIONS = [
-  { id: "missao", label: "Missão" },
-  { id: "linhas-pesquisa", label: "Linhas de pesquisa" },
-  { id: "datacenter", label: "Infraestrutura" },
-  { id: "fotos", label: "Fotos" },
-  { id: "tour-virtual", label: "Tour 360° / 3D" },
-  { id: "localizacao", label: "Localização" },
-  { id: "contato", label: "Contato" },
-]
 
 const DATACENTER_ITEMS = [
   {
@@ -36,6 +29,14 @@ const MAP_ADDRESS =
   "Instituto Federal de Rondônia — Campus Porto Velho Zona Norte, Av. Gov. Jorge Teixeira, 3146, Setor Industrial, Porto Velho - RO, 76821-002"
 
 export function About() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const id = location.hash.slice(1)
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+  }, [location.hash])
+
   return (
     <>
       <PageHero
@@ -46,20 +47,14 @@ export function About() {
 
       <nav className="border-b border-border bg-surface">
         <div className="mx-auto flex max-w-4xl flex-wrap gap-x-6 gap-y-2 px-6 py-4 text-sm">
-          {SECTIONS.map((section) => (
-            <a
+          {ABOUT_SECTIONS.map((section) => (
+            <Link
               key={section.id}
-              href={`#${section.id}`}
-              onClick={(event) => {
-                event.preventDefault()
-                document
-                  .getElementById(section.id)
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }}
+              to={`#${section.id}`}
               className="text-ink-soft transition-colors hover:text-heading"
             >
               {section.label}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
