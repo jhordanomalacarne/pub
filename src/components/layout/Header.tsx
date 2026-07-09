@@ -5,6 +5,7 @@ import { ABOUT_SECTIONS } from "../../lib/aboutSections"
 import { PARTNERSHIP_CATEGORIES } from "../../lib/partnershipCategories"
 import { useHideOnScroll } from "../../hooks/useHideOnScroll"
 import { useLanguage } from "../../i18n/LanguageContext"
+import { LANGUAGES } from "../../i18n/languages"
 import gtecLogo from "../../assets/gtec-logo.png"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import { LanguageSwitcher } from "../ui/LanguageSwitcher"
@@ -148,7 +149,7 @@ function MobileSubmenu({
 }
 
 export function Header() {
-  const { language, dict } = useLanguage()
+  const { language, setLanguage, dict } = useLanguage()
   const [open, setOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
   const scrollVisible = useHideOnScroll()
@@ -211,7 +212,6 @@ export function Header() {
         </div>
 
         <div ref={mobileMenuRef} className="relative flex shrink-0 items-center gap-2 xl:hidden">
-          <LanguageSwitcher />
           <ThemeToggle />
           <button
             type="button"
@@ -254,6 +254,31 @@ export function Header() {
                   )
                 })}
               </ul>
+
+              <div className="mt-4 border-t border-border pt-4">
+                <span className="text-sm text-ink-soft">{dict.header.changeLanguage}</span>
+                <div className="mt-2 flex items-center gap-2">
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      onClick={() => {
+                        setLanguage(lang.code)
+                        setOpen(false)
+                      }}
+                      aria-label={lang.label}
+                      aria-pressed={lang.code === language}
+                      className={`inline-flex items-center justify-center rounded-md border p-2 text-base leading-none transition-colors ${
+                        lang.code === language
+                          ? "border-heading"
+                          : "border-border hover:border-heading"
+                      }`}
+                    >
+                      <span aria-hidden="true">{lang.flag}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </nav>
           )}
         </div>
