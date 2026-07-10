@@ -27,8 +27,8 @@ export const pt = {
     expandSubmenu: "Expandir submenu de",
     collapseSubmenu: "Recolher submenu de",
     changeLanguage: "Alterar idioma",
-    serviceStatusCta: "Serviço fora do ar? Verifique aqui",
-    userAreaCta: "Área do usuário",
+    serviceStatusCta: "Área nerd",
+    userAreaCta: "Minha conta",
     userAreaComingSoon: "Em breve",
   },
   footer: {

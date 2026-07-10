@@ -29,8 +29,8 @@ export const en: typeof pt = {
     expandSubmenu: "Expand submenu for",
     collapseSubmenu: "Collapse submenu for",
     changeLanguage: "Change language",
-    serviceStatusCta: "Service down? Check here",
-    userAreaCta: "User area",
+    serviceStatusCta: "Nerd zone",
+    userAreaCta: "My account",
     userAreaComingSoon: "Coming soon",
   },
   footer: {

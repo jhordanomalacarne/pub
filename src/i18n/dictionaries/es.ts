@@ -29,8 +29,8 @@ export const es: typeof pt = {
     expandSubmenu: "Expandir submenú de",
     collapseSubmenu: "Contraer submenú de",
     changeLanguage: "Cambiar idioma",
-    serviceStatusCta: "¿Servicio caído? Compruébelo aquí",
-    userAreaCta: "Área del usuario",
+    serviceStatusCta: "Zona nerd",
+    userAreaCta: "Mi cuenta",
     userAreaComingSoon: "Próximamente",
   },
   footer: {

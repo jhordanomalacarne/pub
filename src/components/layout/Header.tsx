@@ -286,7 +286,7 @@ export function Header() {
       </div>
 
       <div className="border-t border-border bg-gtec-green-100">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-6 py-2">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-end gap-3 px-6 py-2">
           <Link
             to="/status"
             onClick={() => setOpen(false)}
