@@ -29,6 +29,9 @@ export const en: typeof pt = {
     expandSubmenu: "Expand submenu for",
     collapseSubmenu: "Collapse submenu for",
     changeLanguage: "Change language",
+    serviceStatusCta: "Service down? Check here",
+    userAreaCta: "User area",
+    userAreaComingSoon: "Coming soon",
   },
   footer: {
     description:
@@ -439,6 +442,18 @@ export const en: typeof pt = {
         ],
       },
     },
+  },
+  serviceStatus: {
+    eyebrow: "Service Status",
+    title: "Service Status",
+    description: "Real-time availability of the public services maintained by Laboratório Zero.",
+    grafanaNote:
+      "The data on this page will be updated automatically from the laboratory's Grafana monitoring dashboard.",
+    uptimeLabel: "Uptime (30 days)",
+    statusOperational: "Operational",
+    statusDegraded: "Degraded performance",
+    statusDown: "Down",
+    illustrativeNote: "Illustrative data — will be replaced by the Grafana integration.",
   },
   courses: {
     eyebrow: "Courses",

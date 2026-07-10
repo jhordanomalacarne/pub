@@ -24,6 +24,14 @@
   --color-gold-600: #a9761f;
   --color-gold-500: #c08c2c;
   --color-gold-100: #f5ead2;
+
+  /* Verde da logomarca do GTEC, usado para destacar ações rápidas no cabeçalho. */
+  --color-gtec-green-700: #2f7a34;
+  --color-gtec-green-600: #3a933f;
+  --color-gtec-green-100: #e3f2e4;
+
+  /* Indicador de status "indisponível" na página de status dos serviços. */
+  --color-status-down: #c0392b;
 }
 
 /* Dark mode: only surface/text tokens shift ("less bright" backgrounds).
@@ -36,6 +44,7 @@
   --color-surface: #1a2030;
   --color-border: #2b3245;
   --color-heading: #f4f6fb;
+  --color-gtec-green-100: #16261a;
 }
 
 body {

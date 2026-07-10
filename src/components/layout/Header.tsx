@@ -6,6 +6,7 @@ import { PARTNERSHIP_CATEGORIES } from "../../lib/partnershipCategories"
 import { useHideOnScroll } from "../../hooks/useHideOnScroll"
 import { useLanguage } from "../../i18n/LanguageContext"
 import { LANGUAGES } from "../../i18n/languages"
+import { USER_AREA_URL } from "../../lib/externalLinks"
 import gtecLogo from "../../assets/gtec-logo.png"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import { LanguageSwitcher } from "../ui/LanguageSwitcher"
@@ -280,6 +281,35 @@ export function Header() {
                 </div>
               </div>
             </nav>
+          )}
+        </div>
+      </div>
+
+      <div className="border-t border-border bg-gtec-green-100">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-6 py-2">
+          <Link
+            to="/status"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center rounded-full bg-gtec-green-600 px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gtec-green-700"
+          >
+            {dict.header.serviceStatusCta}
+          </Link>
+          {USER_AREA_URL ? (
+            <a
+              href={USER_AREA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full bg-gtec-green-600 px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gtec-green-700"
+            >
+              {dict.header.userAreaCta}
+            </a>
+          ) : (
+            <span
+              title={dict.header.userAreaComingSoon}
+              className="inline-flex cursor-not-allowed items-center rounded-full bg-gtec-green-600/60 px-4 py-1.5 text-xs font-semibold text-white opacity-80"
+            >
+              {dict.header.userAreaCta}
+            </span>
           )}
         </div>
       </div>

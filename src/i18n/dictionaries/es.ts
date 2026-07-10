@@ -29,6 +29,9 @@ export const es: typeof pt = {
     expandSubmenu: "Expandir submenú de",
     collapseSubmenu: "Contraer submenú de",
     changeLanguage: "Cambiar idioma",
+    serviceStatusCta: "¿Servicio caído? Compruébelo aquí",
+    userAreaCta: "Área del usuario",
+    userAreaComingSoon: "Próximamente",
   },
   footer: {
     description:
@@ -439,6 +442,19 @@ export const es: typeof pt = {
         ],
       },
     },
+  },
+  serviceStatus: {
+    eyebrow: "Estado de los Servicios",
+    title: "Estado de los Servicios",
+    description:
+      "Disponibilidad en tiempo real de los servicios públicos mantenidos por el Laboratório Zero.",
+    grafanaNote:
+      "Los datos de esta página se actualizarán automáticamente desde el panel de monitoreo Grafana del laboratorio.",
+    uptimeLabel: "Disponibilidad (30 días)",
+    statusOperational: "Operativo",
+    statusDegraded: "Rendimiento reducido",
+    statusDown: "Fuera de servicio",
+    illustrativeNote: "Datos ilustrativos — serán sustituidos por la integración con Grafana.",
   },
   courses: {
     eyebrow: "Cursos",

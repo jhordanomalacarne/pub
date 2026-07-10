@@ -11,6 +11,7 @@ import { PartnershipDetail } from "./pages/PartnershipDetail"
 import { PartnerDetail } from "./pages/PartnerDetail"
 import { Services } from "./pages/Services"
 import { ServiceDetail } from "./pages/ServiceDetail"
+import { ServiceStatus } from "./pages/ServiceStatus"
 import { Courses } from "./pages/Courses"
 import { ComplementaryTraining } from "./pages/ComplementaryTraining"
 import { Events } from "./pages/Events"
@@ -34,6 +35,7 @@ function App() {
           <Route path="parcerias/:categorySlug/:partnerSlug" element={<PartnerDetail />} />
           <Route path="servicos" element={<Services />} />
           <Route path="servicos/:slug" element={<ServiceDetail />} />
+          <Route path="status" element={<ServiceStatus />} />
           <Route path="cursos" element={<Courses />} />
           <Route path="formacao-complementar" element={<ComplementaryTraining />} />
           <Route path="eventos" element={<Events />} />
