@@ -115,9 +115,10 @@ export const es: typeof pt = {
       ctaEligibility: "Verificar elegibilidad del proyecto",
       eligibilityComingSoon: "Enlace del formulario próximamente",
     },
-    servicesEyebrow: "Servicios públicos",
+    servicesEyebrow: "Servicios",
     servicesTitle: "Herramientas web abiertas a la comunidad",
-    servicesCta: "Ver todos los servicios",
+    servicesMoreNote:
+      "Los socios y la comunidad académica del IFRO tienen acceso a decenas de herramientas adicionales.",
     stats: {
       projects: "proyectos desarrollados",
       publications: "publicaciones del grupo",

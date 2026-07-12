@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, useSearchParams } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card, type CardTone } from "../components/ui/Card"
 import { getServicesForAudience, getServiceTranslation, type ServiceAudience } from "../lib/services"
@@ -22,7 +22,15 @@ const TAB_TONE_ACTIVE: Record<ServiceAudience, string> = {
 export function Services() {
   const { dict } = useLanguage()
   const t = dict.services
+  const [searchParams] = useSearchParams()
   const [audience, setAudience] = useState<ServiceAudience>("public")
+
+  useEffect(() => {
+    const param = searchParams.get("audiencia")
+    if (AUDIENCES.includes(param as ServiceAudience)) {
+      setAudience(param as ServiceAudience)
+    }
+  }, [searchParams])
 
   const audienceLabel: Record<ServiceAudience, string> = {
     public: t.audiencePublicLabel,

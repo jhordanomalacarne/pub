@@ -113,9 +113,10 @@ export const pt = {
       ctaEligibility: "Verificar elegibilidade do projeto",
       eligibilityComingSoon: "Link do formulário em breve",
     },
-    servicesEyebrow: "Serviços públicos",
+    servicesEyebrow: "Serviços",
     servicesTitle: "Ferramentas web abertas à comunidade",
-    servicesCta: "Ver todos os serviços",
+    servicesMoreNote:
+      "Parceiros e a comunidade acadêmica do IFRO têm acesso a dezenas de ferramentas adicionais.",
     stats: {
       projects: "projetos desenvolvidos",
       publications: "publicações do grupo",

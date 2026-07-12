@@ -107,18 +107,30 @@ export function Home() {
 
       <section className="border-t border-border bg-navy-950">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">
-                {t.servicesEyebrow}
-              </p>
-              <h2 className="mt-2 font-serif text-2xl font-semibold text-white">{t.servicesTitle}</h2>
-            </div>
+          <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">
+            {t.servicesEyebrow}
+          </p>
+          <h2 className="mt-2 font-serif text-2xl font-semibold text-white">{t.servicesTitle}</h2>
+          <p className="mt-2 max-w-xl text-sm text-slate-300">{t.servicesMoreNote}</p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              to="/servicos"
-              className="rounded-md border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-slate-400"
+              to="/servicos?audiencia=public"
+              className="rounded-md border border-medal-bronze-500 bg-medal-bronze-100 px-4 py-2 text-sm font-semibold text-medal-bronze-700 transition-colors hover:brightness-95"
             >
-              {t.servicesCta}
+              {dict.services.audiencePublicLabel}
+            </Link>
+            <Link
+              to="/servicos?audiencia=partners"
+              className="rounded-md border border-medal-silver-500 bg-medal-silver-100 px-4 py-2 text-sm font-semibold text-medal-silver-700 transition-colors hover:brightness-95"
+            >
+              {dict.services.audiencePartnersLabel}
+            </Link>
+            <Link
+              to="/servicos?audiencia=academic"
+              className="rounded-md border border-medal-gold-500 bg-medal-gold-100 px-4 py-2 text-sm font-semibold text-medal-gold-700 transition-colors hover:brightness-95"
+            >
+              {dict.services.audienceAcademicLabel}
             </Link>
           </div>
 
