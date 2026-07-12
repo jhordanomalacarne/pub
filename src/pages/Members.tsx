@@ -1,10 +1,12 @@
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 export function Members() {
   const { dict } = useLanguage()
   const t = dict.members
+  useDocumentTitle(t.title)
 
   return (
     <>

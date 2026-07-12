@@ -3,6 +3,7 @@ import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
 import { ABOUT_SECTIONS } from "../lib/aboutSections"
 import { useHashScroll } from "../hooks/useHashScroll"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 const PHOTO_PLACEHOLDERS = Array.from({ length: 6 }, (_, i) => i + 1)
@@ -14,6 +15,7 @@ export function About() {
   useHashScroll()
   const { dict } = useLanguage()
   const t = dict.about
+  useDocumentTitle(t.title)
   const datacenterItems = [
     dict.about.datacenterItems.proxmox,
     dict.about.datacenterItems.aiWorkstation,

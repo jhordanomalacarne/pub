@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 import type { ServiceAudience } from "../lib/services"
 
@@ -9,17 +10,20 @@ export function ServiceAudienceRequirements() {
   const { audience } = useParams()
   const { dict } = useLanguage()
   const t = dict.services
-
-  if (!audience || !AUDIENCES.includes(audience as ServiceAudience)) {
-    return <Navigate to="/servicos" replace />
-  }
-  const a = audience as ServiceAudience
+  const isValidAudience = !!audience && AUDIENCES.includes(audience as ServiceAudience)
 
   const label: Record<ServiceAudience, string> = {
     public: t.audiencePublicLabel,
     partners: t.audiencePartnersLabel,
     academic: t.audienceAcademicLabel,
   }
+  useDocumentTitle(isValidAudience ? label[audience as ServiceAudience] : undefined)
+
+  if (!isValidAudience) {
+    return <Navigate to="/servicos" replace />
+  }
+  const a = audience as ServiceAudience
+
   const requirement: Record<ServiceAudience, string> = {
     public: t.audiencePublicRequirement,
     partners: t.audiencePartnersRequirement,

@@ -2,11 +2,13 @@ import { Link } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card } from "../components/ui/Card"
 import { resetConsent } from "../lib/cookieConsent"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 export function PrivacyPolicy() {
   const { dict } = useLanguage()
   const t = dict.privacyPolicy
+  useDocumentTitle(t.title)
   const [rightsBefore, rightsAfter] = t.rightsText.split("{link}")
 
   return (

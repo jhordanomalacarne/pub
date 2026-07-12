@@ -4,12 +4,14 @@ import { Card } from "../components/ui/Card"
 import { PartnerCarousel } from "../components/ui/PartnerCarousel"
 import { PARTNERSHIP_CATEGORIES } from "../lib/partnershipCategories"
 import { useHashScroll } from "../hooks/useHashScroll"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 export function Partnerships() {
   useHashScroll()
   const { dict, language } = useLanguage()
   const t = dict.partnerships
+  useDocumentTitle(t.title)
 
   return (
     <>

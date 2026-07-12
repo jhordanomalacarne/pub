@@ -1,9 +1,11 @@
 import { PageHero } from "../components/ui/PageHero"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 export function Publications() {
   const { dict } = useLanguage()
   const t = dict.publications
+  useDocumentTitle(t.title)
 
   return (
     <>

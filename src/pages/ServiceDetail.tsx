@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { getServiceBySlug, getServiceTranslation } from "../lib/services"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 export function ServiceDetail() {
@@ -8,12 +9,12 @@ export function ServiceDetail() {
   const service = getServiceBySlug(slug)
   const { dict } = useLanguage()
   const t = dict.services
+  const item = service ? getServiceTranslation(dict, service.slug) : undefined
+  useDocumentTitle(item?.name)
 
-  if (!service) {
+  if (!service || !item) {
     return <Navigate to="/servicos" replace />
   }
-
-  const item = getServiceTranslation(dict, service.slug)
 
   return (
     <>

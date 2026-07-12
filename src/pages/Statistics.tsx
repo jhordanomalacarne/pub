@@ -2,6 +2,7 @@ import { PageHero } from "../components/ui/PageHero"
 import { StatTile } from "../components/ui/StatTile"
 import { ColumnChart } from "../components/charts/ColumnChart"
 import { HorizontalBarChart } from "../components/charts/HorizontalBarChart"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 const LOCALES: Record<string, string> = { pt: "pt-BR", en: "en-US", es: "es-ES" }
@@ -9,6 +10,7 @@ const LOCALES: Record<string, string> = { pt: "pt-BR", en: "en-US", es: "es-ES" 
 export function Statistics() {
   const { dict, language } = useLanguage()
   const t = dict.statistics
+  useDocumentTitle(t.title)
   const locale = LOCALES[language]
 
   const formatNumber = (value: number) => value.toLocaleString(locale)

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Card } from "../components/ui/Card"
 import { getServicesForAudience, getServiceTranslation, type ServiceAudience } from "../lib/services"
 import { ELIGIBILITY_FORM_URL } from "../lib/externalLinks"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 const HIGHLIGHTS = [
@@ -33,6 +34,7 @@ const AUDIENCE_BADGE_TONE: Record<ServiceAudience, string> = {
 export function Home() {
   const { dict } = useLanguage()
   const t = dict.home
+  useDocumentTitle()
   const [audience, setAudience] = useState<ServiceAudience>("public")
 
   const audienceLabel: Record<ServiceAudience, string> = {

@@ -1,6 +1,7 @@
 import { PageHero } from "../components/ui/PageHero"
 import { SERVICES, getServiceTranslation } from "../lib/services"
 import { SERVICE_STATUS, type ServiceStatusLevel } from "../lib/serviceStatus"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 const DOT_CLASS: Record<ServiceStatusLevel, string> = {
@@ -15,6 +16,7 @@ export function ServiceStatus() {
   const { dict, language } = useLanguage()
   const t = dict.serviceStatus
   const locale = LOCALES[language]
+  useDocumentTitle(t.title)
 
   const statusLabel: Record<ServiceStatusLevel, string> = {
     operational: t.statusOperational,

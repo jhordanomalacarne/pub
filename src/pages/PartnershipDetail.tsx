@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { PartnerNetwork } from "../components/ui/PartnerNetwork"
 import { getPartnershipCategoryBySlug } from "../lib/partnershipCategories"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 export function PartnershipDetail() {
@@ -9,6 +10,7 @@ export function PartnershipDetail() {
   const category = getPartnershipCategoryBySlug(slug)
   const { dict, language } = useLanguage()
   const t = dict.partnerships
+  useDocumentTitle(category?.label[language])
 
   if (!category) {
     return <Navigate to="/parcerias" replace />

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
 import { Card, type CardTone } from "../components/ui/Card"
 import { getServicesForAudience, getServiceTranslation, type ServiceAudience } from "../lib/services"
+import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import { useLanguage } from "../i18n/LanguageContext"
 
 const AUDIENCES: ServiceAudience[] = ["public", "partners", "academic"]
@@ -22,6 +23,7 @@ const TAB_TONE_ACTIVE: Record<ServiceAudience, string> = {
 export function Services() {
   const { dict } = useLanguage()
   const t = dict.services
+  useDocumentTitle(t.title)
   const [searchParams] = useSearchParams()
   const [audience, setAudience] = useState<ServiceAudience>("public")
 
