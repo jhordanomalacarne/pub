@@ -28,7 +28,14 @@ export function ServiceDetail() {
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-navy-950 text-gold-500">
             <service.icon />
           </div>
-          <p className="text-ink-soft leading-relaxed">{item.details}</p>
+          <div>
+            <p className="text-ink-soft leading-relaxed">{item.details}</p>
+            {service.audience === "academic" && (
+              <span className="mt-3 inline-block rounded-full bg-gold-100 px-3 py-1 text-xs font-medium text-gold-600">
+                {t.academicBadge}
+              </span>
+            )}
+          </div>
         </div>
 
         <h2 className="mt-10 font-serif text-xl font-semibold text-heading">{t.featuresTitle}</h2>

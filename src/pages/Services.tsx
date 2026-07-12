@@ -60,11 +60,18 @@ export function Services() {
                   </div>
                   <h2 className="mt-4 font-serif text-lg font-semibold text-heading">{item.name}</h2>
                   <p className="mt-2 text-sm text-ink-soft">{item.description}</p>
-                  {!service.url && (
-                    <span className="mt-4 inline-block rounded-full bg-surface px-3 py-1 text-xs font-medium text-ink-soft">
-                      {t.comingSoon}
-                    </span>
-                  )}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {service.audience === "academic" && (
+                      <span className="inline-block rounded-full bg-gold-100 px-3 py-1 text-xs font-medium text-gold-600">
+                        {t.academicBadge}
+                      </span>
+                    )}
+                    {!service.url && (
+                      <span className="inline-block rounded-full bg-surface px-3 py-1 text-xs font-medium text-ink-soft">
+                        {t.comingSoon}
+                      </span>
+                    )}
+                  </div>
                 </Card>
               </Link>
             )

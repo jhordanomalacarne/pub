@@ -326,6 +326,7 @@ export const en: typeof pt = {
       "In addition to all public and partner services, the IFRO academic community has access to these additional tools.",
     pipelineNote:
       "We are developing a complete development pipeline (CI/CD), to be made available for the software development workflow in classes.",
+    academicBadge: "Classes and projects",
     items: {
       wiki: {
         name: "Wiki",
@@ -570,6 +571,28 @@ export const en: typeof pt = {
           "Scheduled local and remote copies",
           "Backup integrity verification",
           "On-demand restoration",
+        ],
+      },
+      zabbix: {
+        name: "Zabbix",
+        description: "Infrastructure monitoring and alerting platform for partner systems.",
+        details:
+          "Server, network and application monitoring tool, with real-time alert generation to support the operation and availability of partner systems.",
+        features: [
+          "Server and network monitoring",
+          "Configurable real-time alerts",
+          "Performance history and charts",
+        ],
+      },
+      grafana: {
+        name: "Grafana",
+        description: "Real-time metrics and infrastructure indicator visualization dashboards.",
+        details:
+          "Metrics visualization tool used to create real-time dashboards on partners' infrastructure and systems, integrating with different data sources.",
+        features: [
+          "Customizable real-time dashboards",
+          "Integration with several data sources",
+          "Visual alerts based on metric thresholds",
         ],
       },
       "ide-eclipse-che": {

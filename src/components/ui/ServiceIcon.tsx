@@ -332,3 +332,21 @@ export function BackupIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function AlertBellIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M12 3a5 5 0 0 0-5 5v3.5L5 15h14l-2-3.5V8a5 5 0 0 0-5-5Z" />
+      <path d="M9.5 18a2.5 2.5 0 0 0 5 0" />
+    </Base>
+  )
+}
+
+export function LineChartIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="1.5" />
+      <path d="M6.5 15l3-5 3 3 5-7" />
+    </Base>
+  )
+}

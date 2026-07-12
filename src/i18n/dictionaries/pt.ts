@@ -328,6 +328,7 @@ export const pt = {
       "Além de todos os serviços públicos e de parceiros, a comunidade acadêmica do IFRO tem acesso a estas ferramentas adicionais.",
     pipelineNote:
       "Estamos desenvolvendo uma esteira de desenvolvimento completa (CI/CD), a ser disponibilizada para o fluxo de desenvolvimento de software em aulas.",
+    academicBadge: "Aulas e projetos",
     items: {
       wiki: {
         name: "Wiki",
@@ -572,6 +573,28 @@ export const pt = {
           "Cópias locais e remotas agendadas",
           "Verificação de integridade dos backups",
           "Restauração sob demanda",
+        ],
+      },
+      zabbix: {
+        name: "Zabbix",
+        description: "Plataforma de monitoramento de infraestrutura e alertas para sistemas de parceiros.",
+        details:
+          "Ferramenta de monitoramento de servidores, redes e aplicações, com geração de alertas em tempo real para apoiar a operação e a disponibilidade dos sistemas de parceiros.",
+        features: [
+          "Monitoramento de servidores e redes",
+          "Alertas configuráveis em tempo real",
+          "Histórico e gráficos de desempenho",
+        ],
+      },
+      grafana: {
+        name: "Grafana",
+        description: "Painéis de visualização de métricas e indicadores de infraestrutura em tempo real.",
+        details:
+          "Ferramenta de visualização de métricas utilizada para criar painéis em tempo real sobre a infraestrutura e os sistemas de parceiros, integrando-se a diferentes fontes de dados.",
+        features: [
+          "Painéis personalizáveis em tempo real",
+          "Integração com diversas fontes de dados",
+          "Alertas visuais por limite de métricas",
         ],
       },
       "ide-eclipse-che": {

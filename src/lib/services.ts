@@ -29,6 +29,8 @@ import {
   CameraStorageIcon,
   ObjectStorageIcon,
   BackupIcon,
+  AlertBellIcon,
+  LineChartIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
@@ -80,6 +82,9 @@ export const SERVICES: Service[] = [
   { slug: "armazenamento-cameras", icon: CameraStorageIcon, audience: "partners" },
   { slug: "armazenamento-objetos", icon: ObjectStorageIcon, audience: "partners" },
   { slug: "backup", icon: BackupIcon, audience: "partners" },
+  { slug: "zabbix", icon: AlertBellIcon, audience: "partners" },
+  { slug: "grafana", icon: LineChartIcon, audience: "partners" },
+  { slug: "firewall", icon: ShieldIcon, audience: "partners" },
 
   // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
   { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },
@@ -87,7 +92,6 @@ export const SERVICES: Service[] = [
   { slug: "pnetlab", icon: LabNetworkIcon, audience: "academic" },
   { slug: "maquinas-virtuais", icon: VmIcon, audience: "academic" },
   { slug: "proxmox", icon: ServerStackIcon, audience: "academic" },
-  { slug: "firewall", icon: ShieldIcon, audience: "academic" },
 ]
 
 const AUDIENCE_LEVEL: Record<ServiceAudience, number> = {

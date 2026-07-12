@@ -28,6 +28,8 @@ export const SERVICE_STATUS: Record<string, { level: ServiceStatusLevel; uptime:
   "armazenamento-cameras": { level: "operational", uptime: 99.5 },
   "armazenamento-objetos": { level: "operational", uptime: 99.9 },
   backup: { level: "operational", uptime: 99.9 },
+  zabbix: { level: "operational", uptime: 99.8 },
+  grafana: { level: "operational", uptime: 99.9 },
   "ide-eclipse-che": { level: "operational", uptime: 99.4 },
   "desktop-remoto": { level: "operational", uptime: 99.3 },
   pnetlab: { level: "operational", uptime: 99.6 },
