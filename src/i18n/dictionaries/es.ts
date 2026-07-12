@@ -133,24 +133,19 @@ export const es: typeof pt = {
       "El Laboratório Zero forma parte del Grupo de Investigación en Tecnología, Comunicación y Gobernanza, reuniendo infraestructura de red, proyectos aplicados y formación de investigadores.",
     researchLinesTitle: "Líneas de investigación",
     researchLines: {
-      network: {
-        title: "Infraestructura de red",
-        description: "Simulación, experimentación y desarrollo de soluciones de red para la enseñanza y la investigación.",
-      },
-      governance: {
-        title: "Gobernanza digital",
-        description: "Estudio de políticas, regulación y gobernanza de tecnologías de comunicación y datos.",
-      },
-      communication: {
-        title: "Comunicación y tecnología",
-        description: "Intersección entre tecnología, comunicación pública y producción de conocimiento abierto.",
-      },
-      training: {
-        title: "Formación",
+      governanceCommunication: {
+        title: "Gobernanza y Comunicación",
         description:
-          "Cursos, talleres y orientación de estudiantes de grado y posgrado involucrados en los proyectos del laboratorio.",
+          "Investiga cómo las organizaciones gestionan sus datos, información y procesos de comunicación ante las transformaciones digitales. Abarca la gobernanza de datos y de TI, el cumplimiento de la LGPD, la transparencia, la gestión del conocimiento, la automatización de procesos y el desarrollo de software y sistemas de información que respalden estas prácticas, incluyendo soluciones basadas en inteligencia artificial para la toma de decisiones, teniendo como horizonte la soberanía informacional y la sostenibilidad de las organizaciones públicas y privadas.",
+      },
+      networkSecurity: {
+        title: "Redes y Seguridad",
+        description:
+          "Investiga el diseño, la operación y la protección de infraestructuras de red y de computación, desde el centro de datos hasta el borde. Abarca arquitecturas de red, virtualización, monitoreo, criptografía, respuesta a incidentes y seguridad de aplicaciones y de sistemas de IA, con énfasis en soluciones que fortalezcan la protección y la soberanía de datos en entornos académicos, públicos y corporativos.",
       },
     },
+    researchLinesCnpqNote: "Grupo certificado en el {link}.",
+    researchLinesCnpqLink: "Directorio de los Grupos de Investigación del CNPq",
     datacenterTitle: "Nuestra infraestructura de centro de datos",
     datacenterIntro:
       "La operación del laboratorio se sustenta en un pequeño centro de datos propio, utilizado tanto para los proyectos de investigación como para los servicios públicos puestos a disposición de la comunidad.",

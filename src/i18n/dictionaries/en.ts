@@ -133,24 +133,19 @@ export const en: typeof pt = {
       "Laboratório Zero is part of the Technology, Communication and Governance Research Group, bringing together network infrastructure, applied projects and researcher training.",
     researchLinesTitle: "Research areas",
     researchLines: {
-      network: {
-        title: "Network infrastructure",
-        description: "Simulation, experimentation and development of network solutions for teaching and research.",
-      },
-      governance: {
-        title: "Digital governance",
-        description: "Study of policies, regulation and governance of communication and data technologies.",
-      },
-      communication: {
-        title: "Communication and technology",
-        description: "Intersection of technology, public communication and open knowledge production.",
-      },
-      training: {
-        title: "Training",
+      governanceCommunication: {
+        title: "Governance and Communication",
         description:
-          "Courses, workshops and mentoring for undergraduate and graduate students involved in the laboratory's projects.",
+          "Investigates how organizations govern their data, information and communication processes amid digital transformation. Covers data and IT governance, LGPD compliance, transparency, knowledge management, process automation and the development of software and information systems that support these practices — including AI-based solutions for decision-making — with informational sovereignty and the sustainability of public and private organizations as a guiding horizon.",
+      },
+      networkSecurity: {
+        title: "Networks and Security",
+        description:
+          "Investigates the design, operation and protection of network and computing infrastructures, from the datacenter to the edge. Covers network architectures, virtualization, monitoring, cryptography, incident response and the security of applications and AI systems, with an emphasis on solutions that strengthen data protection and sovereignty in academic, public and corporate environments.",
       },
     },
+    researchLinesCnpqNote: "Group certified in the {link}.",
+    researchLinesCnpqLink: "CNPq Research Group Directory",
     datacenterTitle: "Our datacenter infrastructure",
     datacenterIntro:
       "The laboratory's operation is supported by a small in-house datacenter, used both for research projects and for the public services made available to the community.",

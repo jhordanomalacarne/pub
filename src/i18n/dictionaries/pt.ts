@@ -131,27 +131,19 @@ export const pt = {
       "O Laboratório Zero integra o Grupo de Pesquisa em Tecnologia, Comunicação e Governança, reunindo infraestrutura de rede, projetos aplicados e formação de pesquisadores.",
     researchLinesTitle: "Linhas de pesquisa",
     researchLines: {
-      network: {
-        title: "Infraestrutura de rede",
+      governanceCommunication: {
+        title: "Governança e Comunicação",
         description:
-          "Simulação, experimentação e desenvolvimento de soluções de rede para ensino e pesquisa.",
+          "Investiga como organizações governam seus dados, informações e processos de comunicação diante das transformações digitais. Abrange governança de dados e de TI, conformidade com a LGPD, transparência, gestão do conhecimento, automação de processos e o desenvolvimento de software e sistemas de informação que apoiem essas práticas incluindo soluções baseadas em inteligência artificial para a tomada de decisão, tendo como horizonte a soberania informacional e a sustentabilidade das organizações públicas e privadas.",
       },
-      governance: {
-        title: "Governança digital",
+      networkSecurity: {
+        title: "Redes e Segurança",
         description:
-          "Estudo de políticas, regulação e governança de tecnologias de comunicação e dados.",
-      },
-      communication: {
-        title: "Comunicação e tecnologia",
-        description:
-          "Interseção entre tecnologia, comunicação pública e produção de conhecimento aberto.",
-      },
-      training: {
-        title: "Formação",
-        description:
-          "Cursos, oficinas e orientação de alunos de graduação e pós-graduação envolvidos nos projetos do laboratório.",
+          "Investiga a concepção, operação e proteção de infraestruturas de rede e de computação, do datacenter à borda. Abrange arquiteturas de redes, virtualização, monitoramento, criptografia, resposta a incidentes e segurança de aplicações e de sistemas de IA, com ênfase em soluções que fortaleçam a proteção e a soberania de dados em ambientes acadêmicos, públicos e corporativos.",
       },
     },
+    researchLinesCnpqNote: "Grupo certificado no {link}.",
+    researchLinesCnpqLink: "Diretório dos Grupos de Pesquisa do CNPq",
     datacenterTitle: "Nossa infraestrutura de datacenter",
     datacenterIntro:
       "A operação do laboratório é sustentada por um pequeno datacenter próprio, utilizado tanto para os projetos de pesquisa quanto para os serviços públicos disponibilizados à comunidade.",

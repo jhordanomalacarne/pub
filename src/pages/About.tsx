@@ -20,11 +20,10 @@ export function About() {
     dict.about.datacenterItems.backup,
   ]
   const researchLines = [
-    dict.about.researchLines.network,
-    dict.about.researchLines.governance,
-    dict.about.researchLines.communication,
-    dict.about.researchLines.training,
+    dict.about.researchLines.governanceCommunication,
+    dict.about.researchLines.networkSecurity,
   ]
+  const [cnpqBefore, cnpqAfter] = t.researchLinesCnpqNote.split("{link}")
 
   return (
     <>
@@ -56,6 +55,18 @@ export function About() {
             </Card>
           ))}
         </div>
+        <p className="mt-6 text-sm text-ink-soft">
+          {cnpqBefore}
+          <a
+            href="https://dgp.cnpq.br/dgp/espelhogrupo/6251751741657254"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-heading underline transition-colors hover:text-navy-700 dark:hover:text-white"
+          >
+            {t.researchLinesCnpqLink}
+          </a>
+          {cnpqAfter}
+        </p>
 
         <h2 id="datacenter" className="mt-12 scroll-mt-24 font-serif text-2xl font-semibold text-heading">
           {t.datacenterTitle}
