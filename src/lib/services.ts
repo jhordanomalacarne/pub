@@ -116,15 +116,22 @@ export const SERVICES: Service[] = [
   { slug: "gerenciamento-webscraping", icon: WebScrapIcon, audience: "academic" },
 ]
 
-const AUDIENCE_LEVEL: Record<ServiceAudience, number> = {
-  public: 0,
-  partners: 1,
-  academic: 2,
+/**
+ * Ordem de exibição das camadas para cada audiência: a camada selecionada
+ * vem primeiro, seguida das demais camadas às quais ela também tem acesso.
+ */
+const AUDIENCE_ORDER: Record<ServiceAudience, ServiceAudience[]> = {
+  public: ["public"],
+  partners: ["partners", "public"],
+  academic: ["academic", "partners", "public"],
 }
 
-/** Retorna os serviços visíveis para uma audiência, de forma cumulativa. */
+/** Retorna os serviços visíveis para uma audiência, de forma cumulativa e com a
+ * camada selecionada listada primeiro. */
 export function getServicesForAudience(audience: ServiceAudience): Service[] {
-  return SERVICES.filter((service) => AUDIENCE_LEVEL[service.audience] <= AUDIENCE_LEVEL[audience])
+  return AUDIENCE_ORDER[audience].flatMap((tier) =>
+    SERVICES.filter((service) => service.audience === tier),
+  )
 }
 
 export function getServiceBySlug(slug: string | undefined): Service | undefined {
