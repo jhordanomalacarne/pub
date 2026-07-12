@@ -70,7 +70,7 @@ export const pt = {
     eyebrow: "Grupo de Pesquisa em Tecnologia, Comunicação e Governança",
     title: "Laboratório Zero",
     description:
-      "Um laboratório de pesquisa dedicado a infraestrutura de rede, projetos aplicados, publicações e formação de pesquisadores e alunos, em parceria com instituições acadêmicas e públicas.",
+      "Um laboratório de pesquisa dedicado à infraestrutura de rede, projetos aplicados, publicações científicas e formação de pesquisadores e alunos. Atuamos em parceria com instituições acadêmicas, professores e pesquisadores, organizações públicas e privadas, startups e ONGs, oferecendo suporte tecnológico a projetos especializados, com foco em IA e soberania e proteção de dados.",
     ctaProjects: "Conhecer os projetos",
     ctaAbout: "Sobre o laboratório",
     areasTitle: "Áreas de atuação",

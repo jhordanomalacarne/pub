@@ -72,7 +72,7 @@ export const es: typeof pt = {
     eyebrow: "Grupo de Investigación en Tecnología, Comunicación y Gobernanza",
     title: "Laboratório Zero",
     description:
-      "Un laboratorio de investigación dedicado a la infraestructura de red, proyectos aplicados, publicaciones y formación de investigadores y estudiantes, en asociación con instituciones académicas y públicas.",
+      "Un laboratorio de investigación dedicado a la infraestructura de red, proyectos aplicados, publicaciones científicas y formación de investigadores y estudiantes. Trabajamos en alianza con instituciones académicas, profesores e investigadores, organizaciones públicas y privadas, startups y ONG, ofreciendo soporte tecnológico a proyectos especializados, con enfoque en IA y soberanía y protección de datos.",
     ctaProjects: "Conocer los proyectos",
     ctaAbout: "Sobre el laboratorio",
     areasTitle: "Áreas de actuación",
