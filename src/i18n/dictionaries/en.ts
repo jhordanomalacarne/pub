@@ -650,6 +650,39 @@ export const en: typeof pt = {
           "Configurable detection scenarios",
         ],
       },
+      "captive-portal": {
+        name: "Captive Portal",
+        description: "Authentication portal for controlled access to partners' Wi-Fi networks.",
+        details:
+          "Captive portal service used to authenticate and control user access to partner institutions' Wi-Fi networks, with customizable authentication options.",
+        features: [
+          "User authentication on the Wi-Fi network",
+          "Customizable access page",
+          "Authenticated access reports",
+        ],
+      },
+      "map-server": {
+        name: "Map Server",
+        description: "Map server for publishing and consuming geographic data in partner projects.",
+        details:
+          "Map server used to publish and consume geographic data (vector and raster layers) in geoprocessing projects developed with partners.",
+        features: [
+          "Publishing of vector and raster map layers",
+          "Integration via WMS/WFS standards",
+          "Support for multiple simultaneous projects",
+        ],
+      },
+      opendronemap: {
+        name: "OpenDroneMap",
+        description: "Drone aerial imagery processing to generate maps and 3D models.",
+        details:
+          "Platform for processing images captured by drones, generating orthomosaics, digital elevation models and 3D models for partners' mapping projects.",
+        features: [
+          "Generation of orthomosaics and 3D models",
+          "Processing of drone-captured imagery",
+          "Export in GIS-compatible formats",
+        ],
+      },
       "ide-eclipse-che": {
         name: "Eclipse Che IDE",
         description: "Cloud-based integrated development environment, accessible directly from the browser.",

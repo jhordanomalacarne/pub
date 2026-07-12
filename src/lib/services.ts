@@ -38,6 +38,9 @@ import {
   DnsManagementIcon,
   RoboShadowIcon,
   CrowdSecIcon,
+  CaptivePortalIcon,
+  MapServerIcon,
+  DroneMapIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
@@ -97,6 +100,9 @@ export const SERVICES: Service[] = [
   { slug: "gerenciamento-dns", icon: DnsManagementIcon, audience: "partners" },
   { slug: "roboshadow", icon: RoboShadowIcon, audience: "partners" },
   { slug: "crowdsec", icon: CrowdSecIcon, audience: "partners" },
+  { slug: "captive-portal", icon: CaptivePortalIcon, audience: "partners" },
+  { slug: "map-server", icon: MapServerIcon, audience: "partners" },
+  { slug: "opendronemap", icon: DroneMapIcon, audience: "partners" },
 
   // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
   { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },

@@ -41,6 +41,9 @@ export const SERVICE_STATUS: Record<string, { level: ServiceStatusLevel; uptime:
   "gerenciamento-dns": { level: "operational", uptime: 99.9 },
   roboshadow: { level: "operational", uptime: 99.6 },
   crowdsec: { level: "operational", uptime: 99.8 },
+  "captive-portal": { level: "operational", uptime: 99.7 },
+  "map-server": { level: "operational", uptime: 99.6 },
+  opendronemap: { level: "operational", uptime: 99.5 },
   "opencode-llm-local": { level: "operational", uptime: 99.4 },
   "gerenciamento-webscraping": { level: "operational", uptime: 99.3 },
 }

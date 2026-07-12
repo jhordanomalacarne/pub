@@ -420,3 +420,36 @@ export function CrowdSecIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function CaptivePortalIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="4" width="17" height="13" rx="1.5" />
+      <path d="M9 10.3a3 3 0 0 1 6 0" />
+      <rect x="10" y="10.3" width="4" height="3.7" rx="0.8" />
+      <path d="M8 20h8" />
+    </Base>
+  )
+}
+
+export function MapServerIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2Z" />
+      <path d="M9 4v14M15 6v14" />
+    </Base>
+  )
+}
+
+export function DroneMapIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="6" cy="6" r="2" />
+      <circle cx="18" cy="6" r="2" />
+      <circle cx="6" cy="18" r="2" />
+      <circle cx="18" cy="18" r="2" />
+      <path d="M7.4 7.4 10.5 10.5M16.6 7.4 13.5 10.5M7.4 16.6 10.5 13.5M16.6 16.6 13.5 13.5" />
+      <rect x="10" y="10" width="4" height="4" rx="1" />
+    </Base>
+  )
+}

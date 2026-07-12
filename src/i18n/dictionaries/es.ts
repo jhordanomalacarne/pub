@@ -650,6 +650,39 @@ export const es: typeof pt = {
           "Escenarios de detección configurables",
         ],
       },
+      "captive-portal": {
+        name: "Portal Cautivo (Captive Portal)",
+        description: "Portal de autenticación para el acceso controlado a redes Wi-Fi de socios.",
+        details:
+          "Servicio de portal cautivo utilizado para autenticar y controlar el acceso de usuarios a las redes Wi-Fi de instituciones asociadas, con opciones de autenticación personalizables.",
+        features: [
+          "Autenticación de usuarios en la red Wi-Fi",
+          "Personalización de la página de acceso",
+          "Informes de accesos autenticados",
+        ],
+      },
+      "map-server": {
+        name: "Map Server",
+        description: "Servidor de mapas para la publicación y consumo de datos geográficos de proyectos de socios.",
+        details:
+          "Servidor de mapas utilizado para publicar y consumir datos geográficos (capas vectoriales y ráster) en proyectos de geoprocesamiento desarrollados con socios.",
+        features: [
+          "Publicación de capas de mapas vectoriales y ráster",
+          "Integración mediante estándares WMS/WFS",
+          "Soporte para múltiples proyectos simultáneos",
+        ],
+      },
+      opendronemap: {
+        name: "OpenDroneMap",
+        description: "Procesamiento de imágenes aéreas de drones para generar mapas y modelos 3D.",
+        details:
+          "Plataforma para el procesamiento de imágenes capturadas por drones, generando ortomosaicos, modelos digitales de elevación y modelos 3D para proyectos de mapeo de socios.",
+        features: [
+          "Generación de ortomosaicos y modelos 3D",
+          "Procesamiento de imágenes capturadas por drones",
+          "Exportación en formatos compatibles con SIG",
+        ],
+      },
       "ide-eclipse-che": {
         name: "IDE Eclipse Che",
         description: "Entorno de desarrollo integrado en la nube, accesible directamente desde el navegador.",
