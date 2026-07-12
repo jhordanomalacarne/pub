@@ -1,5 +1,4 @@
 export const ABOUT_SECTIONS = [
-  { id: "missao", key: "mission" },
   { id: "linhas-pesquisa", key: "researchLines" },
   { id: "datacenter", key: "datacenter" },
   { id: "fotos", key: "photos" },

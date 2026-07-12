@@ -14,7 +14,6 @@ export const pt = {
     members: "Membros",
   },
   aboutSections: {
-    mission: "Missão",
     researchLines: "Linhas de pesquisa",
     datacenter: "Infraestrutura",
     photos: "Fotos",
@@ -130,12 +129,6 @@ export const pt = {
     title: "O laboratório",
     description:
       "O Laboratório Zero integra o Grupo de Pesquisa em Tecnologia, Comunicação e Governança, reunindo infraestrutura de rede, projetos aplicados e formação de pesquisadores.",
-    gtecNote:
-      "O Laboratório Zero é vinculado ao {gtec}.",
-    gtecName: "GTEC — Grupo de Pesquisa em Tecnologia, Comunicação e Governança",
-    missionTitle: "Missão",
-    missionText:
-      "Produzir pesquisa aplicada e formação em rede de computadores, comunicação e governança digital, articulando infraestrutura própria, parcerias institucionais e a participação ativa de alunos e pesquisadores em projetos de impacto acadêmico e social.",
     researchLinesTitle: "Linhas de pesquisa",
     researchLines: {
       network: {

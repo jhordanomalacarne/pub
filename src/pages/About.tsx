@@ -4,7 +4,6 @@ import { Card } from "../components/ui/Card"
 import { ABOUT_SECTIONS } from "../lib/aboutSections"
 import { useHashScroll } from "../hooks/useHashScroll"
 import { useLanguage } from "../i18n/LanguageContext"
-import gtecLogo from "../assets/gtec-logo.png"
 
 const PHOTO_PLACEHOLDERS = Array.from({ length: 6 }, (_, i) => i + 1)
 
@@ -15,7 +14,6 @@ export function About() {
   useHashScroll()
   const { dict } = useLanguage()
   const t = dict.about
-  const [gtecBefore, gtecAfter] = t.gtecNote.split("{gtec}")
   const datacenterItems = [
     dict.about.datacenterItems.proxmox,
     dict.about.datacenterItems.aiWorkstation,
@@ -47,21 +45,7 @@ export function About() {
       </nav>
 
       <section className="mx-auto max-w-4xl px-6 py-16">
-        <div className="flex items-center gap-4 rounded-lg border border-border bg-surface px-6 py-5">
-          <img src={gtecLogo} alt="GTEC" className="h-14 w-auto shrink-0" />
-          <p className="text-sm text-ink-soft">
-            {gtecBefore}
-            <strong className="text-ink">{t.gtecName}</strong>
-            {gtecAfter}
-          </p>
-        </div>
-
-        <h2 id="missao" className="mt-12 scroll-mt-24 font-serif text-2xl font-semibold text-heading">
-          {t.missionTitle}
-        </h2>
-        <p className="mt-4 text-ink-soft leading-relaxed">{t.missionText}</p>
-
-        <h2 id="linhas-pesquisa" className="mt-12 scroll-mt-24 font-serif text-2xl font-semibold text-heading">
+        <h2 id="linhas-pesquisa" className="scroll-mt-24 font-serif text-2xl font-semibold text-heading">
           {t.researchLinesTitle}
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">

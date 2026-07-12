@@ -16,7 +16,6 @@ export const en: typeof pt = {
     members: "Members",
   },
   aboutSections: {
-    mission: "Mission",
     researchLines: "Research areas",
     datacenter: "Infrastructure",
     photos: "Photos",
@@ -132,11 +131,6 @@ export const en: typeof pt = {
     title: "The laboratory",
     description:
       "Laboratório Zero is part of the Technology, Communication and Governance Research Group, bringing together network infrastructure, applied projects and researcher training.",
-    gtecNote: "Laboratório Zero is affiliated with {gtec}.",
-    gtecName: "GTEC — Technology, Communication and Governance Research Group",
-    missionTitle: "Mission",
-    missionText:
-      "To produce applied research and training in computer networking, communication and digital governance, combining our own infrastructure, institutional partnerships and the active participation of students and researchers in projects of academic and social impact.",
     researchLinesTitle: "Research areas",
     researchLines: {
       network: {
