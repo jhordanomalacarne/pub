@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
 import { useLanguage } from "../../i18n/LanguageContext"
 import gtecLogo from "../../assets/gtec-logo.png"
-import lab0LogoNavy from "../../assets/lab0-logo-navy.png"
-import lab0LogoLight from "../../assets/lab0-logo-light.png"
+import lab0LogoNavy from "../../assets/lab0-logo-navy.svg"
+import lab0LogoLight from "../../assets/lab0-logo-light.svg"
 
 export function Footer() {
   const { dict } = useLanguage()
