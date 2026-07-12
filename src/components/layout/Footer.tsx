@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
 import { useLanguage } from "../../i18n/LanguageContext"
 import gtecLogo from "../../assets/gtec-logo.png"
+import lab0LogoNavy from "../../assets/lab0-logo-navy.png"
+import lab0LogoLight from "../../assets/lab0-logo-light.png"
 
 export function Footer() {
   const { dict } = useLanguage()
@@ -12,9 +14,12 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <img src={gtecLogo} alt="GTEC" className="h-10 w-auto" />
-            <span className="mt-3 block font-serif text-lg font-semibold text-heading">
-              Laboratório Zero
-            </span>
+            <img src={lab0LogoNavy} alt="Laboratório Zero" className="mt-3 h-8 w-auto dark:hidden" />
+            <img
+              src={lab0LogoLight}
+              alt="Laboratório Zero"
+              className="mt-3 hidden h-8 w-auto dark:block"
+            />
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">{dict.footer.description}</p>
           </div>
 
