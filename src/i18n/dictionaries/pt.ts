@@ -308,6 +308,51 @@ export const pt = {
     achievedResultsLabel: "Resultados alcançados",
     referenceDocumentLabel: "Documento de referência",
     responsiblePartiesLabel: "Responsáveis envolvidos",
+    howToPartner: {
+      cta: "Quer se tornar parceiro? Veja como →",
+      eyebrow: "Parcerias",
+      title: "Como se tornar parceiro",
+      description:
+        "Conheça o caminho para formalizar uma parceria com o Laboratório Zero, das primeiras conversas até o acesso aos serviços.",
+      stepsTitle: "Como funciona",
+      steps: [
+        {
+          title: "Manifestação de interesse",
+          description:
+            "A instituição ou pessoa interessada entra em contato com o laboratório e apresenta brevemente o objetivo da parceria pretendida.",
+        },
+        {
+          title: "Análise de aderência",
+          description:
+            "A equipe do laboratório avalia se a proposta está alinhada às linhas de pesquisa, à capacidade técnica disponível e às diretrizes institucionais do Laboratório Zero e do IFRO.",
+        },
+        {
+          title: "Formalização",
+          description:
+            "Escopo, contrapartidas, responsabilidades e prazos são definidos em conjunto e registrados em um documento de referência.",
+        },
+        {
+          title: "Onboarding",
+          description:
+            "A instituição parceira recebe acesso aos serviços e recursos definidos, com apresentação da equipe e dos canais de acompanhamento.",
+        },
+      ],
+      counterpartsTitle: "Tipos de contrapartida aceitos",
+      counterparts: [
+        "Infraestrutura ou equipamentos",
+        "Recursos financeiros ou bolsas",
+        "Dados, conteúdo ou casos de uso para pesquisa",
+        "Conhecimento técnico, mentoria ou coorientação",
+        "Divulgação institucional e articulação em rede",
+      ],
+      counterpartsNote:
+        "Conteúdo ilustrativo — substitua pelos tipos de contrapartida realmente aceitos pelo laboratório.",
+      eligibilityTitle: "Pronto para começar?",
+      eligibilityText:
+        "Preencha o formulário de elegibilidade para dar o primeiro passo. Nossa equipe entra em contato para avançar com a análise de aderência.",
+      ctaEligibility: "Verificar elegibilidade",
+      eligibilityComingSoon: "Link do formulário em breve",
+    },
   },
   services: {
     eyebrow: "Serviços",

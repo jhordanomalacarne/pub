@@ -11,11 +11,27 @@ export function Partnerships() {
   useHashScroll()
   const { dict, language } = useLanguage()
   const t = dict.partnerships
+  const h = t.howToPartner
   useDocumentTitle(t.title)
 
   return (
     <>
       <PageHero eyebrow={t.eyebrow} title={t.title} description={t.description} />
+
+      <section className="mx-auto max-w-6xl px-6 pt-10">
+        <Card className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="font-serif text-lg font-semibold text-heading">{h.title}</h2>
+            <p className="mt-1 text-sm text-ink-soft">{h.description}</p>
+          </div>
+          <Link
+            to="/parcerias/como-participar"
+            className="shrink-0 rounded-md bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+          >
+            {h.cta}
+          </Link>
+        </Card>
+      </section>
 
       <PartnerCarousel />
 

@@ -307,6 +307,51 @@ export const es: typeof pt = {
     achievedResultsLabel: "Resultados alcanzados",
     referenceDocumentLabel: "Documento de referencia",
     responsiblePartiesLabel: "Responsables involucrados",
+    howToPartner: {
+      cta: "¿Quiere convertirse en socio? Vea cómo →",
+      eyebrow: "Alianzas",
+      title: "Cómo convertirse en socio",
+      description:
+        "Conozca el camino para formalizar una alianza con el Laboratório Zero, desde las primeras conversaciones hasta el acceso a los servicios.",
+      stepsTitle: "Cómo funciona",
+      steps: [
+        {
+          title: "Manifestación de interés",
+          description:
+            "La institución o persona interesada se pone en contacto con el laboratorio y presenta brevemente el objetivo de la alianza pretendida.",
+        },
+        {
+          title: "Análisis de adherencia",
+          description:
+            "El equipo del laboratorio evalúa si la propuesta está alineada con las líneas de investigación, la capacidad técnica disponible y las directrices institucionales del Laboratório Zero y del IFRO.",
+        },
+        {
+          title: "Formalización",
+          description:
+            "El alcance, las contrapartidas, las responsabilidades y los plazos se definen en conjunto y se registran en un documento de referencia.",
+        },
+        {
+          title: "Onboarding",
+          description:
+            "La institución asociada recibe acceso a los servicios y recursos definidos, con presentación del equipo y de los canales de seguimiento.",
+        },
+      ],
+      counterpartsTitle: "Tipos de contrapartida aceptados",
+      counterparts: [
+        "Infraestructura o equipos",
+        "Recursos financieros o becas",
+        "Datos, contenido o casos de uso para investigación",
+        "Conocimiento técnico, mentoría o codirección",
+        "Difusión institucional y articulación en red",
+      ],
+      counterpartsNote:
+        "Contenido ilustrativo — sustitúyalo por los tipos de contrapartida realmente aceptados por el laboratorio.",
+      eligibilityTitle: "¿Listo para empezar?",
+      eligibilityText:
+        "Complete el formulario de elegibilidad para dar el primer paso. Nuestro equipo se pondrá en contacto para avanzar con el análisis de adherencia.",
+      ctaEligibility: "Verificar elegibilidad",
+      eligibilityComingSoon: "Enlace del formulario próximamente",
+    },
   },
   services: {
     eyebrow: "Servicios",

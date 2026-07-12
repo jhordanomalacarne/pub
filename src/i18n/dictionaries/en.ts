@@ -307,6 +307,51 @@ export const en: typeof pt = {
     achievedResultsLabel: "Results achieved",
     referenceDocumentLabel: "Reference document",
     responsiblePartiesLabel: "Responsible parties",
+    howToPartner: {
+      cta: "Want to become a partner? See how →",
+      eyebrow: "Partnerships",
+      title: "How to become a partner",
+      description:
+        "Learn the path to formalizing a partnership with Laboratório Zero, from the first conversations to gaining access to services.",
+      stepsTitle: "How it works",
+      steps: [
+        {
+          title: "Expression of interest",
+          description:
+            "The interested institution or person contacts the laboratory and briefly presents the goal of the intended partnership.",
+        },
+        {
+          title: "Fit analysis",
+          description:
+            "The laboratory team assesses whether the proposal aligns with the research lines, available technical capacity, and the institutional guidelines of Laboratório Zero and IFRO.",
+        },
+        {
+          title: "Formalization",
+          description:
+            "Scope, counterparts, responsibilities, and timelines are defined jointly and recorded in a reference document.",
+        },
+        {
+          title: "Onboarding",
+          description:
+            "The partner institution gets access to the defined services and resources, with an introduction to the team and follow-up channels.",
+        },
+      ],
+      counterpartsTitle: "Accepted types of counterpart",
+      counterparts: [
+        "Infrastructure or equipment",
+        "Financial resources or scholarships",
+        "Data, content, or use cases for research",
+        "Technical knowledge, mentoring, or co-supervision",
+        "Institutional outreach and network building",
+      ],
+      counterpartsNote:
+        "Illustrative content — replace with the counterpart types actually accepted by the laboratory.",
+      eligibilityTitle: "Ready to get started?",
+      eligibilityText:
+        "Fill out the eligibility form to take the first step. Our team will get in touch to move forward with the fit analysis.",
+      ctaEligibility: "Check eligibility",
+      eligibilityComingSoon: "Form link coming soon",
+    },
   },
   services: {
     eyebrow: "Services",
