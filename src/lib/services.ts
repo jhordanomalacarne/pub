@@ -34,6 +34,10 @@ import {
   LocalAiIcon,
   TokenManagementIcon,
   OpenCodeAiIcon,
+  WebScrapIcon,
+  DnsManagementIcon,
+  RoboShadowIcon,
+  CrowdSecIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
@@ -90,6 +94,9 @@ export const SERVICES: Service[] = [
   { slug: "firewall", icon: ShieldIcon, audience: "partners" },
   { slug: "llm-local", icon: LocalAiIcon, audience: "partners" },
   { slug: "gestao-modelos-tokens-ia", icon: TokenManagementIcon, audience: "partners" },
+  { slug: "gerenciamento-dns", icon: DnsManagementIcon, audience: "partners" },
+  { slug: "roboshadow", icon: RoboShadowIcon, audience: "partners" },
+  { slug: "crowdsec", icon: CrowdSecIcon, audience: "partners" },
 
   // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
   { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },
@@ -98,6 +105,7 @@ export const SERVICES: Service[] = [
   { slug: "maquinas-virtuais", icon: VmIcon, audience: "academic" },
   { slug: "proxmox", icon: ServerStackIcon, audience: "academic" },
   { slug: "opencode-llm-local", icon: OpenCodeAiIcon, audience: "academic" },
+  { slug: "gerenciamento-webscraping", icon: WebScrapIcon, audience: "academic" },
 ]
 
 const AUDIENCE_LEVEL: Record<ServiceAudience, number> = {

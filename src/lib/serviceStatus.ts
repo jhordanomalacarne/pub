@@ -38,5 +38,9 @@ export const SERVICE_STATUS: Record<string, { level: ServiceStatusLevel; uptime:
   firewall: { level: "operational", uptime: 100 },
   "llm-local": { level: "operational", uptime: 99.5 },
   "gestao-modelos-tokens-ia": { level: "operational", uptime: 99.7 },
+  "gerenciamento-dns": { level: "operational", uptime: 99.9 },
+  roboshadow: { level: "operational", uptime: 99.6 },
+  crowdsec: { level: "operational", uptime: 99.8 },
   "opencode-llm-local": { level: "operational", uptime: 99.4 },
+  "gerenciamento-webscraping": { level: "operational", uptime: 99.3 },
 }

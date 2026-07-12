@@ -617,6 +617,39 @@ export const es: typeof pt = {
           "Control de acceso por equipo y aplicación",
         ],
       },
+      "gerenciamento-dns": {
+        name: "Gestión de DNS",
+        description: "Panel para la gestión de zonas y registros DNS de dominios de socios.",
+        details:
+          "Plataforma para la gestión de zonas y registros DNS de dominios utilizados por socios, que permite configurar y actualizar registros de forma centralizada y segura.",
+        features: [
+          "Gestión centralizada de zonas DNS",
+          "Soporte para los principales tipos de registro",
+          "Historial de cambios",
+        ],
+      },
+      roboshadow: {
+        name: "RoboShadow",
+        description: "Escaneo de vulnerabilidades y evaluación de la superficie de ataque de sistemas de socios.",
+        details:
+          "Herramienta de escaneo de vulnerabilidades utilizada para evaluar la superficie de ataque de dispositivos y sistemas de instituciones asociadas, apoyando acciones preventivas de seguridad.",
+        features: [
+          "Escaneo periódico de vulnerabilidades",
+          "Informes de superficie de ataque",
+          "Priorización de riesgos por criticidad",
+        ],
+      },
+      crowdsec: {
+        name: "CrowdSec",
+        description: "Protección colaborativa contra amenazas, con bloqueo automático de IP maliciosas.",
+        details:
+          "Sistema de seguridad colaborativo que identifica comportamientos maliciosos y bloquea automáticamente IP de ataque, basándose en inteligencia de amenazas compartida por una comunidad global.",
+        features: [
+          "Bloqueo automático de IP maliciosas",
+          "Inteligencia de amenazas compartida",
+          "Escenarios de detección configurables",
+        ],
+      },
       "ide-eclipse-che": {
         name: "IDE Eclipse Che",
         description: "Entorno de desarrollo integrado en la nube, accesible directamente desde el navegador.",
@@ -692,6 +725,17 @@ export const es: typeof pt = {
           "Asistencia de código por IA local",
           "Sin envío de código a servicios externos",
           "Uso en clases y proyectos de programación",
+        ],
+      },
+      "gerenciamento-webscraping": {
+        name: "Gestión de Web Scraping",
+        description: "Entorno para la creación y ejecución de rutinas de recolección automatizada de datos (web scraping).",
+        details:
+          "Entorno puesto a disposición de la comunidad académica del IFRO para el desarrollo, ejecución y programación de rutinas de recolección automatizada de datos en la web, utilizado en clases y proyectos de investigación.",
+        features: [
+          "Ejecución y programación de rutinas de recolección",
+          "Almacenamiento de los datos recolectados",
+          "Uso en clases y proyectos de investigación",
         ],
       },
     },

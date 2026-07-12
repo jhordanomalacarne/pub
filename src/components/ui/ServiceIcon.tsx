@@ -379,3 +379,44 @@ export function OpenCodeAiIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function WebScrapIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 4v16M4 12h16M6.3 6.3l11.4 11.4M17.7 6.3 6.3 17.7" />
+    </Base>
+  )
+}
+
+export function DnsManagementIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M4 12h16" />
+      <path d="M12 4a12 12 0 0 1 0 16 12 12 0 0 1 0-16Z" />
+    </Base>
+  )
+}
+
+export function RoboShadowIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M10 3l6 2.5v5c0 4-2.5 6.5-6 8-3.5-1.5-6-4-6-8v-5L10 3Z" />
+      <circle cx="10" cy="10.5" r="2.3" />
+      <path d="M11.8 12.3l2 2" />
+    </Base>
+  )
+}
+
+export function CrowdSecIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M12 3l6 2.5v4c0 4.5-2.5 7-6 8.5-3.5-1.5-6-4-6-8.5v-4L12 3Z" />
+      <circle cx="9" cy="10" r="1.2" />
+      <circle cx="15" cy="10" r="1.2" />
+      <circle cx="12" cy="14" r="1.2" />
+      <path d="M9 10l3 4M15 10l-3 4" />
+    </Base>
+  )
+}

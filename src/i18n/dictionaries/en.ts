@@ -617,6 +617,39 @@ export const en: typeof pt = {
           "Access control by team and application",
         ],
       },
+      "gerenciamento-dns": {
+        name: "DNS Management",
+        description: "Dashboard for managing DNS zones and records of partners' domains.",
+        details:
+          "Platform for managing DNS zones and records of domains used by partners, allowing records to be configured and updated centrally and securely.",
+        features: [
+          "Centralized DNS zone management",
+          "Support for the main record types",
+          "Change history",
+        ],
+      },
+      roboshadow: {
+        name: "RoboShadow",
+        description: "Vulnerability scanning and attack surface assessment for partner systems.",
+        details:
+          "Vulnerability scanning tool used to assess the attack surface of partner institutions' devices and systems, supporting preventive security actions.",
+        features: [
+          "Periodic vulnerability scanning",
+          "Attack surface reports",
+          "Risk prioritization by severity",
+        ],
+      },
+      crowdsec: {
+        name: "CrowdSec",
+        description: "Collaborative threat protection, with automatic blocking of malicious IPs.",
+        details:
+          "Collaborative security system that identifies malicious behavior and automatically blocks attacking IPs, based on threat intelligence shared by a global community.",
+        features: [
+          "Automatic blocking of malicious IPs",
+          "Shared threat intelligence",
+          "Configurable detection scenarios",
+        ],
+      },
       "ide-eclipse-che": {
         name: "Eclipse Che IDE",
         description: "Cloud-based integrated development environment, accessible directly from the browser.",
@@ -692,6 +725,17 @@ export const en: typeof pt = {
           "Code assistance from a local AI",
           "No code sent to external services",
           "Used in programming classes and projects",
+        ],
+      },
+      "gerenciamento-webscraping": {
+        name: "Web Scraping Management",
+        description: "Environment for creating and running automated web data collection routines.",
+        details:
+          "Environment made available to the IFRO academic community for developing, running and scheduling automated web scraping routines, used in classes and research projects.",
+        features: [
+          "Execution and scheduling of scraping routines",
+          "Storage of collected data",
+          "Used in classes and research projects",
         ],
       },
     },
