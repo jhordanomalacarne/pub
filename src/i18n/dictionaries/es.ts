@@ -308,14 +308,24 @@ export const es: typeof pt = {
   },
   services: {
     eyebrow: "Servicios",
-    title: "Servicios públicos",
-    description: "Herramientas web mantenidas por el Laboratório Zero y puestas a disposición gratuita de la comunidad.",
+    title: "Servicios",
+    description: "Herramientas web mantenidas por el Laboratório Zero, organizadas por público de acceso.",
     note: "Servicios en implementación — los enlaces de acceso se publicarán en cuanto cada uno esté disponible.",
     comingSoon: "Próximamente",
     backToServices: "← Volver a Servicios",
     featuresTitle: "Características",
     accessService: "Acceder",
     notPublished: "Próximamente — servicio aún no publicado",
+    audiencePublicLabel: "Servicios públicos",
+    audiencePartnersLabel: "Servicios para socios",
+    audienceAcademicLabel: "Comunidad académica del IFRO",
+    audiencePublicDescription: "Herramientas disponibles gratuitamente para toda la comunidad.",
+    audiencePartnersDescription:
+      "Además de los servicios públicos — que pueden personalizarse para cada alianza —, el laboratorio pone estas herramientas adicionales a disposición de las instituciones asociadas.",
+    audienceAcademicDescription:
+      "Además de todos los servicios públicos y para socios, la comunidad académica del IFRO tiene acceso a estas herramientas adicionales.",
+    pipelineNote:
+      "Estamos desarrollando una cadena de desarrollo completa (CI/CD), que estará disponible para el flujo de desarrollo de software en las clases.",
     items: {
       wiki: {
         name: "Wiki",
@@ -428,6 +438,149 @@ export const es: typeof pt = {
           "Personalización de colores y forma",
           "Exportación en alta resolución",
           "Generación rápida, sin registro",
+        ],
+      },
+      "hospedagem-web": {
+        name: "Alojamiento Web",
+        description: "Alojamiento de sitios y aplicaciones web para proyectos desarrollados en alianza con el laboratorio.",
+        details:
+          "Entorno de alojamiento web puesto a disposición de los socios para publicar sitios institucionales, aplicaciones y páginas de proyectos desarrollados junto con el laboratorio.",
+        features: [
+          "Dominios y subdominios personalizados",
+          "Certificado SSL incluido",
+          "Soporte para aplicaciones estáticas y dinámicas",
+        ],
+      },
+      "banco-de-dados": {
+        name: "Base de Datos",
+        description: "Instancias de bases de datos gestionadas para aplicaciones y proyectos de socios.",
+        details:
+          "Aprovisionamiento de instancias de bases de datos relacionales y no relacionales, con copias de seguridad y monitoreo, para dar soporte a aplicaciones y proyectos desarrollados con socios.",
+        features: [
+          "Soporte para bases de datos relacionales y no relacionales",
+          "Copias de seguridad periódicas automatizadas",
+          "Acceso controlado mediante credenciales dedicadas",
+        ],
+      },
+      metabase: {
+        name: "Metabase",
+        description: "Plataforma de análisis y visualización de datos para el seguimiento de indicadores de proyectos.",
+        details:
+          "Herramienta de inteligencia de negocios para la creación de paneles e informes visuales a partir de los datos de proyectos desarrollados con socios, sin necesidad de conocimientos técnicos avanzados.",
+        features: [
+          "Creación de paneles y gráficos interactivos",
+          "Consultas sin necesidad de SQL",
+          "Compartición de informes con el equipo",
+        ],
+      },
+      openproject: {
+        name: "OpenProject",
+        description: "Herramienta de gestión de proyectos para la planificación y seguimiento de tareas en alianzas.",
+        details:
+          "Plataforma de gestión de proyectos utilizada para la planificación, cronogramas y seguimiento de tareas en iniciativas desarrolladas junto con socios del laboratorio.",
+        features: [
+          "Tableros Kanban y cronogramas Gantt",
+          "Control de tareas y responsables",
+          "Informes de avance del proyecto",
+        ],
+      },
+      gitlab: {
+        name: "GitLab",
+        description: "Plataforma de control de versiones e integración continua para proyectos de desarrollo.",
+        details:
+          "Instancia de GitLab mantenida por el laboratorio para el control de versiones del código fuente, revisión de cambios y pipelines de integración continua de los proyectos desarrollados con socios.",
+        features: [
+          "Repositorios Git privados y compartidos",
+          "Pipelines de integración continua (CI/CD)",
+          "Revisión de código mediante merge requests",
+        ],
+      },
+      "gerenciamento-automacao": {
+        name: "Gestión de Automatización",
+        description: "Panel para orquestar y ejecutar rutinas de automatización de infraestructura.",
+        details:
+          "Herramienta para orquestar, programar y monitorear la ejecución de playbooks y rutinas de automatización de infraestructura utilizadas en los proyectos del laboratorio.",
+        features: [
+          "Ejecución y programación de playbooks",
+          "Historial de ejecuciones y registros",
+          "Control de acceso por equipo",
+        ],
+      },
+      n8n: {
+        name: "N8N",
+        description: "Plataforma de automatización de flujos de trabajo e integración entre sistemas.",
+        details:
+          "Herramienta de automatización low-code para crear flujos de trabajo que integran sistemas, API y servicios utilizados en los proyectos desarrollados con socios.",
+        features: [
+          "Editor visual de flujos de automatización",
+          "Integración con diversas API y servicios",
+          "Ejecución programada o basada en eventos (webhooks)",
+        ],
+      },
+      "ide-eclipse-che": {
+        name: "IDE Eclipse Che",
+        description: "Entorno de desarrollo integrado en la nube, accesible directamente desde el navegador.",
+        details:
+          "Entorno de desarrollo integrado (IDE) basado en la nube, puesto a disposición de la comunidad académica del IFRO para el desarrollo de código en asignaturas y proyectos, sin necesidad de instalación local.",
+        features: [
+          "Acceso desde el navegador, sin instalación local",
+          "Entornos preconfigurados por lenguaje/proyecto",
+          "Uso en clases y actividades prácticas de programación",
+        ],
+      },
+      "desktop-remoto": {
+        name: "Escritorio Remoto",
+        description: "Acceso remoto a entornos de trabajo completos mantenidos por el laboratorio.",
+        details:
+          "Servicio de escritorio remoto que pone a disposición de la comunidad académica del IFRO entornos de trabajo completos, con herramientas preinstaladas para uso en clases y actividades prácticas.",
+        features: [
+          "Acceso remoto desde cualquier dispositivo",
+          "Herramientas académicas preinstaladas",
+          "Entorno aislado por usuario",
+        ],
+      },
+      pnetlab: {
+        name: "PNetLab",
+        description: "Laboratorio virtual de redes para simulación de topologías y práctica de configuración.",
+        details:
+          "Plataforma de laboratorio virtual de redes utilizada en asignaturas del IFRO para la simulación de topologías, configuración de equipos y práctica de conceptos de redes de computadoras.",
+        features: [
+          "Simulación de topologías de red complejas",
+          "Soporte para diversos fabricantes y sistemas",
+          "Uso en clases prácticas de redes",
+        ],
+      },
+      "maquinas-virtuais": {
+        name: "Máquinas Virtuales (Linux y Windows)",
+        description: "Aprovisionamiento de máquinas virtuales Linux y Windows para uso en clases y proyectos.",
+        details:
+          "Servicio de aprovisionamiento de máquinas virtuales con sistemas Linux y Windows, puesto a disposición de la comunidad académica del IFRO para uso en asignaturas, laboratorios prácticos y proyectos de investigación.",
+        features: [
+          "Máquinas virtuales Linux y Windows bajo demanda",
+          "Configuraciones personalizadas por asignatura",
+          "Acceso remoto durante el período de clase",
+        ],
+      },
+      proxmox: {
+        name: "Entorno de Virtualización Proxmox",
+        description: "Infraestructura de virtualización utilizada en asignaturas y proyectos de infraestructura de TI.",
+        details:
+          "Acceso al entorno de virtualización Proxmox del laboratorio, utilizado en asignaturas y proyectos para la práctica de administración de infraestructura, creación de máquinas virtuales y contenedores.",
+        features: [
+          "Creación de máquinas virtuales y contenedores (LXC)",
+          "Práctica de administración de infraestructura",
+          "Uso en asignaturas de infraestructura de TI",
+        ],
+      },
+      firewall: {
+        name: "Firewall",
+        description: "Entorno de firewall para la práctica de configuración de políticas de seguridad de red.",
+        details:
+          "Entorno de firewall puesto a disposición de la comunidad académica del IFRO para la práctica de configuración de reglas, políticas de seguridad y conceptos de protección de redes de computadoras.",
+        features: [
+          "Práctica de reglas y políticas de firewall",
+          "Uso en asignaturas de seguridad de redes",
+          "Entorno aislado para pruebas seguras",
         ],
       },
     },

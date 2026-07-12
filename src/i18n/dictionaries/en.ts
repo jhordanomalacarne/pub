@@ -308,14 +308,24 @@ export const en: typeof pt = {
   },
   services: {
     eyebrow: "Services",
-    title: "Public services",
-    description: "Web tools maintained by Laboratório Zero and made freely available to the community.",
+    title: "Services",
+    description: "Web tools maintained by Laboratório Zero, organized by audience.",
     note: "Services being deployed — access links will be published as soon as each one is available.",
     comingSoon: "Coming soon",
     backToServices: "← Back to Services",
     featuresTitle: "Features",
     accessService: "Access",
     notPublished: "Coming soon — service not yet published",
+    audiencePublicLabel: "Public services",
+    audiencePartnersLabel: "Partner services",
+    audienceAcademicLabel: "IFRO academic community",
+    audiencePublicDescription: "Tools freely available to the whole community.",
+    audiencePartnersDescription:
+      "In addition to the public services — which can be customized for each partnership —, the laboratory makes these additional tools available to partner institutions.",
+    audienceAcademicDescription:
+      "In addition to all public and partner services, the IFRO academic community has access to these additional tools.",
+    pipelineNote:
+      "We are developing a complete development pipeline (CI/CD), to be made available for the software development workflow in classes.",
     items: {
       wiki: {
         name: "Wiki",
@@ -428,6 +438,149 @@ export const en: typeof pt = {
           "Custom colors and shape",
           "High-resolution export",
           "Fast generation, no registration required",
+        ],
+      },
+      "hospedagem-web": {
+        name: "Web Hosting",
+        description: "Hosting of websites and web applications for projects developed in partnership with the laboratory.",
+        details:
+          "Web hosting environment made available to partners to publish institutional websites, applications and project pages developed jointly with the laboratory.",
+        features: [
+          "Custom domains and subdomains",
+          "SSL certificate included",
+          "Support for static and dynamic applications",
+        ],
+      },
+      "banco-de-dados": {
+        name: "Database",
+        description: "Managed database instances for partner applications and projects.",
+        details:
+          "Provisioning of relational and non-relational database instances, with backup and monitoring, to support applications and projects developed with partners.",
+        features: [
+          "Support for relational and non-relational databases",
+          "Automated periodic backups",
+          "Access controlled by dedicated credentials",
+        ],
+      },
+      metabase: {
+        name: "Metabase",
+        description: "Data analysis and visualization platform for tracking project indicators.",
+        details:
+          "Business intelligence tool for creating dashboards and visual reports from the data of projects developed with partners, without the need for advanced technical knowledge.",
+        features: [
+          "Creation of interactive dashboards and charts",
+          "Queries without needing SQL",
+          "Sharing reports with the team",
+        ],
+      },
+      openproject: {
+        name: "OpenProject",
+        description: "Project management tool for planning and tracking tasks in partnerships.",
+        details:
+          "Project management platform used for planning, timelines and task tracking in initiatives developed jointly with the laboratory's partners.",
+        features: [
+          "Kanban boards and Gantt timelines",
+          "Task and owner tracking",
+          "Project progress reports",
+        ],
+      },
+      gitlab: {
+        name: "GitLab",
+        description: "Code versioning and continuous integration platform for development projects.",
+        details:
+          "GitLab instance maintained by the laboratory for source code versioning, change review and continuous integration pipelines of projects developed with partners.",
+        features: [
+          "Private and shared Git repositories",
+          "Continuous integration pipelines (CI/CD)",
+          "Code review through merge requests",
+        ],
+      },
+      "gerenciamento-automacao": {
+        name: "Automation Management",
+        description: "Dashboard for orchestrating and running infrastructure automation routines.",
+        details:
+          "Tool for orchestrating, scheduling and tracking the execution of playbooks and infrastructure automation routines used in the laboratory's projects.",
+        features: [
+          "Execution and scheduling of playbooks",
+          "Execution history and logs",
+          "Team-based access control",
+        ],
+      },
+      n8n: {
+        name: "N8N",
+        description: "Workflow automation and system integration platform.",
+        details:
+          "Low-code automation tool for creating workflows that integrate systems, APIs and services used in projects developed with partners.",
+        features: [
+          "Visual workflow editor",
+          "Integration with several APIs and services",
+          "Scheduled or event-based execution (webhooks)",
+        ],
+      },
+      "ide-eclipse-che": {
+        name: "Eclipse Che IDE",
+        description: "Cloud-based integrated development environment, accessible directly from the browser.",
+        details:
+          "Cloud-based integrated development environment (IDE) made available to the IFRO academic community for coding in courses and projects, without any local installation.",
+        features: [
+          "Browser access, no local installation",
+          "Pre-configured environments per language/project",
+          "Used in classes and hands-on programming activities",
+        ],
+      },
+      "desktop-remoto": {
+        name: "Remote Desktop",
+        description: "Remote access to complete work environments maintained by the laboratory.",
+        details:
+          "Remote desktop service that provides the IFRO academic community with complete work environments, with pre-installed tools for classes and hands-on activities.",
+        features: [
+          "Remote access from any device",
+          "Pre-installed academic tools",
+          "Isolated environment per user",
+        ],
+      },
+      pnetlab: {
+        name: "PNetLab",
+        description: "Virtual network lab for topology simulation and configuration practice.",
+        details:
+          "Virtual network lab platform used in IFRO courses for topology simulation, equipment configuration and practicing computer networking concepts.",
+        features: [
+          "Simulation of complex network topologies",
+          "Support for several vendors and systems",
+          "Used in hands-on networking classes",
+        ],
+      },
+      "maquinas-virtuais": {
+        name: "Virtual Machines (Linux and Windows)",
+        description: "Provisioning of Linux and Windows virtual machines for use in classes and projects.",
+        details:
+          "Virtual machine provisioning service with Linux and Windows systems, made available to the IFRO academic community for use in courses, hands-on labs and research projects.",
+        features: [
+          "Linux and Windows virtual machines on demand",
+          "Custom configurations per course",
+          "Remote access during class time",
+        ],
+      },
+      proxmox: {
+        name: "Proxmox Virtualization Environment",
+        description: "Virtualization infrastructure used in IT infrastructure courses and projects.",
+        details:
+          "Access to the laboratory's Proxmox virtualization environment, used in courses and projects to practice infrastructure administration, creating virtual machines and containers.",
+        features: [
+          "Creation of virtual machines and containers (LXC)",
+          "Practice of infrastructure administration",
+          "Used in IT infrastructure courses",
+        ],
+      },
+      firewall: {
+        name: "Firewall",
+        description: "Firewall environment for practicing network security policy configuration.",
+        details:
+          "Firewall environment made available to the IFRO academic community to practice configuring rules, security policies and computer network protection concepts.",
+        features: [
+          "Practice of firewall rules and policies",
+          "Used in network security courses",
+          "Isolated environment for safe testing",
         ],
       },
     },

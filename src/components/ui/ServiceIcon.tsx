@@ -152,3 +152,135 @@ export function CollaborationIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function WebHostingIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="5" y="9" width="14" height="10" rx="1.5" />
+      <path d="M8 13h.01M8 16h.01" />
+      <path d="M9 6c1.5-1.5 4.5-1.5 6 0M7 4c3-3 7-3 10 0" />
+    </Base>
+  )
+}
+
+export function DatabaseIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <ellipse cx="12" cy="5.5" rx="7" ry="2.5" />
+      <path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6" />
+      <path d="M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6" />
+    </Base>
+  )
+}
+
+export function DashboardIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="1.5" />
+      <path d="M7 15v-4M12 15V8M17 15v-7" />
+    </Base>
+  )
+}
+
+export function KanbanIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="4" width="5" height="16" rx="1" />
+      <rect x="9.5" y="4" width="5" height="10" rx="1" />
+      <rect x="15.5" y="4" width="5" height="13" rx="1" />
+    </Base>
+  )
+}
+
+export function GitBranchIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="6" cy="6" r="2" />
+      <circle cx="6" cy="18" r="2" />
+      <circle cx="18" cy="18" r="2" />
+      <path d="M6 8v8" />
+      <path d="M8 18h8a4 4 0 0 0 4-4v-2" />
+    </Base>
+  )
+}
+
+export function AutomationIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8" />
+    </Base>
+  )
+}
+
+export function WorkflowIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="5" cy="6" r="2" />
+      <circle cx="5" cy="18" r="2" />
+      <circle cx="19" cy="12" r="2" />
+      <path d="M7 6h4a4 4 0 0 1 4 4v0M7 18h4a4 4 0 0 0 4-4v0" />
+      <path d="M15 10l2 2-2 2" />
+    </Base>
+  )
+}
+
+export function CodeIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M9 6 4 12l5 6" />
+      <path d="M15 6l5 6-5 6" />
+    </Base>
+  )
+}
+
+export function RemoteDesktopIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3" y="4" width="18" height="12" rx="1.5" />
+      <path d="M8 20h8M12 16v4" />
+      <path d="M14 9l3 2-3 2" />
+    </Base>
+  )
+}
+
+export function LabNetworkIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="9" y="3" width="6" height="4" rx="1" />
+      <rect x="3" y="14" width="6" height="4" rx="1" />
+      <rect x="15" y="14" width="6" height="4" rx="1" />
+      <path d="M12 7v4M12 11 6 14M12 11l6 3" />
+    </Base>
+  )
+}
+
+export function VmIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3" y="4" width="10" height="7" rx="1" />
+      <rect x="11" y="13" width="10" height="7" rx="1" />
+      <path d="M6 11v2M18 11v2" />
+    </Base>
+  )
+}
+
+export function ServerStackIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="4" y="4" width="16" height="4.5" rx="1" />
+      <rect x="4" y="10" width="16" height="4.5" rx="1" />
+      <rect x="4" y="16" width="16" height="4.5" rx="1" />
+      <path d="M7 6.25h.01M7 12.25h.01M7 18.25h.01" />
+    </Base>
+  )
+}
+
+export function ShieldIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z" />
+      <path d="M9.5 12l2 2 3-4" />
+    </Base>
+  )
+}

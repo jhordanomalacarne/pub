@@ -11,13 +11,33 @@ import {
   SpeedGaugeIcon,
   LinkIcon,
   QrCodeIcon,
+  WebHostingIcon,
+  DatabaseIcon,
+  DashboardIcon,
+  KanbanIcon,
+  GitBranchIcon,
+  AutomationIcon,
+  WorkflowIcon,
+  CodeIcon,
+  RemoteDesktopIcon,
+  LabNetworkIcon,
+  VmIcon,
+  ServerStackIcon,
+  ShieldIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
  * Dados estruturais dos serviços. Nome, descrição, detalhes e recursos de
  * cada serviço ficam nos dicionários de tradução (src/i18n/dictionaries),
  * em services.items.<slug>, para evitar duplicar o conteúdo em três idiomas.
+ *
+ * Cada serviço tem uma audiência mínima. O acesso é cumulativo:
+ * parceiros veem os serviços públicos + exclusivos de parceiros; a
+ * comunidade acadêmica do IFRO vê tudo (público + parceiros + exclusivos
+ * acadêmicos).
  */
+export type ServiceAudience = "public" | "partners" | "academic"
+
 export type Service = {
   slug: string
   /**
@@ -26,20 +46,50 @@ export type Service = {
    */
   url?: string
   icon: ComponentType<SVGProps<SVGSVGElement>>
+  audience: ServiceAudience
 }
 
 export const SERVICES: Service[] = [
-  { slug: "wiki", icon: WikiIcon },
-  { slug: "bentopdf", icon: PdfPrivacyIcon },
-  { slug: "drawio", icon: DiagramIcon },
-  { slug: "excalidraw", icon: SketchIcon },
-  { slug: "limesurvey", icon: SurveyIcon },
-  { slug: "repositorio-debian", icon: PackageIcon },
-  { slug: "teste-ipv6", icon: NetworkIcon },
-  { slug: "openspeedtest", icon: SpeedGaugeIcon },
-  { slug: "encurtador-url", icon: LinkIcon },
-  { slug: "qrcode", icon: QrCodeIcon },
+  // Serviços públicos — abertos a toda a comunidade
+  { slug: "bentopdf", icon: PdfPrivacyIcon, audience: "public" },
+  { slug: "drawio", icon: DiagramIcon, audience: "public" },
+  { slug: "excalidraw", icon: SketchIcon, audience: "public" },
+  { slug: "repositorio-debian", icon: PackageIcon, audience: "public" },
+  { slug: "teste-ipv6", icon: NetworkIcon, audience: "public" },
+  { slug: "openspeedtest", icon: SpeedGaugeIcon, audience: "public" },
+  { slug: "encurtador-url", icon: LinkIcon, audience: "public" },
+  { slug: "qrcode", icon: QrCodeIcon, audience: "public" },
+
+  // Exclusivos de parceiros — somados aos públicos
+  { slug: "wiki", icon: WikiIcon, audience: "partners" },
+  { slug: "limesurvey", icon: SurveyIcon, audience: "partners" },
+  { slug: "hospedagem-web", icon: WebHostingIcon, audience: "partners" },
+  { slug: "banco-de-dados", icon: DatabaseIcon, audience: "partners" },
+  { slug: "metabase", icon: DashboardIcon, audience: "partners" },
+  { slug: "openproject", icon: KanbanIcon, audience: "partners" },
+  { slug: "gitlab", icon: GitBranchIcon, audience: "partners" },
+  { slug: "gerenciamento-automacao", icon: AutomationIcon, audience: "partners" },
+  { slug: "n8n", icon: WorkflowIcon, audience: "partners" },
+
+  // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
+  { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },
+  { slug: "desktop-remoto", icon: RemoteDesktopIcon, audience: "academic" },
+  { slug: "pnetlab", icon: LabNetworkIcon, audience: "academic" },
+  { slug: "maquinas-virtuais", icon: VmIcon, audience: "academic" },
+  { slug: "proxmox", icon: ServerStackIcon, audience: "academic" },
+  { slug: "firewall", icon: ShieldIcon, audience: "academic" },
 ]
+
+const AUDIENCE_LEVEL: Record<ServiceAudience, number> = {
+  public: 0,
+  partners: 1,
+  academic: 2,
+}
+
+/** Retorna os serviços visíveis para uma audiência, de forma cumulativa. */
+export function getServicesForAudience(audience: ServiceAudience): Service[] {
+  return SERVICES.filter((service) => AUDIENCE_LEVEL[service.audience] <= AUDIENCE_LEVEL[audience])
+}
 
 export function getServiceBySlug(slug: string | undefined): Service | undefined {
   return SERVICES.find((service) => service.slug === slug)

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Card } from "../components/ui/Card"
-import { SERVICES, getServiceTranslation } from "../lib/services"
+import { getServicesForAudience, getServiceTranslation } from "../lib/services"
 import { ELIGIBILITY_FORM_URL } from "../lib/externalLinks"
 import { useLanguage } from "../i18n/LanguageContext"
 
@@ -16,6 +16,7 @@ const HIGHLIGHTS = [
 export function Home() {
   const { dict } = useLanguage()
   const t = dict.home
+  const publicServices = getServicesForAudience("public")
 
   return (
     <>
@@ -122,7 +123,7 @@ export function Home() {
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-5">
-            {SERVICES.map((service) => (
+            {publicServices.map((service) => (
               <Link
                 key={service.slug}
                 to={`/servicos/${service.slug}`}
