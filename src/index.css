@@ -33,6 +33,12 @@
   /* Indicador de status "indisponível" na página de status dos serviços. */
   --color-status-down: #c0392b;
 
+  /* Laranja de acento exclusivo da marca lab0 (traço do símbolo "Ø" no
+     logotipo, em lab0-logo-navy.svg / lab0-logo-light.svg). Reservado para
+     elementos ligados à marca/logo — não usar como cor de UI genérica
+     (CTAs, status etc. já têm suas próprias cores). */
+  --color-lab0-accent: #f26f21;
+
   /* Tons de medalha (bronze/prata/ouro) para a organização visual da página
      de Serviços por público de acesso — distintos do dourado da marca. */
   --color-medal-bronze-700: #7a4f28;
