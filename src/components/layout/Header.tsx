@@ -8,6 +8,8 @@ import { useLanguage } from "../../i18n/LanguageContext"
 import { LANGUAGES } from "../../i18n/languages"
 import { USER_AREA_URL } from "../../lib/externalLinks"
 import gtecLogo from "../../assets/gtec-logo.png"
+import lab0LogoNavy from "../../assets/lab0-logo-navy.png"
+import lab0LogoLight from "../../assets/lab0-logo-light.png"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import { LanguageSwitcher } from "../ui/LanguageSwitcher"
 
@@ -188,9 +190,8 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <NavLink to="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
           <img src={gtecLogo} alt="GTEC" className="h-9 w-auto" />
-          <span className="font-serif text-xl font-semibold text-heading">
-            Laboratório Zero
-          </span>
+          <img src={lab0LogoNavy} alt="Laboratório Zero" className="h-8 w-auto dark:hidden" />
+          <img src={lab0LogoLight} alt="Laboratório Zero" className="hidden h-8 w-auto dark:block" />
         </NavLink>
 
         <nav className="hidden flex-wrap items-center justify-end gap-x-3 gap-y-1 xl:flex">
