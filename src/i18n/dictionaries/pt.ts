@@ -519,6 +519,61 @@ export const pt = {
           "Execução agendada ou por eventos (webhooks)",
         ],
       },
+      "gerenciamento-wifi": {
+        name: "Gerenciamento de Wi-Fi",
+        description: "Painel para gerenciamento centralizado de redes Wi-Fi e pontos de acesso de parceiros.",
+        details:
+          "Plataforma para gerenciamento centralizado de pontos de acesso Wi-Fi, permitindo configurar redes, monitorar dispositivos conectados e aplicar políticas de acesso em ambientes de parceiros.",
+        features: [
+          "Gerenciamento centralizado de pontos de acesso",
+          "Monitoramento de dispositivos conectados",
+          "Definição de políticas de acesso por rede",
+        ],
+      },
+      "registro-logs": {
+        name: "Registro de Logs",
+        description: "Coleta e centralização de registros (logs) de sistemas e aplicações de parceiros.",
+        details:
+          "Plataforma para coleta, armazenamento e consulta centralizada de registros (logs) de sistemas, redes e aplicações, apoiando o monitoramento e a investigação de incidentes.",
+        features: [
+          "Coleta centralizada de logs",
+          "Busca e filtragem de registros",
+          "Retenção configurável do histórico",
+        ],
+      },
+      "armazenamento-cameras": {
+        name: "Armazenamento de Câmeras Remotas",
+        description: "Armazenamento de imagens e gravações de câmeras remotas de parceiros.",
+        details:
+          "Serviço de armazenamento dedicado a imagens e gravações de câmeras de monitoramento remoto, com retenção configurável e acesso controlado para instituições parceiras.",
+        features: [
+          "Armazenamento de gravações em vídeo",
+          "Retenção configurável por período",
+          "Acesso controlado por credenciais",
+        ],
+      },
+      "armazenamento-objetos": {
+        name: "Armazenamento de Objetos (S3)",
+        description: "Armazenamento de objetos compatível com S3 para arquivos e dados de projetos de parceiros.",
+        details:
+          "Serviço de armazenamento de objetos compatível com a API S3, utilizado para guardar arquivos, backups e dados de aplicações desenvolvidas em parceria com o laboratório.",
+        features: [
+          "API compatível com Amazon S3",
+          "Armazenamento escalável por bucket",
+          "Controle de acesso por credenciais e políticas",
+        ],
+      },
+      backup: {
+        name: "Backup Local e Remoto",
+        description: "Rotinas de backup local e remoto para dados e sistemas de parceiros.",
+        details:
+          "Serviço de backup que mantém cópias locais e remotas de dados e sistemas de parceiros, com rotinas agendadas e verificação de integridade das cópias.",
+        features: [
+          "Cópias locais e remotas agendadas",
+          "Verificação de integridade dos backups",
+          "Restauração sob demanda",
+        ],
+      },
       "ide-eclipse-che": {
         name: "IDE Eclipse Che",
         description: "Ambiente de desenvolvimento integrado em nuvem, acessível diretamente pelo navegador.",

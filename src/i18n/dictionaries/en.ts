@@ -517,6 +517,61 @@ export const en: typeof pt = {
           "Scheduled or event-based execution (webhooks)",
         ],
       },
+      "gerenciamento-wifi": {
+        name: "Wi-Fi Management",
+        description: "Dashboard for centralized management of partners' Wi-Fi networks and access points.",
+        details:
+          "Platform for centralized management of Wi-Fi access points, allowing you to configure networks, monitor connected devices and apply access policies in partner environments.",
+        features: [
+          "Centralized access point management",
+          "Monitoring of connected devices",
+          "Access policy definition per network",
+        ],
+      },
+      "registro-logs": {
+        name: "Log Registry",
+        description: "Collection and centralization of system and application logs for partners.",
+        details:
+          "Platform for collecting, storing and centrally querying system, network and application logs, supporting monitoring and incident investigation.",
+        features: [
+          "Centralized log collection",
+          "Search and filtering of records",
+          "Configurable history retention",
+        ],
+      },
+      "armazenamento-cameras": {
+        name: "Remote Camera Storage",
+        description: "Storage of images and recordings from partners' remote cameras.",
+        details:
+          "Storage service dedicated to images and recordings from remote monitoring cameras, with configurable retention and controlled access for partner institutions.",
+        features: [
+          "Video recording storage",
+          "Configurable retention period",
+          "Access controlled by credentials",
+        ],
+      },
+      "armazenamento-objetos": {
+        name: "Object Storage (S3)",
+        description: "S3-compatible object storage for files and data from partner projects.",
+        details:
+          "S3 API-compatible object storage service, used to store files, backups and data from applications developed in partnership with the laboratory.",
+        features: [
+          "Amazon S3-compatible API",
+          "Scalable storage per bucket",
+          "Access control via credentials and policies",
+        ],
+      },
+      backup: {
+        name: "Local and Remote Backup",
+        description: "Local and remote backup routines for partners' data and systems.",
+        details:
+          "Backup service that keeps local and remote copies of partners' data and systems, with scheduled routines and integrity checks of the copies.",
+        features: [
+          "Scheduled local and remote copies",
+          "Backup integrity verification",
+          "On-demand restoration",
+        ],
+      },
       "ide-eclipse-che": {
         name: "Eclipse Che IDE",
         description: "Cloud-based integrated development environment, accessible directly from the browser.",

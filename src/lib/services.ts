@@ -24,6 +24,11 @@ import {
   VmIcon,
   ServerStackIcon,
   ShieldIcon,
+  WifiManagementIcon,
+  LogsIcon,
+  CameraStorageIcon,
+  ObjectStorageIcon,
+  BackupIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
@@ -70,6 +75,11 @@ export const SERVICES: Service[] = [
   { slug: "gitlab", icon: GitBranchIcon, audience: "partners" },
   { slug: "gerenciamento-automacao", icon: AutomationIcon, audience: "partners" },
   { slug: "n8n", icon: WorkflowIcon, audience: "partners" },
+  { slug: "gerenciamento-wifi", icon: WifiManagementIcon, audience: "partners" },
+  { slug: "registro-logs", icon: LogsIcon, audience: "partners" },
+  { slug: "armazenamento-cameras", icon: CameraStorageIcon, audience: "partners" },
+  { slug: "armazenamento-objetos", icon: ObjectStorageIcon, audience: "partners" },
+  { slug: "backup", icon: BackupIcon, audience: "partners" },
 
   // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
   { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },

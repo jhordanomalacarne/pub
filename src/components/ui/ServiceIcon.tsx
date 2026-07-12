@@ -284,3 +284,51 @@ export function ShieldIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function WifiManagementIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M4 9a12 12 0 0 1 16 0" />
+      <path d="M7 12.5a7.5 7.5 0 0 1 10 0" />
+      <path d="M10 16a3 3 0 0 1 4 0" />
+      <path d="M12 19h.01" />
+    </Base>
+  )
+}
+
+export function LogsIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="4" width="17" height="16" rx="1.5" />
+      <path d="M7 9h2l1.5 3L12 8l1.5 3H17" />
+    </Base>
+  )
+}
+
+export function CameraStorageIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M4 8a1 1 0 0 1 1-1h2l1.2-2h7.6L17 7h2a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8Z" />
+      <circle cx="12" cy="13" r="3.2" />
+    </Base>
+  )
+}
+
+export function ObjectStorageIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M5 5h14l-1.5 14a1.5 1.5 0 0 1-1.5 1.3H8a1.5 1.5 0 0 1-1.5-1.3L5 5Z" />
+      <path d="M3.5 5h17" />
+      <path d="M9.5 9v7M14.5 9v7" />
+    </Base>
+  )
+}
+
+export function BackupIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M7 16a4 4 0 0 1 .3-7.97A5.5 5.5 0 0 1 18 9.5 3.5 3.5 0 0 1 17.5 16H7Z" />
+      <path d="M12 10v7M9.5 14.5 12 17l2.5-2.5" />
+    </Base>
+  )
+}
