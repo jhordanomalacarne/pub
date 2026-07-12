@@ -117,6 +117,7 @@ export const pt = {
     servicesTitle: "Ferramentas web abertas à comunidade",
     servicesMoreNote:
       "Parceiros e a comunidade acadêmica do IFRO têm acesso a dezenas de ferramentas adicionais.",
+    servicesViewAll: "Veja todos os serviços →",
     stats: {
       projects: "projetos desenvolvidos",
       publications: "publicações do grupo",

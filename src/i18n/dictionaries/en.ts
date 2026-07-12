@@ -119,6 +119,7 @@ export const en: typeof pt = {
     servicesTitle: "Web tools open to the community",
     servicesMoreNote:
       "Partners and the IFRO academic community get access to dozens of additional tools.",
+    servicesViewAll: "See all services →",
     stats: {
       projects: "projects developed",
       publications: "group publications",

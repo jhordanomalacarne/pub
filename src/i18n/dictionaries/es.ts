@@ -119,6 +119,7 @@ export const es: typeof pt = {
     servicesTitle: "Herramientas web abiertas a la comunidad",
     servicesMoreNote:
       "Los socios y la comunidad académica del IFRO tienen acceso a decenas de herramientas adicionales.",
+    servicesViewAll: "Vea todos los servicios →",
     stats: {
       projects: "proyectos desarrollados",
       publications: "publicaciones del grupo",

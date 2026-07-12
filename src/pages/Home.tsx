@@ -1,6 +1,7 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Card } from "../components/ui/Card"
-import { getServicesForAudience, getServiceTranslation } from "../lib/services"
+import { getServicesForAudience, getServiceTranslation, type ServiceAudience } from "../lib/services"
 import { ELIGIBILITY_FORM_URL } from "../lib/externalLinks"
 import { useLanguage } from "../i18n/LanguageContext"
 
@@ -13,10 +14,27 @@ const HIGHLIGHTS = [
   { key: "opportunities", to: "/oportunidades" },
 ] as const
 
+const AUDIENCES: ServiceAudience[] = ["public", "partners", "academic"]
+
+const AUDIENCE_TAB_ACTIVE: Record<ServiceAudience, string> = {
+  public: "border-medal-bronze-500 bg-medal-bronze-100 text-medal-bronze-700",
+  partners: "border-medal-silver-500 bg-medal-silver-100 text-medal-silver-700",
+  academic: "border-medal-gold-500 bg-medal-gold-100 text-medal-gold-700",
+}
+
+const AUDIENCE_TAB_INACTIVE = "border-slate-600 text-slate-300 hover:border-slate-400 hover:text-white"
+
 export function Home() {
   const { dict } = useLanguage()
   const t = dict.home
-  const publicServices = getServicesForAudience("public")
+  const [audience, setAudience] = useState<ServiceAudience>("public")
+
+  const audienceLabel: Record<ServiceAudience, string> = {
+    public: dict.services.audiencePublicLabel,
+    partners: dict.services.audiencePartnersLabel,
+    academic: dict.services.audienceAcademicLabel,
+  }
+  const services = getServicesForAudience(audience)
 
   return (
     <>
@@ -114,28 +132,23 @@ export function Home() {
           <p className="mt-2 max-w-xl text-sm text-slate-300">{t.servicesMoreNote}</p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              to="/servicos?audiencia=public"
-              className="rounded-md border border-medal-bronze-500 bg-medal-bronze-100 px-4 py-2 text-sm font-semibold text-medal-bronze-700 transition-colors hover:brightness-95"
-            >
-              {dict.services.audiencePublicLabel}
-            </Link>
-            <Link
-              to="/servicos?audiencia=partners"
-              className="rounded-md border border-medal-silver-500 bg-medal-silver-100 px-4 py-2 text-sm font-semibold text-medal-silver-700 transition-colors hover:brightness-95"
-            >
-              {dict.services.audiencePartnersLabel}
-            </Link>
-            <Link
-              to="/servicos?audiencia=academic"
-              className="rounded-md border border-medal-gold-500 bg-medal-gold-100 px-4 py-2 text-sm font-semibold text-medal-gold-700 transition-colors hover:brightness-95"
-            >
-              {dict.services.audienceAcademicLabel}
-            </Link>
+            {AUDIENCES.map((a) => (
+              <button
+                key={a}
+                type="button"
+                onClick={() => setAudience(a)}
+                aria-pressed={audience === a}
+                className={`rounded-md border px-4 py-2 text-sm font-semibold transition-colors ${
+                  audience === a ? AUDIENCE_TAB_ACTIVE[a] : AUDIENCE_TAB_INACTIVE
+                }`}
+              >
+                {audienceLabel[a]}
+              </button>
+            ))}
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-5">
-            {publicServices.map((service) => (
+            {services.map((service) => (
               <Link
                 key={service.slug}
                 to={`/servicos/${service.slug}`}
@@ -148,6 +161,13 @@ export function Home() {
               </Link>
             ))}
           </div>
+
+          <Link
+            to={`/servicos?audiencia=${audience}`}
+            className="mt-8 inline-block text-sm font-semibold text-white transition-colors hover:text-gold-500"
+          >
+            {t.servicesViewAll}
+          </Link>
         </div>
       </section>
 
