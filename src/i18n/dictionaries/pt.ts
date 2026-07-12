@@ -322,10 +322,20 @@ export const pt = {
     audiencePartnersLabel: "Serviços para parceiros",
     audienceAcademicLabel: "Comunidade acadêmica do IFRO",
     audiencePublicDescription: "Ferramentas abertas gratuitamente a toda a comunidade.",
+    audiencePublicRequirement:
+      "O que precisa para usar? Nada! É só usar. Em alguns casos pode ser solicitado um cadastro simples, mas o acesso é livre.",
     audiencePartnersDescription:
-      "Além dos serviços públicos — que podem ser personalizados para cada parceria —, o laboratório disponibiliza estas ferramentas adicionais às instituições parceiras.",
+      "Além dos serviços públicos que podem ser personalizados para cada parceria, o laboratório disponibiliza estas ferramentas adicionais às instituições parceiras.",
+    audiencePartnersRequirement:
+      "O que precisa para ter acesso? Uma parceria formalizada com o Laboratório Zero ou com o IFRO, com as devidas limitações, contrapartidas e responsabilidades.",
     audienceAcademicDescription:
       "Além de todos os serviços públicos e de parceiros, a comunidade acadêmica do IFRO tem acesso a estas ferramentas adicionais.",
+    audienceAcademicRequirement:
+      "O que precisa para usar? Ter vínculo em algum projeto institucionalizado no IFRO ou estar ministrando alguma disciplina no IFRO. Se for aluno(a), é necessário ser autorizado(a) pelo(a) docente da disciplina.",
+    audienceLearnMore: "Saiba mais →",
+    audienceRequirementsTitle: "Critérios de acesso",
+    audienceRequirementsComingSoon:
+      "Detalhes completos sobre os critérios de acesso serão publicados em breve nesta página.",
     pipelineNote:
       "Estamos desenvolvendo uma esteira de desenvolvimento completa (CI/CD), a ser disponibilizada para o fluxo de desenvolvimento de software em aulas.",
     academicBadge: "Aulas e projetos",

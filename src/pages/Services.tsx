@@ -34,6 +34,11 @@ export function Services() {
     partners: t.audiencePartnersDescription,
     academic: t.audienceAcademicDescription,
   }
+  const audienceRequirement: Record<ServiceAudience, string> = {
+    public: t.audiencePublicRequirement,
+    partners: t.audiencePartnersRequirement,
+    academic: t.audienceAcademicRequirement,
+  }
 
   const services = getServicesForAudience(audience)
 
@@ -60,6 +65,13 @@ export function Services() {
           ))}
         </div>
         <p className="mt-4 max-w-2xl text-sm text-ink-soft">{audienceDescription[audience]}</p>
+        <p className="mt-2 max-w-2xl text-sm text-ink-soft">{audienceRequirement[audience]}</p>
+        <Link
+          to={`/servicos/requisitos/${audience}`}
+          className="mt-2 inline-block text-sm font-semibold text-heading transition-colors hover:text-navy-700 dark:hover:text-white"
+        >
+          {t.audienceLearnMore}
+        </Link>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
