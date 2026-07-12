@@ -16,6 +16,7 @@ export const SERVICE_STATUS: Record<string, { level: ServiceStatusLevel; uptime:
   openspeedtest: { level: "down", uptime: 92.1 },
   "encurtador-url": { level: "operational", uptime: 99.9 },
   qrcode: { level: "operational", uptime: 100 },
+  "internet-wifi": { level: "operational", uptime: 99.7 },
   "hospedagem-web": { level: "operational", uptime: 99.8 },
   "banco-de-dados": { level: "operational", uptime: 99.9 },
   metabase: { level: "operational", uptime: 99.6 },

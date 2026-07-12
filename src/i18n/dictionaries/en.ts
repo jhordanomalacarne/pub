@@ -441,6 +441,17 @@ export const en: typeof pt = {
           "Fast generation, no registration required",
         ],
       },
+      "internet-wifi": {
+        name: "Wi-Fi Internet Access",
+        description: "Wi-Fi network open to the community on the laboratory's premises.",
+        details:
+          "Wi-Fi network made freely available to the community on Laboratório Zero's premises, providing internet access for visitors and users of the laboratory's spaces.",
+        features: [
+          "Free internet access via Wi-Fi",
+          "Available on the laboratory's premises",
+          "No prior registration required",
+        ],
+      },
       "hospedagem-web": {
         name: "Web Hosting",
         description: "Hosting of websites and web applications for projects developed in partnership with the laboratory.",

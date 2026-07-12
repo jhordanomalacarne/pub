@@ -453,3 +453,14 @@ export function DroneMapIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function PublicWifiIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M4 9a12 12 0 0 1 16 0" />
+      <path d="M7 12.5a7.5 7.5 0 0 1 10 0" />
+      <rect x="8" y="15" width="8" height="5" rx="1" />
+      <path d="M10 20h4" />
+    </Base>
+  )
+}

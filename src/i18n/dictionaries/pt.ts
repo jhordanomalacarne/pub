@@ -443,6 +443,17 @@ export const pt = {
           "Geração rápida, sem cadastro",
         ],
       },
+      "internet-wifi": {
+        name: "Acesso à Internet via Wi-Fi",
+        description: "Rede Wi-Fi aberta à comunidade nas dependências do laboratório.",
+        details:
+          "Rede Wi-Fi disponibilizada gratuitamente à comunidade nas dependências do Laboratório Zero, permitindo acesso à internet para visitantes e usuários dos espaços do laboratório.",
+        features: [
+          "Acesso gratuito à internet via Wi-Fi",
+          "Disponível nas dependências do laboratório",
+          "Sem necessidade de cadastro prévio",
+        ],
+      },
       "hospedagem-web": {
         name: "Hospedagem Web",
         description: "Hospedagem de sites e aplicações web para projetos desenvolvidos em parceria com o laboratório.",

@@ -41,6 +41,7 @@ import {
   CaptivePortalIcon,
   MapServerIcon,
   DroneMapIcon,
+  PublicWifiIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
@@ -76,6 +77,7 @@ export const SERVICES: Service[] = [
   { slug: "openspeedtest", icon: SpeedGaugeIcon, audience: "public" },
   { slug: "encurtador-url", icon: LinkIcon, audience: "public" },
   { slug: "qrcode", icon: QrCodeIcon, audience: "public" },
+  { slug: "internet-wifi", icon: PublicWifiIcon, audience: "public" },
 
   // Exclusivos de parceiros — somados aos públicos
   { slug: "wiki", icon: WikiIcon, audience: "partners" },
