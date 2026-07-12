@@ -595,6 +595,28 @@ export const en: typeof pt = {
           "Visual alerts based on metric thresholds",
         ],
       },
+      "llm-local": {
+        name: "Local LLMs for AI",
+        description: "Language models running locally, without sending data to external services.",
+        details:
+          "Infrastructure for running language models (LLMs) locally in the laboratory's datacenter, allowing partners to use generative AI without sending sensitive data to external services.",
+        features: [
+          "Local execution of language models",
+          "Processing without sending data to third parties",
+          "Support for different open source models",
+        ],
+      },
+      "gestao-modelos-tokens-ia": {
+        name: "AI Model and Token Management",
+        description: "Dashboard to manage access to AI models and token consumption per project.",
+        details:
+          "Platform for managing credentials, quotas and token consumption of AI models used in projects developed with partners, with control per team and per application.",
+        features: [
+          "Credential and token quota management",
+          "Consumption tracking per project",
+          "Access control by team and application",
+        ],
+      },
       "ide-eclipse-che": {
         name: "Eclipse Che IDE",
         description: "Cloud-based integrated development environment, accessible directly from the browser.",
@@ -652,13 +674,24 @@ export const en: typeof pt = {
       },
       firewall: {
         name: "Firewall",
-        description: "Firewall environment for practicing network security policy configuration.",
+        description: "Firewall environment to protect partners' networks and systems.",
         details:
-          "Firewall environment made available to the IFRO academic community to practice configuring rules, security policies and computer network protection concepts.",
+          "Firewall environment managed by the laboratory, used to protect partner institutions' networks and systems, with rule and security policy configuration on demand.",
         features: [
-          "Practice of firewall rules and policies",
-          "Used in network security courses",
-          "Isolated environment for safe testing",
+          "Security rule and policy configuration",
+          "Protection of partners' networks and systems",
+          "Network event logging and auditing",
+        ],
+      },
+      "opencode-llm-local": {
+        name: "OpenCode + Local LLM",
+        description: "AI-assisted coding environment, with a language model running locally.",
+        details:
+          "Development environment with an AI-based coding assistant (OpenCode), integrated with a language model running locally at the laboratory, made available to the IFRO academic community for use in classes and projects.",
+        features: [
+          "Code assistance from a local AI",
+          "No code sent to external services",
+          "Used in programming classes and projects",
         ],
       },
     },

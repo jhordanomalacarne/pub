@@ -36,4 +36,7 @@ export const SERVICE_STATUS: Record<string, { level: ServiceStatusLevel; uptime:
   "maquinas-virtuais": { level: "operational", uptime: 99.7 },
   proxmox: { level: "operational", uptime: 99.9 },
   firewall: { level: "operational", uptime: 100 },
+  "llm-local": { level: "operational", uptime: 99.5 },
+  "gestao-modelos-tokens-ia": { level: "operational", uptime: 99.7 },
+  "opencode-llm-local": { level: "operational", uptime: 99.4 },
 }

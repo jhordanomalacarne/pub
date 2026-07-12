@@ -350,3 +350,32 @@ export function LineChartIcon(props: SVGProps<SVGSVGElement>) {
     </Base>
   )
 }
+
+export function LocalAiIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <rect x="6" y="6" width="12" height="12" rx="2" />
+      <path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" />
+      <circle cx="12" cy="12" r="2" />
+    </Base>
+  )
+}
+
+export function TokenManagementIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <circle cx="8" cy="12" r="4" />
+      <path d="M11.5 12h9M16 12v3M19 12v3" />
+    </Base>
+  )
+}
+
+export function OpenCodeAiIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Base {...props}>
+      <path d="M8 7 3.5 12l4.5 5" />
+      <path d="M16 7l4.5 5-4.5 5" />
+      <path d="M12 8l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z" />
+    </Base>
+  )
+}

@@ -597,6 +597,28 @@ export const pt = {
           "Alertas visuais por limite de métricas",
         ],
       },
+      "llm-local": {
+        name: "LLMs Locais para IA",
+        description: "Modelos de linguagem executados localmente, sem envio de dados a serviços externos.",
+        details:
+          "Infraestrutura para execução de modelos de linguagem (LLMs) localmente no datacenter do laboratório, permitindo que parceiros utilizem inteligência artificial generativa sem enviar dados sensíveis a serviços externos.",
+        features: [
+          "Execução local de modelos de linguagem",
+          "Processamento sem envio de dados a terceiros",
+          "Suporte a diferentes modelos open source",
+        ],
+      },
+      "gestao-modelos-tokens-ia": {
+        name: "Gestão de Modelos e Tokens para IA",
+        description: "Painel para gerenciar o acesso a modelos de IA e o consumo de tokens por projeto.",
+        details:
+          "Plataforma para gerenciar credenciais, cotas e consumo de tokens de modelos de inteligência artificial utilizados nos projetos desenvolvidos com parceiros, com controle por equipe e por aplicação.",
+        features: [
+          "Gerenciamento de credenciais e cotas de tokens",
+          "Acompanhamento do consumo por projeto",
+          "Controle de acesso por equipe e aplicação",
+        ],
+      },
       "ide-eclipse-che": {
         name: "IDE Eclipse Che",
         description: "Ambiente de desenvolvimento integrado em nuvem, acessível diretamente pelo navegador.",
@@ -654,13 +676,24 @@ export const pt = {
       },
       firewall: {
         name: "Firewall",
-        description: "Ambiente de firewall para prática de configuração de políticas de segurança de rede.",
+        description: "Ambiente de firewall para proteção de redes e sistemas de parceiros.",
         details:
-          "Ambiente de firewall disponibilizado à comunidade acadêmica do IFRO para prática de configuração de regras, políticas de segurança e conceitos de proteção de redes de computadores.",
+          "Ambiente de firewall gerenciado pelo laboratório, utilizado para proteger redes e sistemas de instituições parceiras, com configuração de regras e políticas de segurança sob demanda.",
         features: [
-          "Prática de regras e políticas de firewall",
-          "Uso em disciplinas de segurança de redes",
-          "Ambiente isolado para testes seguros",
+          "Configuração de regras e políticas de segurança",
+          "Proteção de redes e sistemas de parceiros",
+          "Registro e auditoria de eventos de rede",
+        ],
+      },
+      "opencode-llm-local": {
+        name: "OpenCode + LLM Local",
+        description: "Ambiente de programação assistida por IA, com modelo de linguagem executado localmente.",
+        details:
+          "Ambiente de desenvolvimento com assistente de programação baseado em IA (OpenCode), integrado a um modelo de linguagem executado localmente no laboratório, disponibilizado à comunidade acadêmica do IFRO para uso em aulas e projetos.",
+        features: [
+          "Assistência de código por IA local",
+          "Sem envio de código a serviços externos",
+          "Uso em aulas e projetos de programação",
         ],
       },
     },

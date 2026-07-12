@@ -31,6 +31,9 @@ import {
   BackupIcon,
   AlertBellIcon,
   LineChartIcon,
+  LocalAiIcon,
+  TokenManagementIcon,
+  OpenCodeAiIcon,
 } from "../components/ui/ServiceIcon"
 
 /**
@@ -85,6 +88,8 @@ export const SERVICES: Service[] = [
   { slug: "zabbix", icon: AlertBellIcon, audience: "partners" },
   { slug: "grafana", icon: LineChartIcon, audience: "partners" },
   { slug: "firewall", icon: ShieldIcon, audience: "partners" },
+  { slug: "llm-local", icon: LocalAiIcon, audience: "partners" },
+  { slug: "gestao-modelos-tokens-ia", icon: TokenManagementIcon, audience: "partners" },
 
   // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
   { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },
@@ -92,6 +97,7 @@ export const SERVICES: Service[] = [
   { slug: "pnetlab", icon: LabNetworkIcon, audience: "academic" },
   { slug: "maquinas-virtuais", icon: VmIcon, audience: "academic" },
   { slug: "proxmox", icon: ServerStackIcon, audience: "academic" },
+  { slug: "opencode-llm-local", icon: OpenCodeAiIcon, audience: "academic" },
 ]
 
 const AUDIENCE_LEVEL: Record<ServiceAudience, number> = {
