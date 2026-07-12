@@ -24,6 +24,12 @@ const AUDIENCE_TAB_ACTIVE: Record<ServiceAudience, string> = {
 
 const AUDIENCE_TAB_INACTIVE = "border-slate-600 text-slate-300 hover:border-slate-400 hover:text-white"
 
+const AUDIENCE_BADGE_TONE: Record<ServiceAudience, string> = {
+  public: "bg-medal-bronze-100 text-medal-bronze-700",
+  partners: "bg-medal-silver-100 text-medal-silver-700",
+  academic: "bg-medal-gold-100 text-medal-gold-700",
+}
+
 export function Home() {
   const { dict } = useLanguage()
   const t = dict.home
@@ -154,7 +160,9 @@ export function Home() {
                 to={`/servicos/${service.slug}`}
                 className="flex flex-col items-center gap-2 text-center text-slate-300 transition-colors hover:text-white"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-gold-500">
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-lg ${AUDIENCE_BADGE_TONE[service.audience]}`}
+                >
                   <service.icon />
                 </span>
                 <span className="text-xs">{getServiceTranslation(dict, service.slug).name}</span>
