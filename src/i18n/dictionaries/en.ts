@@ -10,9 +10,8 @@ export const en: typeof pt = {
     partnerships: "Partnerships",
     services: "Services",
     courses: "Courses",
-    complementaryTraining: "Complementary Training",
     events: "Events",
-    opportunities: "Opportunities",
+    opportunities: "Training & Opportunities",
     members: "Members",
   },
   aboutSections: {
@@ -22,6 +21,10 @@ export const en: typeof pt = {
     virtualTour: "360° / 3D tour",
     location: "Location",
     contact: "Contact",
+  },
+  opportunitiesSections: {
+    training: "Complementary Training",
+    jobs: "Internships & Jobs",
   },
   header: {
     openMenu: "Open menu",
@@ -93,14 +96,10 @@ export const en: typeof pt = {
         title: "Training",
         description: "Courses and events aimed at students, researchers and the community.",
       },
-      complementaryTraining: {
-        title: "Complementary Training",
-        description:
-          "Suggested external courses and materials to deepen laboratory topics.",
-      },
       opportunities: {
-        title: "Opportunities",
-        description: "Internships, scholarships and job openings announced by the laboratory and partners.",
+        title: "Training & Opportunities",
+        description:
+          "Curated external courses and internship, scholarship and job openings in the Networking field.",
       },
     },
     grants: {
@@ -876,39 +875,6 @@ export const en: typeof pt = {
       },
     ],
   },
-  complementaryTraining: {
-    eyebrow: "Complementary Training",
-    title: "Training suggestions",
-    description:
-      "External courses and materials recommended by the laboratory to deepen network, governance and communication topics, complementing the courses offered directly by the group.",
-    note: "Illustrative list — replace with the real training suggestions and their links.",
-    items: [
-      {
-        title: "Computer networking fundamentals",
-        provider: "Open learning platform",
-        area: "Networks",
-        format: "Online",
-      },
-      {
-        title: "Introduction to data governance",
-        provider: "University extension course",
-        area: "Governance",
-        format: "Online",
-      },
-      {
-        title: "Scientific communication and research outreach",
-        provider: "Partner graduate program",
-        area: "Communication",
-        format: "In-person",
-      },
-      {
-        title: "Security and privacy in network infrastructure",
-        provider: "Open learning platform",
-        area: "Networks",
-        format: "Online",
-      },
-    ],
-  },
   events: {
     eyebrow: "Events",
     title: "Events",
@@ -921,36 +887,85 @@ export const en: typeof pt = {
     ],
   },
   opportunities: {
-    eyebrow: "Opportunities",
-    title: "Internships and jobs",
-    description: "Internship, scholarship and job opportunities announced by the laboratory and partner institutions.",
-    note: "Illustrative list — replace with real opportunities and their application contacts/links.",
-    items: [
-      {
-        title: "Research internship — network infrastructure",
-        organization: "Laboratório Zero",
-        type: "Internship",
-        status: "Open",
-        open: true,
-        description: "Support for network simulation and experimentation projects, for undergraduate students.",
-      },
-      {
-        title: "Undergraduate research scholarship — data governance",
-        organization: "Laboratório Zero",
-        type: "Scholarship",
-        status: "Open",
-        open: true,
-        description: "Research on data policy in partnership with a public body.",
-      },
-      {
-        title: "Developer position — partner institution",
-        organization: "Partner Institution A",
-        type: "Job",
-        status: "Closed",
-        open: false,
-        description: "Position advertised by a laboratory partner institution.",
-      },
-    ],
+    eyebrow: "Training & Opportunities",
+    title: "Training & Opportunities",
+    description:
+      "Curated courses, materials and openings in the Networking field, selected by the laboratory team to support students in the course. The laboratory does not teach the courses or offer the positions listed here — it only shares relevant external opportunities.",
+    externalLabel: "External source",
+    training: {
+      title: "Complementary Training",
+      description:
+        "External courses and materials recommended by the laboratory to deepen network, governance and communication topics, complementing the courses offered directly by the group.",
+      note: "Illustrative list — replace with the real training suggestions and their links.",
+      viewCourse: "Go to course",
+      items: [
+        {
+          title: "Computer networking fundamentals",
+          provider: "Open learning platform",
+          area: "Networks",
+          format: "Online",
+          url: "",
+        },
+        {
+          title: "Introduction to data governance",
+          provider: "University extension course",
+          area: "Governance",
+          format: "Online",
+          url: "",
+        },
+        {
+          title: "Scientific communication and research outreach",
+          provider: "Partner graduate program",
+          area: "Communication",
+          format: "In-person",
+          url: "",
+        },
+        {
+          title: "Security and privacy in network infrastructure",
+          provider: "Open learning platform",
+          area: "Networks",
+          format: "Online",
+          url: "",
+        },
+      ],
+    },
+    jobs: {
+      title: "Internships & Jobs",
+      description:
+        "Internship, scholarship and job openings selected by the laboratory team at partner institutions and other organizations, in the Networking field.",
+      note: "Illustrative list — replace with real opportunities and their application contacts/links.",
+      apply: "Apply",
+      items: [
+        {
+          title: "Network support internship",
+          organization: "Partner Institution A",
+          type: "Internship",
+          status: "Open",
+          open: true,
+          description: "Internship in network infrastructure and support, announced by a partner institution of the course.",
+          url: "",
+        },
+        {
+          title: "Undergraduate research scholarship — data governance in networks",
+          organization: "Partner University B",
+          type: "Scholarship",
+          status: "Open",
+          open: true,
+          description:
+            "Undergraduate research scholarship on a data governance in networks project, offered by a partner institution.",
+          url: "",
+        },
+        {
+          title: "Network developer position",
+          organization: "Partner Company C",
+          type: "Job",
+          status: "Closed",
+          open: false,
+          description: "Position advertised by a partner company, aimed at Networking graduates.",
+          url: "",
+        },
+      ],
+    },
   },
   members: {
     eyebrow: "Members",

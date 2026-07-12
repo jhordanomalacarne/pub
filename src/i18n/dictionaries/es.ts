@@ -10,9 +10,8 @@ export const es: typeof pt = {
     partnerships: "Alianzas",
     services: "Servicios",
     courses: "Cursos",
-    complementaryTraining: "Formación Complementaria",
     events: "Eventos",
-    opportunities: "Oportunidades",
+    opportunities: "Formación y Oportunidades",
     members: "Miembros",
   },
   aboutSections: {
@@ -22,6 +21,10 @@ export const es: typeof pt = {
     virtualTour: "Recorrido 360° / 3D",
     location: "Ubicación",
     contact: "Contacto",
+  },
+  opportunitiesSections: {
+    training: "Formación Complementaria",
+    jobs: "Prácticas y Empleo",
   },
   header: {
     openMenu: "Abrir menú",
@@ -93,14 +96,10 @@ export const es: typeof pt = {
         title: "Formación",
         description: "Cursos y eventos dirigidos a estudiantes, investigadores y la comunidad.",
       },
-      complementaryTraining: {
-        title: "Formación Complementaria",
-        description:
-          "Sugerencias de cursos y materiales externos para profundizar en temas del laboratorio.",
-      },
       opportunities: {
-        title: "Oportunidades",
-        description: "Prácticas, becas y ofertas de empleo difundidas por el laboratorio y sus socios.",
+        title: "Formación y Oportunidades",
+        description:
+          "Curaduría de cursos externos y ofertas de prácticas, becas y empleo en el área de Redes.",
       },
     },
     grants: {
@@ -877,39 +876,6 @@ export const es: typeof pt = {
       },
     ],
   },
-  complementaryTraining: {
-    eyebrow: "Formación Complementaria",
-    title: "Sugerencias de formación",
-    description:
-      "Cursos y materiales externos recomendados por el laboratorio para profundizar en temas de redes, gobernanza y comunicación, complementando los cursos ofrecidos directamente por el grupo.",
-    note: "Lista ilustrativa — sustitúyala por las sugerencias reales de formación y sus respectivos enlaces.",
-    items: [
-      {
-        title: "Fundamentos de redes de computadoras",
-        provider: "Plataforma de enseñanza abierta",
-        area: "Redes",
-        format: "En línea",
-      },
-      {
-        title: "Introducción a la gobernanza de datos",
-        provider: "Curso de extensión universitaria",
-        area: "Gobernanza",
-        format: "En línea",
-      },
-      {
-        title: "Comunicación científica y divulgación de la investigación",
-        provider: "Programa de posgrado asociado",
-        area: "Comunicación",
-        format: "Presencial",
-      },
-      {
-        title: "Seguridad y privacidad en infraestructura de red",
-        provider: "Plataforma de enseñanza abierta",
-        area: "Redes",
-        format: "En línea",
-      },
-    ],
-  },
   events: {
     eyebrow: "Eventos",
     title: "Eventos",
@@ -922,36 +888,86 @@ export const es: typeof pt = {
     ],
   },
   opportunities: {
-    eyebrow: "Oportunidades",
-    title: "Prácticas y empleo",
-    description: "Oportunidades de prácticas, becas y empleo difundidas por el laboratorio y por instituciones asociadas.",
-    note: "Lista ilustrativa — sustitúyala por las oportunidades reales y sus respectivos contactos/enlaces de postulación.",
-    items: [
-      {
-        title: "Práctica de investigación — infraestructura de red",
-        organization: "Laboratório Zero",
-        type: "Práctica",
-        status: "Abierta",
-        open: true,
-        description: "Apoyo a proyectos de simulación y experimentación de red, para estudiantes de grado.",
-      },
-      {
-        title: "Beca de iniciación científica — gobernanza de datos",
-        organization: "Laboratório Zero",
-        type: "Beca",
-        status: "Abierta",
-        open: true,
-        description: "Investigación sobre políticas de datos en asociación con un organismo público.",
-      },
-      {
-        title: "Vacante de desarrollador(a) — institución asociada",
-        organization: "Institución Asociada A",
-        type: "Empleo",
-        status: "Cerrada",
-        open: false,
-        description: "Vacante difundida por una institución asociada del laboratorio.",
-      },
-    ],
+    eyebrow: "Formación y Oportunidades",
+    title: "Formación y Oportunidades",
+    description:
+      "Curaduría de cursos, materiales y ofertas del área de Redes de Computadoras, seleccionados por el equipo del laboratorio para apoyar a quienes estudian en el curso. El laboratorio no imparte los cursos ni ofrece las vacantes listadas aquí — solo difunde oportunidades externas relevantes.",
+    externalLabel: "Fuente externa",
+    training: {
+      title: "Formación Complementaria",
+      description:
+        "Cursos y materiales externos recomendados por el laboratorio para profundizar en temas de redes, gobernanza y comunicación, complementando los cursos ofrecidos directamente por el grupo.",
+      note: "Lista ilustrativa — sustitúyala por las sugerencias reales de formación y sus respectivos enlaces.",
+      viewCourse: "Acceder al curso",
+      items: [
+        {
+          title: "Fundamentos de redes de computadoras",
+          provider: "Plataforma de enseñanza abierta",
+          area: "Redes",
+          format: "En línea",
+          url: "",
+        },
+        {
+          title: "Introducción a la gobernanza de datos",
+          provider: "Curso de extensión universitaria",
+          area: "Gobernanza",
+          format: "En línea",
+          url: "",
+        },
+        {
+          title: "Comunicación científica y divulgación de la investigación",
+          provider: "Programa de posgrado asociado",
+          area: "Comunicación",
+          format: "Presencial",
+          url: "",
+        },
+        {
+          title: "Seguridad y privacidad en infraestructura de red",
+          provider: "Plataforma de enseñanza abierta",
+          area: "Redes",
+          format: "En línea",
+          url: "",
+        },
+      ],
+    },
+    jobs: {
+      title: "Prácticas y Empleo",
+      description:
+        "Ofertas de prácticas, becas y empleo seleccionadas por el equipo del laboratorio en instituciones asociadas y otras organizaciones, del área de Redes de Computadoras.",
+      note: "Lista ilustrativa — sustitúyala por las oportunidades reales y sus respectivos contactos/enlaces de postulación.",
+      apply: "Postularme",
+      items: [
+        {
+          title: "Práctica en soporte de redes",
+          organization: "Institución Asociada A",
+          type: "Práctica",
+          status: "Abierta",
+          open: true,
+          description:
+            "Vacante de práctica en infraestructura y soporte de redes, difundida por una institución asociada del curso.",
+          url: "",
+        },
+        {
+          title: "Beca de iniciación científica — gobernanza de datos en redes",
+          organization: "Universidad Asociada B",
+          type: "Beca",
+          status: "Abierta",
+          open: true,
+          description:
+            "Beca de iniciación científica en un proyecto de investigación sobre gobernanza de datos en redes, ofrecida por una institución asociada.",
+          url: "",
+        },
+        {
+          title: "Vacante de desarrollador(a) de redes",
+          organization: "Empresa Asociada C",
+          type: "Empleo",
+          status: "Cerrada",
+          open: false,
+          description: "Vacante difundida por una empresa asociada, dirigida a egresados del área de Redes.",
+          url: "",
+        },
+      ],
+    },
   },
   members: {
     eyebrow: "Miembros",

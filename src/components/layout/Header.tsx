@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom"
 import { NAV_ITEMS } from "../../lib/nav"
 import { ABOUT_SECTIONS } from "../../lib/aboutSections"
 import { PARTNERSHIP_CATEGORIES } from "../../lib/partnershipCategories"
+import { OPPORTUNITIES_SECTIONS } from "../../lib/opportunitiesSections"
 import { useHideOnScroll } from "../../hooks/useHideOnScroll"
 import { useLanguage } from "../../i18n/LanguageContext"
 import { LANGUAGES } from "../../i18n/languages"
@@ -176,9 +177,14 @@ export function Header() {
     id: category.id,
     label: category.label[language],
   }))
+  const opportunitiesSections: SubmenuSection[] = OPPORTUNITIES_SECTIONS.map((section) => ({
+    id: section.id,
+    label: dict.opportunitiesSections[section.key],
+  }))
   const submenus: Record<string, SubmenuSection[]> = {
     "/sobre": aboutSections,
     "/parcerias": partnershipSections,
+    "/oportunidades": opportunitiesSections,
   }
 
   return (

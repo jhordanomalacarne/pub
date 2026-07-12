@@ -15,7 +15,6 @@ import { ServiceDetail } from "./pages/ServiceDetail"
 import { ServiceStatus } from "./pages/ServiceStatus"
 import { ServiceAudienceRequirements } from "./pages/ServiceAudienceRequirements"
 import { Courses } from "./pages/Courses"
-import { ComplementaryTraining } from "./pages/ComplementaryTraining"
 import { Events } from "./pages/Events"
 import { Opportunities } from "./pages/Opportunities"
 import { Members } from "./pages/Members"
@@ -41,7 +40,7 @@ function App() {
           <Route path="servicos/:slug" element={<ServiceDetail />} />
           <Route path="status" element={<ServiceStatus />} />
           <Route path="cursos" element={<Courses />} />
-          <Route path="formacao-complementar" element={<ComplementaryTraining />} />
+          <Route path="formacao-complementar" element={<Navigate to="/oportunidades#formacao" replace />} />
           <Route path="eventos" element={<Events />} />
           <Route path="oportunidades" element={<Opportunities />} />
           <Route path="membros" element={<Members />} />

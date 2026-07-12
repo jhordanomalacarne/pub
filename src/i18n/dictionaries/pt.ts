@@ -8,9 +8,8 @@ export const pt = {
     partnerships: "Parcerias",
     services: "Serviços",
     courses: "Cursos",
-    complementaryTraining: "Formação Complementar",
     events: "Eventos",
-    opportunities: "Oportunidades",
+    opportunities: "Formação e Oportunidades",
     members: "Membros",
   },
   aboutSections: {
@@ -20,6 +19,10 @@ export const pt = {
     virtualTour: "Tour 360° / 3D",
     location: "Localização",
     contact: "Contato",
+  },
+  opportunitiesSections: {
+    training: "Formação Complementar",
+    jobs: "Estágio e Emprego",
   },
   header: {
     openMenu: "Abrir menu",
@@ -91,14 +94,10 @@ export const pt = {
         title: "Formação",
         description: "Cursos e eventos voltados a alunos, pesquisadores e à comunidade.",
       },
-      complementaryTraining: {
-        title: "Formação Complementar",
-        description:
-          "Sugestões de cursos e materiais externos para aprofundar temas do laboratório.",
-      },
       opportunities: {
-        title: "Oportunidades",
-        description: "Estágios, bolsas e vagas de emprego divulgadas pelo laboratório e parceiros.",
+        title: "Formação e Oportunidades",
+        description:
+          "Curadoria de cursos externos e vagas de estágio, bolsa e emprego voltados à área de Redes.",
       },
     },
     grants: {
@@ -879,39 +878,6 @@ export const pt = {
       },
     ],
   },
-  complementaryTraining: {
-    eyebrow: "Formação Complementar",
-    title: "Sugestões de formação",
-    description:
-      "Cursos e materiais externos recomendados pelo laboratório para aprofundar temas de redes, governança e comunicação, complementando os cursos oferecidos diretamente pelo grupo.",
-    note: "Lista ilustrativa — substitua pelas sugestões reais de formação e respectivos links.",
-    items: [
-      {
-        title: "Fundamentos de redes de computadores",
-        provider: "Plataforma de ensino aberto",
-        area: "Redes",
-        format: "Online",
-      },
-      {
-        title: "Introdução à governança de dados",
-        provider: "Curso de extensão universitária",
-        area: "Governança",
-        format: "Online",
-      },
-      {
-        title: "Comunicação científica e divulgação da pesquisa",
-        provider: "Programa de pós-graduação parceiro",
-        area: "Comunicação",
-        format: "Presencial",
-      },
-      {
-        title: "Segurança e privacidade em infraestrutura de rede",
-        provider: "Plataforma de ensino aberto",
-        area: "Redes",
-        format: "Online",
-      },
-    ],
-  },
   events: {
     eyebrow: "Eventos",
     title: "Eventos",
@@ -924,38 +890,86 @@ export const pt = {
     ],
   },
   opportunities: {
-    eyebrow: "Oportunidades",
-    title: "Estágio e emprego",
+    eyebrow: "Formação e Oportunidades",
+    title: "Formação e Oportunidades",
     description:
-      "Oportunidades de estágio, bolsas e emprego divulgadas pelo laboratório e por instituições parceiras.",
-    note: "Lista ilustrativa — substitua pelas oportunidades reais e respectivos contatos/links de candidatura.",
-    items: [
-      {
-        title: "Estágio em pesquisa — infraestrutura de rede",
-        organization: "Laboratório Zero",
-        type: "Estágio",
-        status: "Aberta",
-        open: true,
-        description:
-          "Apoio a projetos de simulação e experimentação de rede, para alunos de graduação.",
-      },
-      {
-        title: "Bolsa de iniciação científica — governança de dados",
-        organization: "Laboratório Zero",
-        type: "Bolsa",
-        status: "Aberta",
-        open: true,
-        description: "Pesquisa sobre políticas de dados em parceria com órgão público.",
-      },
-      {
-        title: "Vaga de desenvolvedor(a) — instituição parceira",
-        organization: "Instituição Parceira A",
-        type: "Emprego",
-        status: "Encerrada",
-        open: false,
-        description: "Vaga divulgada por instituição parceira do laboratório.",
-      },
-    ],
+      "Curadoria de cursos, materiais e vagas voltados à área de Redes de Computadores, selecionados pela equipe do laboratório para apoiar quem estuda no curso. O laboratório não ministra os cursos nem oferece as vagas listadas aqui — apenas divulga oportunidades externas relevantes.",
+    externalLabel: "Fonte externa",
+    training: {
+      title: "Formação Complementar",
+      description:
+        "Cursos e materiais externos recomendados pelo laboratório para aprofundar temas de redes, governança e comunicação, complementando os cursos oferecidos diretamente pelo grupo.",
+      note: "Lista ilustrativa — substitua pelas sugestões reais de formação e respectivos links.",
+      viewCourse: "Acessar curso",
+      items: [
+        {
+          title: "Fundamentos de redes de computadores",
+          provider: "Plataforma de ensino aberto",
+          area: "Redes",
+          format: "Online",
+          url: "",
+        },
+        {
+          title: "Introdução à governança de dados",
+          provider: "Curso de extensão universitária",
+          area: "Governança",
+          format: "Online",
+          url: "",
+        },
+        {
+          title: "Comunicação científica e divulgação da pesquisa",
+          provider: "Programa de pós-graduação parceiro",
+          area: "Comunicação",
+          format: "Presencial",
+          url: "",
+        },
+        {
+          title: "Segurança e privacidade em infraestrutura de rede",
+          provider: "Plataforma de ensino aberto",
+          area: "Redes",
+          format: "Online",
+          url: "",
+        },
+      ],
+    },
+    jobs: {
+      title: "Estágio e Emprego",
+      description:
+        "Vagas de estágio, bolsas e emprego selecionadas pela equipe do laboratório em instituições parceiras e outras organizações, voltadas à área de Redes de Computadores.",
+      note: "Lista ilustrativa — substitua pelas oportunidades reais e respectivos contatos/links de candidatura.",
+      apply: "Candidatar-se",
+      items: [
+        {
+          title: "Estágio em suporte de redes",
+          organization: "Instituição Parceira A",
+          type: "Estágio",
+          status: "Aberta",
+          open: true,
+          description:
+            "Vaga de estágio em infraestrutura e suporte de redes, divulgada por instituição parceira do curso.",
+          url: "",
+        },
+        {
+          title: "Bolsa de iniciação científica — governança de dados em redes",
+          organization: "Universidade Parceira B",
+          type: "Bolsa",
+          status: "Aberta",
+          open: true,
+          description:
+            "Bolsa de iniciação científica em projeto de pesquisa sobre governança de dados em redes, oferecida por instituição parceira.",
+          url: "",
+        },
+        {
+          title: "Vaga de desenvolvedor(a) de redes",
+          organization: "Empresa Parceira C",
+          type: "Emprego",
+          status: "Encerrada",
+          open: false,
+          description: "Vaga divulgada por empresa parceira, voltada a egressos da área de Redes.",
+          url: "",
+        },
+      ],
+    },
   },
   members: {
     eyebrow: "Membros",

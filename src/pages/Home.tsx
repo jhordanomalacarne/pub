@@ -11,7 +11,6 @@ const HIGHLIGHTS = [
   { key: "publications", to: "/publicacoes" },
   { key: "partnerships", to: "/parcerias" },
   { key: "training", to: "/cursos" },
-  { key: "complementaryTraining", to: "/formacao-complementar" },
   { key: "opportunities", to: "/oportunidades" },
 ] as const
 
