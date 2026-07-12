@@ -329,7 +329,7 @@ export const en: typeof pt = {
     audienceAcademicDescription:
       "In addition to all public and partner services, the IFRO academic community has access to these additional tools.",
     audienceAcademicRequirement:
-      "What do you need to use it? Be involved in an institutionalized project at IFRO or be teaching a course at IFRO. If you are a student, you must be authorized by the course instructor.",
+      "What do you need to use it? Be involved in an institutionalized project at IFRO or be teaching a course at IFRO. If you are a student, you must be authorized by the course instructor. Use is subject to formalizing the request with Laboratório Zero, with the appropriate limitations, counterparts and responsibilities.",
     audienceLearnMore: "Learn more →",
     audienceRequirementsTitle: "Access criteria",
     audienceRequirementsComingSoon:

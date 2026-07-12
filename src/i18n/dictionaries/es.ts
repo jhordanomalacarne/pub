@@ -329,7 +329,7 @@ export const es: typeof pt = {
     audienceAcademicDescription:
       "Además de todos los servicios públicos y para socios, la comunidad académica del IFRO tiene acceso a estas herramientas adicionales.",
     audienceAcademicRequirement:
-      "¿Qué se necesita para usarlo? Tener vínculo con algún proyecto institucionalizado en el IFRO o estar impartiendo alguna asignatura en el IFRO. Si es estudiante, debe estar autorizado por el docente de la asignatura.",
+      "¿Qué se necesita para usarlo? Tener vínculo con algún proyecto institucionalizado en el IFRO o estar impartiendo alguna asignatura en el IFRO. Si es estudiante, debe estar autorizado por el docente de la asignatura. El uso está sujeto a la formalización de la solicitud ante el Laboratório Zero, con las debidas limitaciones, contrapartidas y responsabilidades.",
     audienceLearnMore: "Saber más →",
     audienceRequirementsTitle: "Criterios de acceso",
     audienceRequirementsComingSoon:
