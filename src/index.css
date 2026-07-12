@@ -32,6 +32,20 @@
 
   /* Indicador de status "indisponível" na página de status dos serviços. */
   --color-status-down: #c0392b;
+
+  /* Tons de medalha (bronze/prata/ouro) para a organização visual da página
+     de Serviços por público de acesso — distintos do dourado da marca. */
+  --color-medal-bronze-700: #7a4f28;
+  --color-medal-bronze-500: #b5763c;
+  --color-medal-bronze-100: #f7ece1;
+
+  --color-medal-silver-700: #4b5762;
+  --color-medal-silver-500: #8f9aa5;
+  --color-medal-silver-100: #e8ebee;
+
+  --color-medal-gold-700: #8a6b13;
+  --color-medal-gold-500: #c9a227;
+  --color-medal-gold-100: #faf1cf;
 }
 
 /* Dark mode: only surface/text tokens shift ("less bright" backgrounds).
@@ -45,6 +59,13 @@
   --color-border: #2b3245;
   --color-heading: #f4f6fb;
   --color-gtec-green-100: #16261a;
+
+  --color-medal-bronze-100: #2b2015;
+  --color-medal-bronze-700: #d9a978;
+  --color-medal-silver-100: #343a42;
+  --color-medal-silver-700: #c3cbd2;
+  --color-medal-gold-100: #2a2313;
+  --color-medal-gold-700: #e0c465;
 }
 
 body {

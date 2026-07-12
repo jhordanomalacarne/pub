@@ -1,11 +1,23 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { PageHero } from "../components/ui/PageHero"
-import { Card } from "../components/ui/Card"
+import { Card, type CardTone } from "../components/ui/Card"
 import { getServicesForAudience, getServiceTranslation, type ServiceAudience } from "../lib/services"
 import { useLanguage } from "../i18n/LanguageContext"
 
 const AUDIENCES: ServiceAudience[] = ["public", "partners", "academic"]
+
+const AUDIENCE_TONE: Record<ServiceAudience, CardTone> = {
+  public: "bronze",
+  partners: "silver",
+  academic: "gold",
+}
+
+const TAB_TONE_ACTIVE: Record<ServiceAudience, string> = {
+  public: "border-medal-bronze-500 bg-medal-bronze-100 text-medal-bronze-700",
+  partners: "border-medal-silver-500 bg-medal-silver-100 text-medal-silver-700",
+  academic: "border-medal-gold-500 bg-medal-gold-100 text-medal-gold-700",
+}
 
 export function Services() {
   const { dict } = useLanguage()
@@ -39,7 +51,7 @@ export function Services() {
               aria-pressed={audience === a}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                 audience === a
-                  ? "border-navy-900 bg-navy-900 text-white dark:border-white dark:bg-white dark:text-navy-950"
+                  ? TAB_TONE_ACTIVE[a]
                   : "border-border text-ink-soft hover:border-heading hover:text-heading"
               }`}
             >
@@ -54,7 +66,7 @@ export function Services() {
             const item = getServiceTranslation(dict, service.slug)
             return (
               <Link key={service.slug} to={`/servicos/${service.slug}`}>
-                <Card className="h-full">
+                <Card className="h-full" tone={AUDIENCE_TONE[service.audience]}>
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-950 text-gold-500">
                     <service.icon />
                   </div>
@@ -62,12 +74,12 @@ export function Services() {
                   <p className="mt-2 text-sm text-ink-soft">{item.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {service.audience === "academic" && (
-                      <span className="inline-block rounded-full bg-gold-100 px-3 py-1 text-xs font-medium text-gold-600">
+                      <span className="inline-block rounded-full bg-paper px-3 py-1 text-xs font-medium text-medal-gold-700">
                         {t.academicBadge}
                       </span>
                     )}
                     {!service.url && (
-                      <span className="inline-block rounded-full bg-surface px-3 py-1 text-xs font-medium text-ink-soft">
+                      <span className="inline-block rounded-full bg-paper px-3 py-1 text-xs font-medium text-ink-soft">
                         {t.comingSoon}
                       </span>
                     )}
