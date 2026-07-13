@@ -56,6 +56,13 @@ import {
  */
 export type ServiceAudience = "public" | "partners" | "academic"
 
+/**
+ * Categoria funcional do serviço — transversal à audiência, usada para
+ * filtrar o catálogo por tipo de capacidade técnica, independente de
+ * quem pode acessar o serviço.
+ */
+export type ServiceCategory = "infrastructure" | "development" | "data-ai" | "security" | "utilities"
+
 export type Service = {
   slug: string
   /**
@@ -65,55 +72,56 @@ export type Service = {
   url?: string
   icon: ComponentType<SVGProps<SVGSVGElement>>
   audience: ServiceAudience
+  category: ServiceCategory
 }
 
 export const SERVICES: Service[] = [
   // Serviços públicos — abertos a toda a comunidade
-  { slug: "bentopdf", icon: PdfPrivacyIcon, audience: "public" },
-  { slug: "drawio", icon: DiagramIcon, audience: "public" },
-  { slug: "excalidraw", icon: SketchIcon, audience: "public" },
-  { slug: "repositorio-debian", icon: PackageIcon, audience: "public" },
-  { slug: "teste-ipv6", icon: NetworkIcon, audience: "public" },
-  { slug: "openspeedtest", icon: SpeedGaugeIcon, audience: "public" },
-  { slug: "encurtador-url", icon: LinkIcon, audience: "public" },
-  { slug: "qrcode", icon: QrCodeIcon, audience: "public" },
-  { slug: "internet-wifi", icon: PublicWifiIcon, audience: "public" },
+  { slug: "bentopdf", icon: PdfPrivacyIcon, audience: "public", category: "utilities" },
+  { slug: "drawio", icon: DiagramIcon, audience: "public", category: "utilities" },
+  { slug: "excalidraw", icon: SketchIcon, audience: "public", category: "utilities" },
+  { slug: "repositorio-debian", icon: PackageIcon, audience: "public", category: "infrastructure" },
+  { slug: "teste-ipv6", icon: NetworkIcon, audience: "public", category: "infrastructure" },
+  { slug: "openspeedtest", icon: SpeedGaugeIcon, audience: "public", category: "infrastructure" },
+  { slug: "encurtador-url", icon: LinkIcon, audience: "public", category: "utilities" },
+  { slug: "qrcode", icon: QrCodeIcon, audience: "public", category: "utilities" },
+  { slug: "internet-wifi", icon: PublicWifiIcon, audience: "public", category: "infrastructure" },
 
   // Exclusivos de parceiros — somados aos públicos
-  { slug: "wiki", icon: WikiIcon, audience: "partners" },
-  { slug: "limesurvey", icon: SurveyIcon, audience: "partners" },
-  { slug: "hospedagem-web", icon: WebHostingIcon, audience: "partners" },
-  { slug: "banco-de-dados", icon: DatabaseIcon, audience: "partners" },
-  { slug: "metabase", icon: DashboardIcon, audience: "partners" },
-  { slug: "openproject", icon: KanbanIcon, audience: "partners" },
-  { slug: "gitlab", icon: GitBranchIcon, audience: "partners" },
-  { slug: "gerenciamento-automacao", icon: AutomationIcon, audience: "partners" },
-  { slug: "n8n", icon: WorkflowIcon, audience: "partners" },
-  { slug: "gerenciamento-wifi", icon: WifiManagementIcon, audience: "partners" },
-  { slug: "registro-logs", icon: LogsIcon, audience: "partners" },
-  { slug: "armazenamento-cameras", icon: CameraStorageIcon, audience: "partners" },
-  { slug: "armazenamento-objetos", icon: ObjectStorageIcon, audience: "partners" },
-  { slug: "backup", icon: BackupIcon, audience: "partners" },
-  { slug: "zabbix", icon: AlertBellIcon, audience: "partners" },
-  { slug: "grafana", icon: LineChartIcon, audience: "partners" },
-  { slug: "firewall", icon: ShieldIcon, audience: "partners" },
-  { slug: "llm-local", icon: LocalAiIcon, audience: "partners" },
-  { slug: "gestao-modelos-tokens-ia", icon: TokenManagementIcon, audience: "partners" },
-  { slug: "gerenciamento-dns", icon: DnsManagementIcon, audience: "partners" },
-  { slug: "roboshadow", icon: RoboShadowIcon, audience: "partners" },
-  { slug: "crowdsec", icon: CrowdSecIcon, audience: "partners" },
-  { slug: "captive-portal", icon: CaptivePortalIcon, audience: "partners" },
-  { slug: "map-server", icon: MapServerIcon, audience: "partners" },
-  { slug: "opendronemap", icon: DroneMapIcon, audience: "partners" },
+  { slug: "wiki", icon: WikiIcon, audience: "partners", category: "utilities" },
+  { slug: "limesurvey", icon: SurveyIcon, audience: "partners", category: "utilities" },
+  { slug: "hospedagem-web", icon: WebHostingIcon, audience: "partners", category: "infrastructure" },
+  { slug: "banco-de-dados", icon: DatabaseIcon, audience: "partners", category: "data-ai" },
+  { slug: "metabase", icon: DashboardIcon, audience: "partners", category: "data-ai" },
+  { slug: "openproject", icon: KanbanIcon, audience: "partners", category: "utilities" },
+  { slug: "gitlab", icon: GitBranchIcon, audience: "partners", category: "development" },
+  { slug: "gerenciamento-automacao", icon: AutomationIcon, audience: "partners", category: "infrastructure" },
+  { slug: "n8n", icon: WorkflowIcon, audience: "partners", category: "development" },
+  { slug: "gerenciamento-wifi", icon: WifiManagementIcon, audience: "partners", category: "infrastructure" },
+  { slug: "registro-logs", icon: LogsIcon, audience: "partners", category: "security" },
+  { slug: "armazenamento-cameras", icon: CameraStorageIcon, audience: "partners", category: "security" },
+  { slug: "armazenamento-objetos", icon: ObjectStorageIcon, audience: "partners", category: "infrastructure" },
+  { slug: "backup", icon: BackupIcon, audience: "partners", category: "infrastructure" },
+  { slug: "zabbix", icon: AlertBellIcon, audience: "partners", category: "infrastructure" },
+  { slug: "grafana", icon: LineChartIcon, audience: "partners", category: "infrastructure" },
+  { slug: "firewall", icon: ShieldIcon, audience: "partners", category: "security" },
+  { slug: "llm-local", icon: LocalAiIcon, audience: "partners", category: "data-ai" },
+  { slug: "gestao-modelos-tokens-ia", icon: TokenManagementIcon, audience: "partners", category: "data-ai" },
+  { slug: "gerenciamento-dns", icon: DnsManagementIcon, audience: "partners", category: "infrastructure" },
+  { slug: "roboshadow", icon: RoboShadowIcon, audience: "partners", category: "security" },
+  { slug: "crowdsec", icon: CrowdSecIcon, audience: "partners", category: "security" },
+  { slug: "captive-portal", icon: CaptivePortalIcon, audience: "partners", category: "security" },
+  { slug: "map-server", icon: MapServerIcon, audience: "partners", category: "utilities" },
+  { slug: "opendronemap", icon: DroneMapIcon, audience: "partners", category: "utilities" },
 
   // Exclusivos da comunidade acadêmica do IFRO — somados aos anteriores
-  { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic" },
-  { slug: "desktop-remoto", icon: RemoteDesktopIcon, audience: "academic" },
-  { slug: "pnetlab", icon: LabNetworkIcon, audience: "academic" },
-  { slug: "maquinas-virtuais", icon: VmIcon, audience: "academic" },
-  { slug: "proxmox", icon: ServerStackIcon, audience: "academic" },
-  { slug: "opencode-llm-local", icon: OpenCodeAiIcon, audience: "academic" },
-  { slug: "gerenciamento-webscraping", icon: WebScrapIcon, audience: "academic" },
+  { slug: "ide-eclipse-che", icon: CodeIcon, audience: "academic", category: "development" },
+  { slug: "desktop-remoto", icon: RemoteDesktopIcon, audience: "academic", category: "infrastructure" },
+  { slug: "pnetlab", icon: LabNetworkIcon, audience: "academic", category: "utilities" },
+  { slug: "maquinas-virtuais", icon: VmIcon, audience: "academic", category: "infrastructure" },
+  { slug: "proxmox", icon: ServerStackIcon, audience: "academic", category: "infrastructure" },
+  { slug: "opencode-llm-local", icon: OpenCodeAiIcon, audience: "academic", category: "development" },
+  { slug: "gerenciamento-webscraping", icon: WebScrapIcon, audience: "academic", category: "data-ai" },
 ]
 
 /**
