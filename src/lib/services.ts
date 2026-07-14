@@ -142,6 +142,21 @@ export function getServicesForAudience(audience: ServiceAudience): Service[] {
   )
 }
 
+/**
+ * Audiências que enxergam um serviço de uma dada camada mínima, já que o
+ * acesso é cumulativo (ex.: um serviço de parceiros também é visível para a
+ * comunidade acadêmica). Usado para exibir os selos de audiência no catálogo.
+ */
+const AUDIENCE_ACCESS: Record<ServiceAudience, ServiceAudience[]> = {
+  public: ["public", "partners", "academic"],
+  partners: ["partners", "academic"],
+  academic: ["academic"],
+}
+
+export function getAudiencesForService(service: Service): ServiceAudience[] {
+  return AUDIENCE_ACCESS[service.audience]
+}
+
 export function getServiceBySlug(slug: string | undefined): Service | undefined {
   return SERVICES.find((service) => service.slug === slug)
 }

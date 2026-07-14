@@ -356,7 +356,7 @@ export const en: typeof pt = {
     eyebrow: "Service Catalog",
     title: "Service Catalog",
     description:
-      "Web tools maintained by Laboratório Zero, organized by audience, category and search.",
+      "Web tools maintained by Laboratório Zero, organized by functional category and search.",
     note: "Services being deployed — access links will be published as soon as each one is available.",
     comingSoon: "Coming soon",
     backToServices: "← Back to the Service Catalog",
@@ -376,23 +376,18 @@ export const en: typeof pt = {
     audiencePublicLabel: "Public services",
     audiencePartnersLabel: "Partner services",
     audienceAcademicLabel: "IFRO academic community",
-    audiencePublicDescription: "Tools freely available to the whole community.",
+    audiencePublicBadge: "Public",
+    audiencePartnersBadge: "Partner",
+    audienceAcademicBadge: "Academic",
     audiencePublicRequirement:
       "What do you need to use it? Nothing! Just use it. In some cases a simple registration may be required, but access is free.",
-    audiencePartnersDescription:
-      "In addition to the public services, which can be customized for each partnership, the laboratory makes these additional tools available to partner institutions.",
     audiencePartnersRequirement:
       "What do you need for access? A formal partnership with Laboratório Zero or with IFRO, with the appropriate limitations, counterparts and responsibilities.",
-    audienceAcademicDescription:
-      "In addition to all public and partner services, the IFRO academic community has access to these additional tools.",
     audienceAcademicRequirement:
       "What do you need to use it? Be involved in an institutionalized project at IFRO or be teaching a course at IFRO. If you are a student, you must be authorized by the course instructor. Use is subject to formalizing the request with Laboratório Zero, with the appropriate limitations, counterparts and responsibilities.",
-    audienceLearnMore: "Learn more →",
     audienceRequirementsTitle: "Access criteria",
     audienceRequirementsComingSoon:
       "Full details about the access criteria will be published on this page soon.",
-    pipelineNote:
-      "We are developing a complete development pipeline (CI/CD), to be made available for the software development workflow in classes.",
     academicBadge: "Classes and projects",
     items: {
       wiki: {

@@ -357,7 +357,7 @@ export const pt = {
     eyebrow: "Catálogo de Serviços",
     title: "Catálogo de Serviços",
     description:
-      "Ferramentas web mantidas pelo Laboratório Zero, organizadas por público de acesso, categoria e busca.",
+      "Ferramentas web mantidas pelo Laboratório Zero, organizadas por categoria funcional e busca.",
     note: "Serviços em implantação — os links de acesso serão publicados assim que cada um estiver disponível.",
     comingSoon: "Em breve",
     backToServices: "← Voltar para o Catálogo de Serviços",
@@ -377,23 +377,18 @@ export const pt = {
     audiencePublicLabel: "Serviços públicos",
     audiencePartnersLabel: "Serviços para parceiros",
     audienceAcademicLabel: "Comunidade acadêmica do IFRO",
-    audiencePublicDescription: "Ferramentas abertas gratuitamente a toda a comunidade.",
+    audiencePublicBadge: "Público",
+    audiencePartnersBadge: "Parceiro",
+    audienceAcademicBadge: "Acadêmico",
     audiencePublicRequirement:
       "O que precisa para usar? Nada! É só usar. Em alguns casos pode ser solicitado um cadastro simples, mas o acesso é livre.",
-    audiencePartnersDescription:
-      "Além dos serviços públicos que podem ser personalizados para cada parceria, o laboratório disponibiliza estas ferramentas adicionais às instituições parceiras.",
     audiencePartnersRequirement:
       "O que precisa para ter acesso? Uma parceria formalizada com o Laboratório Zero ou com o IFRO, com as devidas limitações, contrapartidas e responsabilidades.",
-    audienceAcademicDescription:
-      "Além de todos os serviços públicos e de parceiros, a comunidade acadêmica do IFRO tem acesso a estas ferramentas adicionais.",
     audienceAcademicRequirement:
       "O que precisa para usar? Ter vínculo em algum projeto institucionalizado no IFRO ou estar ministrando alguma disciplina no IFRO. Se for aluno(a), é necessário ser autorizado(a) pelo(a) docente da disciplina. O uso ocorre mediante a formalização da demanda junto ao Laboratório Zero, com as devidas limitações, contrapartidas e responsabilidades.",
-    audienceLearnMore: "Saiba mais →",
     audienceRequirementsTitle: "Critérios de acesso",
     audienceRequirementsComingSoon:
       "Detalhes completos sobre os critérios de acesso serão publicados em breve nesta página.",
-    pipelineNote:
-      "Estamos desenvolvendo uma esteira de desenvolvimento completa (CI/CD), a ser disponibilizada para o fluxo de desenvolvimento de software em aulas.",
     academicBadge: "Aulas e projetos",
     items: {
       wiki: {

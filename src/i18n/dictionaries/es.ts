@@ -356,7 +356,7 @@ export const es: typeof pt = {
     eyebrow: "Catálogo de Servicios",
     title: "Catálogo de Servicios",
     description:
-      "Herramientas web mantenidas por el Laboratório Zero, organizadas por público de acceso, categoría y búsqueda.",
+      "Herramientas web mantenidas por el Laboratório Zero, organizadas por categoría funcional y búsqueda.",
     note: "Servicios en implementación — los enlaces de acceso se publicarán en cuanto cada uno esté disponible.",
     comingSoon: "Próximamente",
     backToServices: "← Volver al Catálogo de Servicios",
@@ -376,23 +376,18 @@ export const es: typeof pt = {
     audiencePublicLabel: "Servicios públicos",
     audiencePartnersLabel: "Servicios para socios",
     audienceAcademicLabel: "Comunidad académica del IFRO",
-    audiencePublicDescription: "Herramientas disponibles gratuitamente para toda la comunidad.",
+    audiencePublicBadge: "Público",
+    audiencePartnersBadge: "Socio",
+    audienceAcademicBadge: "Académico",
     audiencePublicRequirement:
       "¿Qué se necesita para usarlo? ¡Nada! Solo usarlo. En algunos casos puede solicitarse un registro simple, pero el acceso es libre.",
-    audiencePartnersDescription:
-      "Además de los servicios públicos, que pueden personalizarse para cada alianza, el laboratorio pone estas herramientas adicionales a disposición de las instituciones asociadas.",
     audiencePartnersRequirement:
       "¿Qué se necesita para tener acceso? Una alianza formalizada con el Laboratório Zero o con el IFRO, con las debidas limitaciones, contrapartidas y responsabilidades.",
-    audienceAcademicDescription:
-      "Además de todos los servicios públicos y para socios, la comunidad académica del IFRO tiene acceso a estas herramientas adicionales.",
     audienceAcademicRequirement:
       "¿Qué se necesita para usarlo? Tener vínculo con algún proyecto institucionalizado en el IFRO o estar impartiendo alguna asignatura en el IFRO. Si es estudiante, debe estar autorizado por el docente de la asignatura. El uso está sujeto a la formalización de la solicitud ante el Laboratório Zero, con las debidas limitaciones, contrapartidas y responsabilidades.",
-    audienceLearnMore: "Saber más →",
     audienceRequirementsTitle: "Criterios de acceso",
     audienceRequirementsComingSoon:
       "Los detalles completos sobre los criterios de acceso se publicarán próximamente en esta página.",
-    pipelineNote:
-      "Estamos desarrollando una cadena de desarrollo completa (CI/CD), que estará disponible para el flujo de desarrollo de software en las clases.",
     academicBadge: "Clases y proyectos",
     items: {
       wiki: {
